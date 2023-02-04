@@ -31,22 +31,17 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
-    public void SpawnRandom()
+    public T SpawnRandom()
     {
         T spawned = GetSpawnable();
 
         Vector3 spawnPoint;
-        Bounds groundLocalBounds = meshGround.localBounds;
         bool willSpawn = false;
         int spawnTries = 0;
 
         do
         {
-            spawnPoint = new Vector3(groundLocalBounds.center.x + Random.Range(-0.5f, 0.5f) * groundLocalBounds.size.x,
-                groundLocalBounds.center.y,
-                groundLocalBounds.center.x + Random.Range(-0.5f, 0.5f) * groundLocalBounds.size.z);
-
-            spawnPoint = meshGround.transform.TransformPoint(spawnPoint);
+            spawnPoint = Utils.GetRandomPointInPlane(meshGround);
 
             float distanceToSpawner = (transform.position - spawnPoint).sqrMagnitude;
 
@@ -70,11 +65,14 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         if (NavMesh.SamplePosition(spawnPoint, out hit, 1.0f, NavMesh.AllAreas))
         {
             spawned.transform.position = hit.position;
+            return spawned;
         }
         else
         {
             spawned.gameObject.SetActive(false);
         }
+
+        return null;
     }
 
     public T GetSpawnable()
