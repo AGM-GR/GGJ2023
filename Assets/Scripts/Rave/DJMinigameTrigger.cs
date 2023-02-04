@@ -10,17 +10,21 @@ public class DJMinigameTrigger : MonoBehaviour
 
     private void Start() {
         myRaveColor = GetComponentInParent<Rave>().RaveColor;
+        djMinigame.SetRave(GetComponentInParent<Rave>());
+        GetComponentInParent<Rave>().DJMinigame = djMinigame;
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.TryGetComponent<Character>(out Character character) && character.CharacterColor == myRaveColor) {
+        if (other.TryGetComponent(out Character character) && character.CharacterColor == myRaveColor) {
             djMinigame.Activate();
-            character.GetComponent<CharacterDJMinigameInteraction>().InMinigame = true;
+            CharacterDJMinigameInteraction interaction = character.GetComponent<CharacterDJMinigameInteraction>();
+            interaction.InMinigame = true;
+            interaction.DJMinigame = djMinigame;
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.TryGetComponent<Character>(out Character character) && character.CharacterColor == myRaveColor) {
+        if (other.TryGetComponent(out Character character) && character.CharacterColor == myRaveColor) {
             djMinigame.Deactivate();
             character.GetComponent<CharacterDJMinigameInteraction>().InMinigame = false;
         }
