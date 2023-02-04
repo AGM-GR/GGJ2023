@@ -30,7 +30,10 @@ public class DJMinigame : MonoBehaviour {
     [Header("References")]
     [SerializeField] TextMeshProUGUI targetText;
 
-    Rave rave;
+    public bool MinigameActive { get; set; }
+
+    Car car;
+    Character character;
     DJButton[] djButtons;
     AudioSource audioSource;
 
@@ -43,7 +46,6 @@ public class DJMinigame : MonoBehaviour {
     float timeToTierDown;
     float normalizedBeatTime;
 
-    bool gameActive;
 
     float activatedXPosition;
     float deactivatedXPosition;
@@ -73,7 +75,7 @@ public class DJMinigame : MonoBehaviour {
     
     private void Update() {
         normalizedBeatTime = (Time.time % (1 / BPM * 60)) / (1 / BPM * 60);
-        if (!gameActive && currentTier > 1) {
+        if (!MinigameActive && currentTier > 1) {
             timeToTierDown -= Time.deltaTime;
             if (timeToTierDown <= 0) {
                 TierDown();
@@ -81,18 +83,22 @@ public class DJMinigame : MonoBehaviour {
         }
     }
 
-    public void SetRave(Rave rave) {
-        this.rave = rave;
+    public void SetCar(Car car) {
+        this.car = car;
     }
 
-    public void Activate() {
+    public void Activate(Character character) {
         transform.localPosition = new Vector3(activatedXPosition, transform.localPosition.y, 0);
-        gameActive = true;
+        MinigameActive = true;
+        this.character = character;
     }
 
     public void Deactivate() {
         transform.localPosition = new Vector3(deactivatedXPosition, transform.localPosition.y, 0);
-        gameActive = false;
+        MinigameActive = false;
+        if (character) {
+            character.GetComponent<CharacterMovement>().IsMovementAllowed = true;
+        }
     }
 
     public void ReceiveInput(MinigameButton button) {
@@ -123,9 +129,10 @@ public class DJMinigame : MonoBehaviour {
         }
     }
 
-    private void FailedInput(bool sound = true) {
-        if (sound) {
+    private void FailedInput(bool closing = true) {
+        if (closing) {
             audioSource.PlayOneShot(failClip);
+            Deactivate();
         }
 
         remainingSuccessesToTierUp = tiers[currentTier].successGoalToLevelUp;
@@ -155,7 +162,7 @@ public class DJMinigame : MonoBehaviour {
         timeToTierDown = tiers[currentTier].duration;
         remainingSuccessesToTierUp = tiers[currentTier].successGoalToLevelUp;
         targetText.text = tiers[currentTier].successGoalToLevelUp.ToString();
-        rave.RaveInfluence = tiers[currentTier].raveInfluence;
+        car.SetInfluence(tiers[currentTier].raveInfluence);
         ResetAllButtons();
     }
 
