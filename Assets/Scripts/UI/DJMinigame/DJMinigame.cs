@@ -29,8 +29,8 @@ public class DJMinigame : MonoBehaviour {
 
     [Header("References")]
     [SerializeField] TextMeshProUGUI targetText;
-    [SerializeField] Rave rave;
 
+    Rave rave;
     DJButton[] djButtons;
     AudioSource audioSource;
 
@@ -79,6 +79,10 @@ public class DJMinigame : MonoBehaviour {
                 TierDown();
             }
         }
+    }
+
+    public void SetRave(Rave rave) {
+        this.rave = rave;
     }
 
     public void Activate() {
@@ -140,12 +144,18 @@ public class DJMinigame : MonoBehaviour {
         ResetTier();
     }
 
+    public void LowestTier() {
+        print("EPA");
+        currentTier = 0;
+        ResetTier();
+    }
+
     private void ResetTier() {
         speedMultiplier = tiers[currentTier].speedMultiplier;
         timeToTierDown = tiers[currentTier].duration;
         remainingSuccessesToTierUp = tiers[currentTier].successGoalToLevelUp;
         targetText.text = tiers[currentTier].successGoalToLevelUp.ToString();
-        //rave.RaveInfluence = tiers[currentTier].raveInfluence;
+        rave.RaveInfluence = tiers[currentTier].raveInfluence;
         ResetAllButtons();
     }
 
@@ -167,7 +177,6 @@ public class DJMinigame : MonoBehaviour {
     private void ResetAllButtons() {
         float distance = BPM * speedMultiplier;
         for (int i = 0; i < djButtons.Length; ++i) {
-            //print((distance * i) + " - " + (distance * normalizedBeatTime));
             djButtons[i].Reset(distance * (i + 1) + distance * normalizedBeatTime, speedMultiplier);
         }
         currentPressableButton = djButtons[0];
