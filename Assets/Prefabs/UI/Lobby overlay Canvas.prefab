@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.9019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -193,7 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe831d6e5a6873479b8548361d70ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputManager: {fileID: 0}
   ConnectedPlayersAmount: 0
   PlayGameButton: {fileID: 7037066949060147727}
   characterBanners:
@@ -236,11 +235,11 @@ RectTransform:
   m_Father: {fileID: 7037066948953220520}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 47}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -206, y: 65.192}
+  m_SizeDelta: {x: 354.5575, y: 79.9721}
+  m_Pivot: {x: 0.5, y: 0.4999997}
 --- !u!222 &7037066949060147725
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -262,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -359,11 +358,11 @@ RectTransform:
   m_Father: {fileID: 7037066948953220520}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 64, y: 0}
-  m_SizeDelta: {x: 800, y: 500}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7037066949086622793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,10 +378,10 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: -243
     m_Bottom: 0
-  m_ChildAlignment: 3
-  m_Spacing: 20
+  m_ChildAlignment: 4
+  m_Spacing: -116.3
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -401,6 +400,7 @@ GameObject:
   - component: {fileID: 7037066949443547047}
   - component: {fileID: 7037066949443547045}
   - component: {fileID: 7037066949443547044}
+  - component: {fileID: 756369705931295056}
   m_Layer: 5
   m_Name: waiting text
   m_TagString: Untagged
@@ -425,8 +425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -410}
+  m_SizeDelta: {x: 1752.3939, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7037066949443547045
 CanvasRenderer:
@@ -456,17 +456,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Waiting for players...
+  m_text: "Esperando a los jugadores... Pulsa cualquier bot\xF3n para unirte."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 744f828789babf44882f9e00fb0fc92a, type: 2}
+  m_sharedMaterial: {fileID: 8719854633455235371, guid: 744f828789babf44882f9e00fb0fc92a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4289649663
+  m_fontColor: {r: 1, g: 0.85809696, b: 0.6839622, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -475,7 +475,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: 58c8b95843ffd6e49a78341ff2dc3fe8, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -483,8 +483,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -525,6 +525,26 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &756369705931295056
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7037066949443547046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 303aae0529de51d4eaa0b734bc6527e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &7037066949562754175
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,17 +611,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: <sprite index=73> Al Lio
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 744f828789babf44882f9e00fb0fc92a, type: 2}
+  m_sharedMaterial: {fileID: 8719854633455235371, guid: 744f828789babf44882f9e00fb0fc92a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282071873
+  m_fontColor: {r: 0.254717, g: 0.22948559, b: 0.22948559, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -610,7 +630,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: 58c8b95843ffd6e49a78341ff2dc3fe8, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -618,8 +638,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -697,11 +717,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 541
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 450
+      value: 789
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_LocalPosition.x
@@ -808,11 +828,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 541
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 450
+      value: 789
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_LocalPosition.x
@@ -870,6 +890,34 @@ PrefabInstance:
       propertyPath: m_text
       value: La Jenny
       objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.b
+      value: 0.23921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.g
+      value: 0.63529414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.r
+      value: 0.85882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.b
+      value: 0.23921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.g
+      value: 0.63529414
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.r
+      value: 0.85882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557378779876018984, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0cee5dc9d53630c4480f2e8f1b41a123, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
 --- !u!224 &5295466173817770136 stripped
@@ -919,11 +967,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 541
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 450
+      value: 789
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_LocalPosition.x
@@ -981,6 +1029,34 @@ PrefabInstance:
       propertyPath: m_text
       value: El Paco
       objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.b
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.g
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.r
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.b
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.g
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.r
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557378779876018984, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8da84eacbe2b03748934d9787687c046, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
 --- !u!224 &5295466173807665896 stripped
@@ -1030,11 +1106,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 541
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 450
+      value: 789
       objectReference: {fileID: 0}
     - target: {fileID: 2942514626756287536, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1096,6 +1172,34 @@ PrefabInstance:
       propertyPath: m_text
       value: La Vane
       objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.b
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.g
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.r
+      value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.b
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.g
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571961358859834863, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Color.r
+      value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557378779876018984, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a2b83814f7ebb044837f7173e0d3795, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
 --- !u!224 &5295466174120869813 stripped
