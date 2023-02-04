@@ -66,6 +66,7 @@ public class RaversGroup : RaverBase
 
     public override void InfluencedByPlayer(CarColor raveColor, Vector3 destination)
     {
+        base.InfluencedByPlayer(raveColor, destination);
         foreach (Raver raver in _raversInGroup)
         {
             raver.SetPlayerMaterial(raveColor);

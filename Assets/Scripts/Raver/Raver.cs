@@ -42,6 +42,7 @@ public class Raver : RaverBase
 
     public override void InfluencedByPlayer(CarColor raveColor, Vector3 destination)
     {
+        base.InfluencedByPlayer(raveColor, destination);
         SetPlayerMaterial(raveColor);
         SetDestination(destination);
     }
