@@ -52,16 +52,16 @@ MonoBehaviour:
   - Prefab: {fileID: 1660621812236693555}
     SpawnProbability: 1
   _spawnRadios:
-  - spawnRadio: 10
+  - spawnRadio: 6
     spawnProbability: 1
+  - spawnRadio: 12
+    spawnProbability: 0.7
   - spawnRadio: 18
-    spawnProbability: 0.8
-  - spawnRadio: 30
-    spawnProbability: 0.3
-  - spawnRadio: 40
-    spawnProbability: 0.15
+    spawnProbability: 0.2
+  - spawnRadio: 24
+    spawnProbability: 0.1
   meshGround: {fileID: 5075584716663242230}
-  _maxRaverCount: 100
+  _maxRaverCount: 120
   _raversSpawnBatch: 10
   _spawnRatio: 0.1
   _exitAreas:

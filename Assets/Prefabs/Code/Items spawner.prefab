@@ -44,12 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfe3300afb137c41bf5f806c9193b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnablePrefab: {fileID: 8764874478580199030, guid: 2747259c851e3bd4090568748280fe32, type: 3}
+  Prefabs: []
   _spawnRadios:
-  - spawnRadio: 5.43
+  - spawnRadio: 20
     spawnProbability: 1
-  - spawnRadio: 9.8
+  - spawnRadio: 14
+    spawnProbability: 0.4
+  - spawnRadio: 6
     spawnProbability: 0.2
   meshGround: {fileID: 0}
-  _initializeItemCount: 10
+  _maxItemsCount: 30
+  _itemsSpawnBatch: 4
   _spawnRatio: 0.5
