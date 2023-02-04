@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DJMinigameTrigger : MonoBehaviour
 {
-    [SerializeField] GameObject minigameUI;
+    [SerializeField] DJMinigame djMinigame;
 
     RaveColor myRaveColor;
 
@@ -14,14 +14,14 @@ public class DJMinigameTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.TryGetComponent<Character>(out Character character) && character.CharacterColor == myRaveColor) {
-            minigameUI.SetActive(true);
+            djMinigame.Activate();
             character.GetComponent<CharacterDJMinigameInteraction>().InMinigame = true;
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.TryGetComponent<Character>(out Character character) && character.CharacterColor == myRaveColor) {
-            minigameUI.SetActive(false);
+            djMinigame.Deactivate();
             character.GetComponent<CharacterDJMinigameInteraction>().InMinigame = false;
         }
     }
