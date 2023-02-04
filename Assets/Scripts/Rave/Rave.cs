@@ -8,9 +8,8 @@ public class Rave : MonoBehaviour
     [SerializeField] RaveColor color;
     [SerializeField] TextMeshProUGUI raversAmountText;
 
-    public int SpeedMultiplier { get; set; }
-
     public RaveColor RaveColor { get { return color; } }
+    public float RaveInfluence { get; set; }
 
     int currentRavers;
 
@@ -25,4 +24,8 @@ public class Rave : MonoBehaviour
     private void UpdateAmountText() {
         raversAmountText.text = currentRavers.ToString();
     }    
+
+    public void Sabotage() {
+        
+    }
 }
