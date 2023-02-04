@@ -30,7 +30,6 @@ public class CharacterInfluenceAction : MonoBehaviour
 
     public void OnInfluenceRaver()
     {
-        Debug.Log("INLFUENCE!");
         if (CanInfluence)
         {
             RaverBase closerRaver = null;

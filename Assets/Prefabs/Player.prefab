@@ -56,9 +56,9 @@ GameObject:
   - component: {fileID: 7818478831211465011}
   - component: {fileID: 5773042757638996136}
   - component: {fileID: 589278177152257944}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Influence Ravers
-  m_TagString: Stunner
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
