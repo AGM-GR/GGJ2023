@@ -5,14 +5,12 @@ using TMPro;
 public class ActionsController : MonoBehaviour
 {
     public SphereCollider SphereCollider;
-    private bool _canExecuteAction;
-
     public ItemPicker _itemPicker;
-
     public TextMeshProUGUI _debugText;
-
     private Interactable _targetInteractable;
-    private Animator _animator;
+    //private Animator _animator;
+
+    public GameObject StunnerTest;
 
 
     private void Awake()
@@ -27,24 +25,25 @@ public class ActionsController : MonoBehaviour
 
     public void OnExecuteAction()
     {
-        if (_canExecuteAction)
-        {
-            ExecuteAction();
-        }
+        ExecuteAction();
     }
 
 
     // Use item
     private void ExecuteAction()
     {
-        if(_itemPicker.HasItem)
+        if (_itemPicker.HasItem)
         {
-            _animator.SetTrigger(_itemPicker.CurrentItemData.AnimationTrigger);
+            //_animator.SetTrigger(_itemPicker.CurrentItemData.AnimationTrigger);
+
+            StunnerTest.SetActive(true);
 
             if (_itemPicker.CurrentItemNeedsTarget && _targetInteractable != null)
             {
                 _targetInteractable.Interact(_itemPicker);
             }
+
+            _itemPicker.UseItem();
         }
     }
 
@@ -53,7 +52,6 @@ public class ActionsController : MonoBehaviour
         Interactable interactable;
         if (other.TryGetComponent<Interactable>(out interactable))
         {
-            _canExecuteAction = true;
             _targetInteractable = interactable;
             interactable.Highlight();
         }
@@ -62,7 +60,6 @@ public class ActionsController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        _canExecuteAction = false;
 
         Interactable interactable;
         if (other.TryGetComponent<Interactable>(out interactable))
