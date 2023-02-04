@@ -18,6 +18,7 @@ public class LobbyManager : MonoBehaviour
 
         _inputManager = FindObjectOfType<PlayerInputManager>();
         _inputManager.onPlayerJoined += (p) => OnPlayerJoined(p);
+        _inputManager.onPlayerLeft += (p) => OnPlayerLeft(p);
 
         //characterBanners.ForEach(a => a.SetTrigger("PlayerEntry"));
     }
@@ -40,6 +41,8 @@ public class LobbyManager : MonoBehaviour
 
     private void OnPlayerLeft(PlayerInput player)
     {
+        Debug.Log("Player left!");
+
         // Assign rave to a player
         characterBanners[player.playerIndex].SetTrigger("PlayerDisconnect");
 
