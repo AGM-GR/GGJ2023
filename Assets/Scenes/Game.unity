@@ -392,6 +392,26 @@ PrefabInstance:
       propertyPath: meshGround
       value: 
       objectReference: {fileID: 1501295581}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[0].Prefab
+      value: 
+      objectReference: {fileID: 8764874478580199030, guid: 2747259c851e3bd4090568748280fe32, type: 3}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[1].Prefab
+      value: 
+      objectReference: {fileID: 448643550364072591, guid: 2c0070c9c3dbadd48ab0ad63d8a9ad9d, type: 3}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[0].SpawnProbability
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[1].SpawnProbability
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 202737967340706559, guid: 9e2915c82fd123c438a4982916671235, type: 3}
       propertyPath: m_Name
       value: Items spawner
@@ -508,6 +528,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Img: {fileID: 1909671857}
   Rave: 2
+--- !u!114 &1039240783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1660621812236693555, guid: 895897e4db8b28747a7329039885594f, type: 3}
+  m_PrefabInstance: {fileID: 1091077045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dda77aeef16a75469ac325e5da1c666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1087605096
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +622,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.data[0].Prefab
+      value: 
+      objectReference: {fileID: 1039240783}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.data[0].SpawnProbability
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5075584716663242228, guid: 895897e4db8b28747a7329039885594f, type: 3}
       propertyPath: m_RootOrder
       value: 5

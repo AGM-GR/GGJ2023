@@ -12,10 +12,19 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         public float spawnProbability;
     }
 
+    [System.Serializable]
+    public struct PrefabProbabilityPair<U>
+    {
+        public U Prefab;
+        public float SpawnProbability;
+    }
+
+
     private const int maxSpawnTries = 20;
 
-    [Header("Spawner Data")]
-    public T _spawnablePrefab;
+    [Header("Spawner Data (less probability to more. From 0 to 1)")]
+    public PrefabProbabilityPair<T>[] Prefabs;
+
     public SpawnRadio[] _spawnRadios;
     public Renderer meshGround;
 
@@ -29,6 +38,26 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
             _spawnRadios[0].spawnRadio = 40;
             _spawnRadios[0].spawnProbability = 1f;
         }
+    }
+
+    public T GetRandomPrefab()
+    {
+        float dice = UnityEngine.Random.value;
+        Debug.Log(dice);
+        for (int i = 0; i < Prefabs.Length; i++)
+        {
+            if (dice <= Prefabs[0].SpawnProbability)
+            {
+                return Prefabs[0].Prefab;
+            }
+
+            if (dice <= Prefabs[i].SpawnProbability && dice >= Prefabs[i-1].SpawnProbability)
+            {
+                return Prefabs[i].Prefab;
+            }
+        }
+
+        return Prefabs[Prefabs.Length - 1].Prefab;
     }
 
     public T SpawnRandom()
@@ -85,7 +114,7 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
             }
         }
 
-        T newSpawnlable = Instantiate(_spawnablePrefab, transform);
+        T newSpawnlable = Instantiate(/*_spawnablePrefab*/ GetRandomPrefab(), transform);
         _spawnPool.Add(newSpawnlable);
 
         return newSpawnlable;
