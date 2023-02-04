@@ -22,9 +22,11 @@ public class Car : Interactable
     public override void Interact(ItemPicker picker)
     {
         if (picker.GetComponent<Character>().CharacterColor == color) {
-            picker.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
-            picker.GetComponent<CharacterMovement>().IsMovementAllowed = false;
-            djMinigame.Activate(picker.GetComponent<Character>());
+            if (!djMinigame.MinigameActive) {
+                picker.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
+                picker.GetComponent<CharacterMovement>().IsMovementAllowed = false;
+                djMinigame.Activate(picker.GetComponent<Character>());
+            }
         } else {
             if (!picker.HasItem) return;
 

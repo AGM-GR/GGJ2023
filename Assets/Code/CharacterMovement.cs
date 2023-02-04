@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
     public float SpeedDampTime = 0.2f;
     public float RotateSpeed = 6f;
     public float FloorOffsetY = 0.75f;
-    public bool alwaysAllowMovement;
+    public bool startWithMovement;
 
     // Private fields
     private float _horizontalAxis;
@@ -27,6 +27,12 @@ public class CharacterMovement : MonoBehaviour
 
     public bool IsMovementAllowed { get; set; }
 
+    private void Awake() {
+        if (startWithMovement) {
+            IsMovementAllowed = true;
+        }
+    }
+
     private void Start()
     {
         _mainCamera = Camera.main;
@@ -37,7 +43,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        if(!IsMovementAllowed && !alwaysAllowMovement) return;
+        if(!IsMovementAllowed) return;
 
         _verticalAxis = value.Get<Vector2>().y;
         _horizontalAxis = value.Get<Vector2>().x;

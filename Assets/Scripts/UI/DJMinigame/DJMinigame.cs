@@ -132,11 +132,16 @@ public class DJMinigame : MonoBehaviour {
     private void FailedInput(bool closing = true) {
         if (closing) {
             audioSource.PlayOneShot(failClip);
-            Deactivate();
+            StartCoroutine(DeactivateNextFrame());
         }
 
         remainingSuccessesToTierUp = tiers[currentTier].successGoalToLevelUp;
         targetText.text = remainingSuccessesToTierUp.ToString();
+    }
+
+    private IEnumerator DeactivateNextFrame() {
+        yield return null;
+        Deactivate();
     }
 
     private void TierUp() {

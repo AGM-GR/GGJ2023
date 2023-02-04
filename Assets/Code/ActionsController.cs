@@ -22,6 +22,10 @@ public class ActionsController : MonoBehaviour
         SphereCollider.isTrigger = true;
     }
 
+    public void OnStartMinigame() {
+        _targetInteractable?.Interact(_itemPicker);
+    }
+
     public void OnExecuteAction()
     {
         ExecuteAction();
