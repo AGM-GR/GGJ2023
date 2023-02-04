@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -10,8 +11,10 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private PlayerInputManager _inputManager;
     public int ConnectedPlayersAmount;
     public Button PlayGameButton;
+    public List<GameObject> characterBanners;
 
-    private int _currentPlayerIndex;
+
+    private int _currentPlayerIndex = 0;
 
     private void Awake()
     {
@@ -20,15 +23,18 @@ public class LobbyManager : MonoBehaviour
 
         _inputManager.onPlayerJoined += (p) => OnPlayerJoined(p);
 
+        characterBanners.ForEach(b => b.SetActive(false));
+
     }
 
     private void OnPlayerJoined(PlayerInput player)
     {
+        Debug.Log("Player joined!");
         // Assign rave to a player
-        player.GetComponent<PlayerUser>().Rave = (RaveColor)(Enum.GetValues(typeof(RaveColor)).GetValue(_currentPlayerIndex));
+        characterBanners[_currentPlayerIndex].SetActive(true);
+        player.GetComponent<PlayerUser>().Rave = (RaveColor)_currentPlayerIndex;
         _currentPlayerIndex++;
 
-        Debug.Log("Player joined!");
         ConnectedPlayersAmount++;
         if (ConnectedPlayersAmount >= 2)
         {

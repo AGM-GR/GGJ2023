@@ -12,10 +12,6 @@ public class ItemPicker : MonoBehaviour
     public bool HasItem => CurrentItemData != null;
     public bool CurrentItemNeedsTarget => CurrentItemData.NeedsTargetInteractable;
 
-    private void Awake()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {

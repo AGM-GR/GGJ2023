@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum RaveColor
 {
-    RED, 
-    GREEN, 
+    RED,
+    GREEN,
     BLUE, 
     PURPLE
 }

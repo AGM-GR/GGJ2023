@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: Scissors
   Type: 2
   Prefab: {fileID: 0}
+  PreviewSprite: {fileID: 21300000, guid: 74cb19fbc911c81428c039feea6bf02e, type: 3}
   NeedsTargetInteractable: 1
   AnimationTrigger: 

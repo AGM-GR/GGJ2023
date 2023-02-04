@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 8870835819245187019}
   - component: {fileID: 8870835819245187016}
   - component: {fileID: 8870835819245187017}
+  - component: {fileID: 4314146313003985751}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -377,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07bf304a3834ec41a804146c40d254d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  djMinigame: {fileID: 0}
 --- !u!114 &8870835819245187018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +426,7 @@ MonoBehaviour:
   SpeedDampTime: 0.2
   RotateSpeed: 6
   FloorOffsetY: 0.75
+  alwaysAllowMovement: 0
 --- !u!114 &8870835819245187016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5d3cd6c7776aa49ad14078a30a0ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _user: {fileID: 0}
   CurrentItemData: {fileID: 0}
 --- !u!114 &8870835819245187017
 MonoBehaviour:
@@ -451,6 +455,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movement: {fileID: 8870835819245187019}
   IsStunned: 0
+--- !u!114 &4314146313003985751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870835819245186992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2212070b480af458b4080cff35ef63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rave: 0
 --- !u!1 &8870835819650460675
 GameObject:
   m_ObjectHideFlags: 0
