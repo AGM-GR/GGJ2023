@@ -23,7 +23,7 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
 
     protected virtual void OnValidate()
     {
-        if (_spawnRadios.Length == 0)
+        if (_spawnRadios == null ||_spawnRadios.Length == 0)
         {
             _spawnRadios = new SpawnRadio[1];
             _spawnRadios[0].spawnRadio = 40;
