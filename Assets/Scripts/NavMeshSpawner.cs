@@ -21,6 +21,16 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
 
     internal List<T> _spawnPool = new List<T>();
 
+    protected virtual void OnValidate()
+    {
+        if (_spawnRadios.Length == 0)
+        {
+            _spawnRadios = new SpawnRadio[1];
+            _spawnRadios[0].spawnRadio = 40;
+            _spawnRadios[0].spawnProbability = 1f;
+        }
+    }
+
     public void SpawnRandom()
     {
         T spawned = GetSpawnable();
