@@ -7,7 +7,7 @@ public class ActionsController : MonoBehaviour
     public ItemPicker _itemPicker;
     public TextMeshProUGUI _debugText;
     private Interactable _targetInteractable;
-    //private Animator _animator;   // TO INTEGRATE
+    private Animator _animator;   // TO INTEGRATE
 
     public GameObject StunnerTest;
 
@@ -37,7 +37,7 @@ public class ActionsController : MonoBehaviour
     {
         if (_itemPicker.HasItem)
         {
-            //_animator.SetTrigger(_itemPicker.CurrentItemData.AnimationTrigger);
+            _animator.SetTrigger(_itemPicker.CurrentItemData.AnimationTrigger);
 
             StunnerTest.SetActive(true);
 

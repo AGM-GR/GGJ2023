@@ -49,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
         _horizontalAxis = value.Get<Vector2>().x;
 
         Move();
-        //animator.SetFloat("Speed", inputAmount, speedDampTime, Time.deltaTime);
+        _animator.SetFloat("Speed", _inputAmount);
         _rb.velocity = _moveDirection * MoveSpeed * _inputAmount;
     }
 

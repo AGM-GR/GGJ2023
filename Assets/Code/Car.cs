@@ -15,19 +15,25 @@ public class Car : Interactable
     float carInfluence;
     int currentRavers;
 
-    private void Start() {
+    private void Start()
+    {
         djMinigame.SetCar(this);
     }
 
     public override void Interact(ItemPicker picker)
     {
-        if (picker.GetComponent<Character>().CharacterColor == color) {
-            if (!djMinigame.MinigameActive) {
+        if (picker.GetComponent<Character>().CharacterColor == color)
+        {
+            if (!djMinigame.MinigameActive)
+            {
                 picker.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
                 picker.GetComponent<CharacterMovement>().IsMovementAllowed = false;
                 djMinigame.Activate(picker.GetComponent<Character>());
+                picker.GetComponent<Animator>().SetTrigger("Scratch");
             }
-        } else {
+        }
+        else
+        {
             if (!picker.HasItem) return;
 
             switch (picker.CurrentItemData.Type)
