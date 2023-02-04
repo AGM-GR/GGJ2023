@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class CharacterDJMinigameInteraction : MonoBehaviour
 {
-    [SerializeField] DJMinigame djMinigame;
 
     public bool InMinigame { get; set; }
+    public DJMinigame DJMinigame { get; set; }
 
     public void OnMinigameSouthButton() {
         if (InMinigame) {
-            djMinigame.ReceiveInput(MinigameButton.SOUTH);
+            DJMinigame.ReceiveInput(MinigameButton.SOUTH);
         }
     }
 
     public void OnMinigameEastButton() {
         if (InMinigame) {
-            djMinigame.ReceiveInput(MinigameButton.EAST);
+            DJMinigame.ReceiveInput(MinigameButton.EAST);
         }
     }
 
     public void OnMinigameWestButton() {
         if (InMinigame) {
-            djMinigame.ReceiveInput(MinigameButton.WEST);
+            DJMinigame.ReceiveInput(MinigameButton.WEST);
         }
     }
 
     public void OnMinigameNorthButton() {
         if (InMinigame) {
-            djMinigame.ReceiveInput(MinigameButton.NORTH);
+            DJMinigame.ReceiveInput(MinigameButton.NORTH);
         }
     }
 }

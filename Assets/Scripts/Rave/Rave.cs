@@ -10,15 +10,17 @@ public class Rave : MonoBehaviour
 
     public RaveColor RaveColor { get { return color; } }
     public float RaveInfluence { get; set; }
+    public DJMinigame DJMinigame { get; set; }
 
     int currentRavers;
 
     private void OnTriggerEnter(Collider other) {
         if (other.TryGetComponent(out Raver raver)) {
-            currentRavers++; // Poner valor del raver
+            currentRavers++;
             UpdateAmountText();
             Destroy(other.gameObject);
         }
+
     }
 
     private void UpdateAmountText() {
@@ -26,6 +28,6 @@ public class Rave : MonoBehaviour
     }    
 
     public void Sabotage() {
-        
+        DJMinigame.LowestTier();
     }
 }
