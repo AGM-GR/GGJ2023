@@ -28,7 +28,7 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
     public SpawnRadio[] _spawnRadios;
     public Renderer meshGround;
 
-    internal List<T> _spawnPool = new List<T>();
+    internal List<List<T>> _spawnPool = new List<List<T>>();
 
     protected virtual void OnValidate()
     {
@@ -40,24 +40,28 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
-    public T GetRandomPrefab()
+    protected virtual void Awake()
     {
-        float dice = UnityEngine.Random.value;
-        Debug.Log(dice);
+        for (int i=0; i < Prefabs.Length; i++)
+        {
+            _spawnPool.Add(new List<T>());
+        }
+    }
+
+    public int GetRandomPrefab()
+    {
+        float dice = Random.value;
+
         for (int i = 0; i < Prefabs.Length; i++)
         {
-            if (dice <= Prefabs[0].SpawnProbability)
+            if (dice <= Prefabs[0].SpawnProbability || 
+                (dice <= Prefabs[i].SpawnProbability && dice >= Prefabs[i-1].SpawnProbability))
             {
-                return Prefabs[0].Prefab;
-            }
-
-            if (dice <= Prefabs[i].SpawnProbability && dice >= Prefabs[i-1].SpawnProbability)
-            {
-                return Prefabs[i].Prefab;
+                return i;
             }
         }
 
-        return Prefabs[Prefabs.Length - 1].Prefab;
+        return Prefabs.Length - 1;
     }
 
     public T SpawnRandom()
@@ -90,10 +94,9 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         } while (!willSpawn && spawnTries < maxSpawnTries);
 
 
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(spawnPoint, out hit, 1.0f, NavMesh.AllAreas))
+        if (GetNavMeshPoint(ref spawnPoint))
         {
-            spawned.transform.position = hit.position;
+            spawned.transform.position = spawnPoint;
             return spawned;
         }
         else
@@ -104,9 +107,24 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         return null;
     }
 
+    public bool GetNavMeshPoint(ref Vector3 position)
+    {
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(position, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            position = hit.position;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public T GetSpawnable()
     {
-        foreach (T spawnable in _spawnPool)
+        int randomSpawnable = GetRandomPrefab();
+        foreach (T spawnable in _spawnPool[randomSpawnable])
         {
             if (!spawnable.gameObject.activeSelf)
             {
@@ -114,8 +132,8 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
             }
         }
 
-        T newSpawnlable = Instantiate(/*_spawnablePrefab*/ GetRandomPrefab(), transform);
-        _spawnPool.Add(newSpawnlable);
+        T newSpawnlable = Instantiate(Prefabs[randomSpawnable].Prefab, transform);
+        _spawnPool[randomSpawnable].Add(newSpawnlable);
 
         return newSpawnlable;
     }

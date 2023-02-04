@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class RaversSpawner : NavMeshSpawner<Raver>
+public class RaversSpawner : NavMeshSpawner<RaverBase>
 {
     [Header("Ravers Spawner")]
     public int _maxRaverCount = 100;
@@ -19,16 +19,15 @@ public class RaversSpawner : NavMeshSpawner<Raver>
             {
                 for (int i = 0; i < _raversSpawnBatch; i++)
                 {
-                    Raver raverSpawned = SpawnRandom();
+                    RaverBase raverSpawned = SpawnRandom();
                     if (raverSpawned != null)
                     {
                         yield return new WaitForSeconds(_spawnRatio);
                         Vector3 exitPoint = Utils.GetRandomPointInPlane(_exitAreas[Random.Range(0, _exitAreas.Length)]);
 
-                        raverSpawned.RaverSpawner = this;
+                        raverSpawned.SetSpawner(this);
                         raverSpawned.SetExitDestination(exitPoint);
                         raverSpawned.StartRaverLogic();
-                        _totalActiveRavers++;
                     }
                 }
 
@@ -41,9 +40,13 @@ public class RaversSpawner : NavMeshSpawner<Raver>
         }
     }
 
+    public void RaverEnabled()
+    {
+        _totalActiveRavers++;
+    }
+
     public void RaverDisabled()
     {
         _totalActiveRavers--;
     }
-
 }
