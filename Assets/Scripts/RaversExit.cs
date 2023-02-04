@@ -8,7 +8,11 @@ public class RaversExit : MonoBehaviour
     {
         if (other.CompareTag("Raver"))
         {
-            other.GetComponent<Raver>().DisableRaver();
+            RaverBase raverToDisable = other.GetComponent<RaverBase>();
+            if (raverToDisable.RaversGroup != null)
+                raverToDisable = raverToDisable.RaversGroup;
+
+            raverToDisable.DisableRaver();
         }
     }
 }

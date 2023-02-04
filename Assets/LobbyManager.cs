@@ -63,6 +63,9 @@ public class LobbyManager : MonoBehaviour
     private static void AllowPlayersMovement()
     {
         var characterMovements = FindObjectsOfType<CharacterMovement>().ToList();
-        characterMovements.ForEach(o => o.IsMovementAllowed = true);
+        characterMovements.ForEach(o => {
+            o.GetComponent<CharacterInfluenceAction>().CanInfluence = true;
+            o.IsMovementAllowed = true;
+        });
     }
 }

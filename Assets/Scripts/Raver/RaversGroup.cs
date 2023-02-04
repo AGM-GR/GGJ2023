@@ -14,6 +14,10 @@ public class RaversGroup : RaverBase
     private void Awake()
     {
         _raversOffsetInGroup = new Vector3[_raversInGroup.Length];
+        foreach (Raver raver in _raversInGroup)
+        {
+            raver.RaversGroup = this;
+        }
     }
 
     public override void SetSpawner(RaversSpawner spawner)

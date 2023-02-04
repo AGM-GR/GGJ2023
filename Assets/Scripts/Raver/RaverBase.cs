@@ -7,6 +7,8 @@ public abstract class RaverBase : MonoBehaviour
     internal Vector3 _finalDestination;
     internal RaversSpawner _raverSpawner;
 
+    public RaversGroup RaversGroup { get; internal set; }
+
     public virtual void SetSpawner(RaversSpawner spawner)
     {
         _raverSpawner = spawner;
