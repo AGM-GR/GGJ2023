@@ -33,18 +33,10 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        //_moveDirection = value.Get<Vector2>().normalized;
-        //Debug.Log(direction);
-        //direction *= Speed;
-        //Rb.velocity = new Vector3(direction.x, 0, direction.y);
-
         _verticalAxis = value.Get<Vector2>().y;
         _horizontalAxis = value.Get<Vector2>().x;
 
         Move();
-        //Rotate();
-
-        // Handle walking animation
         //animator.SetFloat("Speed", inputAmount, speedDampTime, Time.deltaTime);
         _rb.velocity = _moveDirection * MoveSpeed * _inputAmount;
     }
@@ -59,16 +51,10 @@ public class CharacterMovement : MonoBehaviour
     {
         _moveDirection = Vector3.zero; // reset movement
 
-        //_verticalAxis = Input.GetAxis("Vertical");
-        //_horizontalAxis = Input.GetAxis("Horizontal");
 
-        // Multiplicar por los ejes de la cámara para
-        // que el personaje se mueva dependiendo de la vista de la cámara
-        // (esto es para evitar que si está mirando hacia la cámara, vaya en la dirección contraria al input)
         Vector3 correctedVertical = _verticalAxis * _mainCamera.transform.forward;
         Vector3 correctedHorizontal = _horizontalAxis * _mainCamera.transform.right;
 
-        // Obtener la dirección del movimento
         Vector3 combinedInput = correctedVertical + correctedHorizontal;
         _moveDirection = new Vector3(combinedInput.normalized.x, 0, combinedInput.normalized.z);
 
@@ -80,9 +66,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Rotate()
     {
-        // Obtener la rotación en función de la dirección de movimiento
         Quaternion rot = Quaternion.LookRotation(_moveDirection);
-        // Usar el input amount hace que rote más lentamente si el input es más sutil
         Quaternion targetRotation = Quaternion.Slerp(transform.rotation, rot, Time.fixedDeltaTime * _inputAmount * RotateSpeed);
         transform.rotation = targetRotation;
     }
