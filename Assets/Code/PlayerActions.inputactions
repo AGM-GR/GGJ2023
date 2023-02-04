@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "ExecuteRoleAction",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "9183c799-00d3-423b-9599-481d1500b9f0",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "SwitchRole",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "e5cf3e6a-1e11-49b9-a9bf-31c28f93b999",
                     "expectedControlType": "Button",
                     "processors": "",

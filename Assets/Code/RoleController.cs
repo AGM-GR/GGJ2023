@@ -1,24 +1,21 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class RoleController : MonoBehaviour
 {
     private Role _currentRole;
     private int _currentRoleIndex;
     private Role[] _roles = new Role[3];
-    private PlayerActions_ _playerActions;
 
     public SphereCollider SphereCollider;
     private bool _canExecuteAction;
 
     private void Awake()
     {
-        _playerActions = new PlayerActions_();
-        _playerActions.Enable();
+        Initialize();
+    }
 
-        _playerActions.Player.ExecuteRoleAction.performed += ctx => ExecuteRoleAction(ctx);
-        _playerActions.Player.SwitchRole.performed += ctx => SwitchRole(ctx);
-
+    private void Initialize()
+    {
         SphereCollider.isTrigger = true;
 
         _roles[0] = new PR();
@@ -28,11 +25,8 @@ public class RoleController : MonoBehaviour
         _currentRole = _roles[0];
     }
 
-
-    public void SwitchRole(InputAction.CallbackContext ctx)
+    public void OnSwitchRole()
     {
-        Debug.Log("Switch role");
-
         _currentRoleIndex++;
         if(_currentRoleIndex >= _roles.Length) _currentRoleIndex = 0;
 
@@ -40,24 +34,16 @@ public class RoleController : MonoBehaviour
         SphereCollider.radius = _currentRole.Radius;
     }
 
-    public void ExecuteRoleAction(InputAction.CallbackContext ctx)
+    public void OnExecuteRoleAction()
     {
-        Debug.Log("Execute action");
-
         if (_canExecuteAction)
         {
             _currentRole.ExecuteAction();
         }
     }
 
-    private void OnDestroy()
-    {
-        _playerActions.Disable();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-            Debug.Log("trigger");
         if (other.CompareTag(_currentRole.TargetTag))
         {
             _canExecuteAction = true;
