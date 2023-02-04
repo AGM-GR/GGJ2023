@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Highlighter : MonoBehaviour
+public class OutlineHighlighter : MonoBehaviour, IHighlighteable
 {
     public Material Mat;
 

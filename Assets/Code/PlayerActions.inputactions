@@ -15,18 +15,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ExecuteRoleAction",
+                    "name": "ExecuteAction",
                     "type": "Button",
                     "id": "9183c799-00d3-423b-9599-481d1500b9f0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "SwitchRole",
-                    "type": "Button",
-                    "id": "e5cf3e6a-1e11-49b9-a9bf-31c28f93b999",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -96,18 +87,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ExecuteRoleAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5558adb1-178c-4836-a347-d8a84a2f9229",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchRole",
+                    "action": "ExecuteAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
