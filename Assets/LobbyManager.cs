@@ -1,23 +1,40 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour
 {
-    public PlayerInputManager InputManager;
+    [SerializeField] private PlayerInputManager _inputManager;
     public int ConnectedPlayersAmount;
     public Button PlayGameButton;
+    public List<GameObject> characterBanners;
+
+
+    private int _currentPlayerIndex = 0;
 
     private void Awake()
     {
         PlayGameButton.interactable = false;
         PlayGameButton.onClick.AddListener(StartGame);
+
+        _inputManager.onPlayerJoined += (p) => OnPlayerJoined(p);
+
+        characterBanners.ForEach(b => b.SetActive(false));
+
     }
 
-    public void OnPlayerJoined()
+    private void OnPlayerJoined(PlayerInput player)
     {
         Debug.Log("Player joined!");
+        // Assign rave to a player
+        characterBanners[_currentPlayerIndex].SetActive(true);
+        player.GetComponent<PlayerUser>().Rave = (RaveColor)_currentPlayerIndex;
+        _currentPlayerIndex++;
+
         ConnectedPlayersAmount++;
         if (ConnectedPlayersAmount >= 2)
         {
@@ -25,10 +42,11 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
+
     public void StartGame()
     {
         AllowPlayersMovement();
-        InputManager.enabled = false;
+        _inputManager.enabled = false;
         this.gameObject.SetActive(false);
     }
 

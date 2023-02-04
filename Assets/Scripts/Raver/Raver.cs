@@ -10,6 +10,8 @@ public class Raver : MonoBehaviour
     [SerializeField]
     private RaverMaterials _raverMaterials;
 
+    public NavMeshAgent NavMeshAgent => _navMeshAgent;
+
     private void OnValidate()
     {
         if (_navMeshAgent == null)

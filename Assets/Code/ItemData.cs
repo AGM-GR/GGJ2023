@@ -7,6 +7,7 @@ public class ItemData : ScriptableObject
     public ItemType Type;
     // preview?
     public GameObject Prefab;
+    public Sprite PreviewSprite;
 
     public bool NeedsTargetInteractable;
     public string AnimationTrigger;
