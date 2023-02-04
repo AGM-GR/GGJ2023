@@ -528,6 +528,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Img: {fileID: 1909671857}
   Rave: 2
+--- !u!95 &912587888 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 76148474638745570, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+  m_PrefabInstance: {fileID: 1094009752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1087605096
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +841,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6425989994842439141, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6425989994842439142, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -928,6 +937,42 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.data[0]
+      value: 
+      objectReference: {fileID: 912587888}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.data[1]
+      value: 
+      objectReference: {fileID: 1937803871}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.data[2]
+      value: 
+      objectReference: {fileID: 1824409887}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.data[3]
+      value: 
+      objectReference: {fileID: 1712908365}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.data[4]
+      value: 
+      objectReference: {fileID: 912587888}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.data[5]
+      value: 
+      objectReference: {fileID: 1937803871}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.data[6]
+      value: 
+      objectReference: {fileID: 1824409887}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: characterBanners.Array.data[7]
+      value: 
+      objectReference: {fileID: 1712908365}
     - target: {fileID: 7037066950276371490, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1093,6 +1138,11 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5075584716663242230, guid: 895897e4db8b28747a7329039885594f, type: 3}
   m_PrefabInstance: {fileID: 1091077045}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1712908365 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3016111941445075123, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+  m_PrefabInstance: {fileID: 1094009752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1712951046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7037066950152670143, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
@@ -1118,6 +1168,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!95 &1824409887 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3016111942337093102, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+  m_PrefabInstance: {fileID: 1094009752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1833841037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1325,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909671855}
   m_CullTransparentMesh: 1
+--- !u!95 &1937803871 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3016111942352154526, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+  m_PrefabInstance: {fileID: 1094009752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1952732480
 PrefabInstance:
   m_ObjectHideFlags: 0
