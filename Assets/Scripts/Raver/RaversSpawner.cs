@@ -7,18 +7,19 @@ public class RaversSpawner : MonoBehaviour
     public Raver _raverPrefab;
     public int _initializeRaverCount = 20;
     public float _spawnRadio = 4f;
+    public float _spawnRatio = 0.1f;
 
     private List<Raver> _ravers = new List<Raver>();
 
-    private void Awake()
+    private IEnumerator Start()
     {
         for (int i=0; i < _initializeRaverCount; i++)
         {
             Raver raver = GetRaver();
-            raver.SetDestination(new Vector3(
-                transform.position.x + Random.Range(-_spawnRadio/2f, _spawnRadio/2f), 
-                transform.position.y, 
-                transform.position.z + Random.Range(-_spawnRadio / 2f, _spawnRadio / 2f)));
+            Vector2 randomPointInCircle = Random.insideUnitCircle * _spawnRadio;
+            raver.SetDestination(new Vector3(randomPointInCircle.x, transform.position.y, randomPointInCircle.y));
+
+            yield return new WaitForSeconds(_spawnRatio);
         }
     }
 
