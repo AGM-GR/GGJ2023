@@ -24,9 +24,9 @@ public class Raver : MonoBehaviour
         _navMeshAgent.SetDestination(destination);
     }
 
-    public void InfluencedByPlayer(int player, Vector3 destination)
+    public void InfluencedByPlayer(RaveColor raveColor, Vector3 destination)
     {
-        _raverMaterials.SetPlayerMaterial(player);
+        _raverMaterials.SetPlayerMaterial((int)raveColor);
         _navMeshAgent.SetDestination(destination);
     }
 }
