@@ -12,14 +12,23 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         public float spawnProbability;
     }
 
+    [System.Serializable]
+    public struct PrefabProbabilityPair<U>
+    {
+        public U Prefab;
+        public float SpawnProbability;
+    }
+
+
     private const int maxSpawnTries = 20;
 
-    [Header("Spawner Data")]
-    public T _spawnablePrefab;
+    [Header("Spawner Data (less probability to more. From 0 to 1)")]
+    public PrefabProbabilityPair<T>[] Prefabs;
+
     public SpawnRadio[] _spawnRadios;
     public Renderer meshGround;
 
-    internal List<T> _spawnPool = new List<T>();
+    internal List<List<T>> _spawnPool = new List<List<T>>();
 
     protected virtual void OnValidate()
     {
@@ -29,6 +38,30 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
             _spawnRadios[0].spawnRadio = 40;
             _spawnRadios[0].spawnProbability = 1f;
         }
+    }
+
+    protected virtual void Awake()
+    {
+        for (int i=0; i < Prefabs.Length; i++)
+        {
+            _spawnPool.Add(new List<T>());
+        }
+    }
+
+    public int GetRandomPrefab()
+    {
+        float dice = Random.value;
+
+        for (int i = 0; i < Prefabs.Length; i++)
+        {
+            if (dice <= Prefabs[0].SpawnProbability || 
+                (dice <= Prefabs[i].SpawnProbability && dice >= Prefabs[i-1].SpawnProbability))
+            {
+                return i;
+            }
+        }
+
+        return Prefabs.Length - 1;
     }
 
     public T SpawnRandom()
@@ -61,10 +94,9 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         } while (!willSpawn && spawnTries < maxSpawnTries);
 
 
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(spawnPoint, out hit, 1.0f, NavMesh.AllAreas))
+        if (GetNavMeshPoint(ref spawnPoint))
         {
-            spawned.transform.position = hit.position;
+            spawned.transform.position = spawnPoint;
             return spawned;
         }
         else
@@ -75,9 +107,24 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
         return null;
     }
 
+    public bool GetNavMeshPoint(ref Vector3 position)
+    {
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(position, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            position = hit.position;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public T GetSpawnable()
     {
-        foreach (T spawnable in _spawnPool)
+        int randomSpawnable = GetRandomPrefab();
+        foreach (T spawnable in _spawnPool[randomSpawnable])
         {
             if (!spawnable.gameObject.activeSelf)
             {
@@ -85,8 +132,8 @@ public class NavMeshSpawner<T> : MonoBehaviour where T : MonoBehaviour
             }
         }
 
-        T newSpawnlable = Instantiate(_spawnablePrefab, transform);
-        _spawnPool.Add(newSpawnlable);
+        T newSpawnlable = Instantiate(Prefabs[randomSpawnable].Prefab, transform);
+        _spawnPool[randomSpawnable].Add(newSpawnlable);
 
         return newSpawnlable;
     }

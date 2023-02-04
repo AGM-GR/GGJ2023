@@ -6,6 +6,8 @@ public class Item : MonoBehaviour
     public ItemData Data;
     public ItemSlot Slot;
 
+    public ItemsSpawner Spawner;
+
     public void Spawn()
     {
         // anim, vfx, etc
@@ -17,6 +19,8 @@ public class Item : MonoBehaviour
         gameObject.SetActive(false);
         Slot = FindObjectsOfType<ItemSlot>().Where(s => s.Rave == color).First();
         Slot.ShowItem(Data);
+
+        Spawner.ItemDisabled();
     }
 
 }

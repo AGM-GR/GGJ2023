@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Raver : MonoBehaviour
+public class Raver : RaverBase
 {
     [SerializeField]
     private NavMeshAgent _navMeshAgent;
     [SerializeField]
     private RaverMaterials _raverMaterials;
 
-    private Vector3 _finalDestination;
-
     public NavMeshAgent NavMeshAgent => _navMeshAgent;
-    public RaversSpawner RaverSpawner { get; set;}
 
     private void OnValidate()
     {
@@ -24,39 +21,38 @@ public class Raver : MonoBehaviour
             _raverMaterials = GetComponentInChildren<RaverMaterials>();
     }
 
-    public void SetDestination(Vector3 destination)
+    public override void SetDestination(Vector3 destination)
     {
         _navMeshAgent.SetDestination(destination);
     }
 
-    public void SetExitDestination(Vector3 destination)
-    {
-        _finalDestination = destination;
-    }
-
-    public void StartRaverLogic()
+    public override void EnableRaver()
     {
         gameObject.SetActive(true);
         _navMeshAgent.enabled = true;
-        StartCoroutine(RaverLogic());
+        _raverSpawner.RaverEnabled();
     }
 
-    private IEnumerator RaverLogic()
+    public override void DisableRaver()
     {
-        yield return new WaitForSeconds(Random.Range(0.2f, 1f));
-        SetDestination(_finalDestination);
-    }
-
-    public void DisableRaver()
-    {
-        RaverSpawner.RaverDisabled();
+        _raverSpawner.RaverDisabled();
         _navMeshAgent.enabled = false;
         gameObject.SetActive(false);
     }
 
-    public void InfluencedByPlayer(RaveColor raveColor, Vector3 destination)
+    public override void InfluencedByPlayer(RaveColor raveColor, Vector3 destination)
+    {
+        SetPlayerMaterial(raveColor);
+        SetDestination(destination);
+    }
+
+    public void SetRaverMaterial()
+    {
+        _raverMaterials.SetRaverMaterial();
+    }
+
+    public void SetPlayerMaterial(RaveColor raveColor)
     {
         _raverMaterials.SetPlayerMaterial((int)raveColor);
-        _navMeshAgent.SetDestination(destination);
     }
 }
