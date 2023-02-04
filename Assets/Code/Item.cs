@@ -1,23 +1,22 @@
+using System.Linq;
 using UnityEngine;
-
-
-// TO DO
-// make item spawner - based on raver spawner
-
 
 public class Item : MonoBehaviour
 {
     public ItemData Data;
+    public ItemSlot Slot;
 
     public void Spawn()
     {
         // anim, vfx, etc
     }
 
-    public void Pick()
+    public void Pick(RaveColor color)
     {
         // anim, vfx, etc
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        Slot = FindObjectsOfType<ItemSlot>().Where(s => s.Rave == color).First();
+        Slot.ShowItem(Data);
     }
 
 }
