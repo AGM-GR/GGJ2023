@@ -37,7 +37,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        if (!IsMovementAllowed && !alwaysAllowMovement) return;
+        if(!IsMovementAllowed && !alwaysAllowMovement) return;
 
         _verticalAxis = value.Get<Vector2>().y;
         _horizontalAxis = value.Get<Vector2>().x;

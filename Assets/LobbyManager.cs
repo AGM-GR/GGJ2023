@@ -1,14 +1,12 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour
 {
-    [SerializeField] private PlayerInputManager _inputManager;
+    private PlayerInputManager _inputManager;
     public int ConnectedPlayersAmount;
     public Button PlayGameButton;
     public List<GameObject> characterBanners;
@@ -21,10 +19,10 @@ public class LobbyManager : MonoBehaviour
         PlayGameButton.interactable = false;
         PlayGameButton.onClick.AddListener(StartGame);
 
+        _inputManager = FindObjectOfType<PlayerInputManager>();
         _inputManager.onPlayerJoined += (p) => OnPlayerJoined(p);
 
         characterBanners.ForEach(b => b.SetActive(false));
-
     }
 
     private void OnPlayerJoined(PlayerInput player)
@@ -48,6 +46,7 @@ public class LobbyManager : MonoBehaviour
         AllowPlayersMovement();
         _inputManager.enabled = false;
         this.gameObject.SetActive(false);
+        FindObjectOfType<ItemsSpawner>().enabled = true;
     }
 
     private static void AllowPlayersMovement()

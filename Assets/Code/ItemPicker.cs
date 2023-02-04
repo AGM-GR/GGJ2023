@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -12,6 +13,10 @@ public class ItemPicker : MonoBehaviour
     public bool HasItem => CurrentItemData != null;
     public bool CurrentItemNeedsTarget => CurrentItemData.NeedsTargetInteractable;
 
+    private void Start()
+    {
+        _slot = FindObjectsOfType<ItemSlot>().Where(s => s.Rave == _user.Rave).First();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

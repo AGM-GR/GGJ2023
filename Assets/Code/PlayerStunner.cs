@@ -17,10 +17,10 @@ public class PlayerStunner : MonoBehaviour
 
             IsStunned = true;
             Debug.Log("Start stun!");
-            _movement.enabled = false;
+            _movement.IsMovementAllowed = false;
             await Task.Delay(2000);
             Debug.Log("End stun!");
-            _movement.enabled = true;
+            _movement.IsMovementAllowed = true;
             IsStunned = false;
         }
     }

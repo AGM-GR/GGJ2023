@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3643196352044438520}
   - component: {fileID: 3643196352044438405}
   - component: {fileID: 3643196352044438406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 18615635214715436}
   - component: {fileID: 3643196353454003163}
   - component: {fileID: 4109622207866640672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Raver
   m_TagString: Raver
   m_Icon: {fileID: 0}

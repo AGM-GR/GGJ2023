@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8659478534643567610}
   - component: {fileID: 7194206468657080100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stunner - baseball bat
   m_TagString: Stunner
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 8870835819117567092}
   - component: {fileID: 8870835819117567095}
   - component: {fileID: 8870835819117567094}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 8870835819185453332}
   - component: {fileID: 8870835819185453335}
   - component: {fileID: 8870835819185453354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 8870835819245187016}
   - component: {fileID: 8870835819245187017}
   - component: {fileID: 4314146313003985751}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8870835819245186992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5d3cd6c7776aa49ad14078a30a0ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _user: {fileID: 0}
+  _user: {fileID: 4314146313003985751}
   CurrentItemData: {fileID: 0}
 --- !u!114 &8870835819245187017
 MonoBehaviour:
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 8870835819650460672}
   - component: {fileID: 8870835819650460678}
   - component: {fileID: 8870835819650460673}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 8870835821101816182}
   - component: {fileID: 8870835821101816177}
   - component: {fileID: 8870835821101816176}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
