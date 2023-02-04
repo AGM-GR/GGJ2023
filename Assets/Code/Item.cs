@@ -13,7 +13,7 @@ public class Item : MonoBehaviour
         // anim, vfx, etc
     }
 
-    public void Pick(RaveColor color)
+    public void Pick(CarColor color)
     {
         // anim, vfx, etc
         gameObject.SetActive(false);

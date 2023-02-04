@@ -30,7 +30,7 @@ public class LobbyManager : MonoBehaviour
         Debug.Log("Player joined!");
         // Assign rave to a player
         characterBanners[_currentPlayerIndex].SetActive(true);
-        player.GetComponent<PlayerUser>().Rave = (RaveColor)_currentPlayerIndex;
+        player.GetComponent<PlayerUser>().Rave = (CarColor)_currentPlayerIndex;
         _currentPlayerIndex++;
 
         ConnectedPlayersAmount++;

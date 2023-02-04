@@ -23,7 +23,7 @@ public abstract class RaverBase : MonoBehaviour
 
     public abstract void DisableRaver();
 
-    public abstract void InfluencedByPlayer(RaveColor raveColor, Vector3 destination);
+    public abstract void InfluencedByPlayer(CarColor raveColor, Vector3 destination);
 
     public virtual void StartRaverLogic()
     {

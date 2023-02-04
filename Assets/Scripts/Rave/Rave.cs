@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Rave : MonoBehaviour
 {
-    [SerializeField] RaveColor color;
+    [SerializeField] CarColor color;
     [SerializeField] TextMeshProUGUI raversAmountText;
 
-    public RaveColor RaveColor { get { return color; } }
+    public CarColor RaveColor { get { return color; } }
     public float RaveInfluence { get; set; }
     public DJMinigame DJMinigame { get; set; }
 

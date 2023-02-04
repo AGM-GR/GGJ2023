@@ -6,7 +6,7 @@ public class DJMinigameTrigger : MonoBehaviour
 {
     [SerializeField] DJMinigame djMinigame;
 
-    RaveColor myRaveColor;
+    CarColor myRaveColor;
 
     private void Start() {
         myRaveColor = GetComponentInParent<Rave>().RaveColor;

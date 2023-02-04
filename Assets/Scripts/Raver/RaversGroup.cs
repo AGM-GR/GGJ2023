@@ -60,7 +60,7 @@ public class RaversGroup : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(RaveColor raveColor, Vector3 destination)
+    public override void InfluencedByPlayer(CarColor raveColor, Vector3 destination)
     {
         foreach (Raver raver in _raversInGroup)
         {

@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class PlayerUser : MonoBehaviour
 {
-    public RaveColor Rave;
+    public CarColor Rave;
 }

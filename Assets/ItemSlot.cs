@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour
 {
     public Image Img;
-    public RaveColor Rave;
+    public CarColor Rave;
 
     private void Start()
     {

@@ -40,7 +40,7 @@ public class Raver : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(RaveColor raveColor, Vector3 destination)
+    public override void InfluencedByPlayer(CarColor raveColor, Vector3 destination)
     {
         SetPlayerMaterial(raveColor);
         SetDestination(destination);
@@ -51,7 +51,7 @@ public class Raver : RaverBase
         _raverMaterials.SetRaverMaterial();
     }
 
-    public void SetPlayerMaterial(RaveColor raveColor)
+    public void SetPlayerMaterial(CarColor raveColor)
     {
         _raverMaterials.SetPlayerMaterial((int)raveColor);
     }
