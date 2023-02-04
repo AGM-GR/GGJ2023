@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 // TO DO
-// make item spawner
+// make item spawner - based on raver spawner
 
 
 public class Item : MonoBehaviour
