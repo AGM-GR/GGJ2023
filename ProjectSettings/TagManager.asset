@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Raver
   - Car
+  - Stunner
   layers:
   - Default
   - TransparentFX
