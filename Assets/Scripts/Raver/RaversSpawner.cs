@@ -1,42 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RaversSpawner : MonoBehaviour
+public class RaversSpawner : NavMeshSpawner<Raver>
 {
-    public Raver _raverPrefab;
+    [Header("Ravers Spawner")]
     public int _initializeRaverCount = 20;
-    public float _spawnRadio = 4f;
     public float _spawnRatio = 0.1f;
-
-    private List<Raver> _ravers = new List<Raver>();
+    public Renderer[] exitAreas;
 
     private IEnumerator Start()
     {
         for (int i=0; i < _initializeRaverCount; i++)
         {
-            Raver raver = GetRaver();
-            Vector2 randomPointInCircle = Random.insideUnitCircle * _spawnRadio;
-            raver.SetDestination(new Vector3(randomPointInCircle.x, transform.position.y, randomPointInCircle.y));
-
-            yield return new WaitForSeconds(_spawnRatio);
-        }
-    }
-
-    public Raver GetRaver()
-    {
-        foreach (Raver raver in _ravers)
-        {
-            if (!raver.gameObject.activeSelf)
+            Raver raverSpawned = SpawnRandom();
+            if (raverSpawned != null)
             {
-                return raver;
+                yield return new WaitForSeconds(_spawnRatio);
+                Vector3 exitPoint = Utils.GetRandomPointInPlane(exitAreas[Random.Range(0, exitAreas.Length)]);
+                raverSpawned.SetDestination(exitPoint);
             }
+
+            yield return null;
         }
-
-        Raver newRaver = Instantiate(_raverPrefab, transform);
-        _ravers.Add(newRaver);
-
-        return newRaver;
     }
 
 }

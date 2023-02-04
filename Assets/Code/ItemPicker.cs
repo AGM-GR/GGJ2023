@@ -5,9 +5,17 @@ using UnityEngine;
 /// </summary>
 public class ItemPicker : MonoBehaviour
 {
+    public PlayerUser _user;
     public ItemData CurrentItemData; // just one slot
+    private ItemSlot _slot; // just one slot
+
     public bool HasItem => CurrentItemData != null;
     public bool CurrentItemNeedsTarget => CurrentItemData.NeedsTargetInteractable;
+
+    private void Awake()
+    {
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,13 +24,14 @@ public class ItemPicker : MonoBehaviour
         {
             CurrentItemData = item.Data;
             // update ui
-            item.Pick();
+            item.Pick(_user.Rave);
         }
     }
 
     public void UseItem()
     {
         CurrentItemData = null;
+        _slot.HideItem();
         // update ui
     }
 }

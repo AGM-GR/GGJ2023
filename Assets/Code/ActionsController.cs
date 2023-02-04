@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using TMPro;
 
-
 public class ActionsController : MonoBehaviour
 {
     public SphereCollider SphereCollider;
     public ItemPicker _itemPicker;
     public TextMeshProUGUI _debugText;
     private Interactable _targetInteractable;
-    //private Animator _animator;
+    //private Animator _animator;   // TO INTEGRATE
 
     public GameObject StunnerTest;
 
@@ -29,7 +28,7 @@ public class ActionsController : MonoBehaviour
     }
 
 
-    // Use item
+    // Actually: Use item
     private void ExecuteAction()
     {
         if (_itemPicker.HasItem)
