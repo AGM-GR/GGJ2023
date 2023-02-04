@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: a435250fd6c91af4c874e71a3509cd9c, type: 2}
 --- !u!1 &80821868
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +605,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &273641198
 Transform:
@@ -759,11 +759,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8764874478580199026, guid: 2747259c851e3bd4090568748280fe32, type: 3}
   m_PrefabInstance: {fileID: 632057898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &657094481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657094482}
+  - component: {fileID: 657094483}
+  m_Layer: 0
+  m_Name: Items spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &657094482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657094481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &657094483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657094481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bfe3300afb137c41bf5f806c9193b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnablePrefab: {fileID: 849135079}
+  _spawnRadios:
+  - spawnRadio: 5.43
+    spawnProbability: 1
+  - spawnRadio: 9.8
+    spawnProbability: 0.2
+  meshGround: {fileID: 1656248738}
+  _initializeItemCount: 10
+  _spawnRatio: 0.5
 --- !u!4 &849135078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8764874478580199026, guid: 2747259c851e3bd4090568748280fe32, type: 3}
   m_PrefabInstance: {fileID: 8764874478337665940}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &849135079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8764874478580199030, guid: 2747259c851e3bd4090568748280fe32, type: 3}
+  m_PrefabInstance: {fileID: 8764874478337665940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2cbdb4b3d980846b593838c09d296f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &951173476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -988,7 +1052,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &1159957924
 MeshRenderer:
@@ -1378,7 +1442,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &1656248737
 MeshCollider:
@@ -1637,6 +1701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe831d6e5a6873479b8548361d70ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputManager: {fileID: 1481067581}
   ConnectedPlayersAmount: 0
   PlayGameButton: {fileID: 1840737221}
 --- !u!1 &1840737219

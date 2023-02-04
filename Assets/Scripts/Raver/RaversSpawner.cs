@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+
 public class RaversSpawner : NavMeshSpawner<Raver>
 {
     [Header("Ravers Spawner")]
