@@ -5,6 +5,7 @@ public abstract class Role
 {
     public float Radius = 1;
     public abstract string TargetTag { get; }
+    public abstract string Name { get; }
 
     public abstract void ExecuteAction();
 }
@@ -12,6 +13,8 @@ public abstract class Role
 public class PR : Role
 {
     public override string TargetTag => "Player";
+
+    public override string Name => "PR";
 
     public override void ExecuteAction()
     {
@@ -23,6 +26,8 @@ public class PR : Role
 public class Badass : Role
 {
     public override string TargetTag => "Player";
+    public override string Name => "Badass";
+
 
     public override void ExecuteAction()
     {
@@ -33,11 +38,15 @@ public class Badass : Role
 
 public class Dj : Role
 {
-    public override string TargetTag => "Player";
+    public override string TargetTag => "Car";
+    public override string Name => "DJ";
+
 
     public override void ExecuteAction()
     {
         // si está cerca del coche, empezar minijuego influencia
         Debug.Log("Execute Dj action");
+
+
     }
 }

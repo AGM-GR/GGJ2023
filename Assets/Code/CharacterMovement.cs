@@ -66,6 +66,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Rotate()
     {
+        if (_moveDirection == Vector3.zero) return;
         Quaternion rot = Quaternion.LookRotation(_moveDirection);
         Quaternion targetRotation = Quaternion.Slerp(transform.rotation, rot, Time.fixedDeltaTime * _inputAmount * RotateSpeed);
         transform.rotation = targetRotation;
