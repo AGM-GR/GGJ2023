@@ -28,7 +28,7 @@ public class LobbyManager : MonoBehaviour
         Debug.Log("Player joined!");
         // Assign rave to a player
         characterBanners[player.playerIndex].SetTrigger("PlayerEntry");
-        player.GetComponent<PlayerUser>().Rave = (CarColor)player.playerIndex;
+        player.GetComponent<Character>().SetCharacterColor((CarColor)player.playerIndex);
 
         ConnectedPlayersAmount++;
         RefreshPlayButton();

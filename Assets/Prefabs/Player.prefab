@@ -339,7 +339,6 @@ GameObject:
   - component: {fileID: 8870835819245187019}
   - component: {fileID: 8870835819245187016}
   - component: {fileID: 8870835819245187017}
-  - component: {fileID: 4314146313003985751}
   - component: {fileID: 5972657309720533824}
   m_Layer: 7
   m_Name: Player
@@ -498,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5d3cd6c7776aa49ad14078a30a0ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _user: {fileID: 4314146313003985751}
+  _user: {fileID: 2803676385956394543}
   CurrentItemData: {fileID: 0}
 --- !u!114 &8870835819245187017
 MonoBehaviour:
@@ -515,19 +514,6 @@ MonoBehaviour:
   _movement: {fileID: 8870835819245187019}
   _influence: {fileID: 5972657309720533824}
   IsStunned: 0
---- !u!114 &4314146313003985751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8870835819245186992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd2212070b480af458b4080cff35ef63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rave: 0
 --- !u!114 &5972657309720533824
 MonoBehaviour:
   m_ObjectHideFlags: 0
