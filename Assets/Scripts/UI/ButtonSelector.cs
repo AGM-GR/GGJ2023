@@ -11,6 +11,10 @@ public class ButtonSelector : MonoBehaviour
     private void Awake()
     {
         thisButton = GetComponent<Button>();
+    }
+
+    private void OnEnable()
+    {
         if (startSelected)
         {
             Select();
