@@ -66,7 +66,7 @@ public class DJMinigame : MonoBehaviour {
             djButtons[i].Initialize(BPM, invert, skipLimit, pressThreshold, speedMultiplier);
         }
 
-        Animator anim = GetComponentInChildren<Animator>();
+        Animator anim = character.CharacterAnimator;
         if (anim) {
             anim.SetFloat("frequency", 1 / (60 / BPM));
         }
@@ -99,7 +99,7 @@ public class DJMinigame : MonoBehaviour {
         MinigameActive = false;
         if (character) {
             character.GetComponent<CharacterMovement>().IsMovementAllowed = true;
-            character.GetComponent<Animator>().SetTrigger("ScratchEnd");
+            character.CharacterAnimator.SetTrigger("ScratchEnd");
         }
     }
 

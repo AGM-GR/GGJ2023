@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.TextCore.Text;
 
 public class ActionsController : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class ActionsController : MonoBehaviour
     public ItemPicker _itemPicker;
     public TextMeshProUGUI _debugText;
     private Interactable _targetInteractable;
-    private Animator _animator;   // TO INTEGRATE
+    public Character character;
+    private Animator _animator => character.CharacterAnimator;
 
     public GameObject StunnerTest;
 
