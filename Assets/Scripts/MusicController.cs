@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,9 @@ public class MusicController : MonoBehaviour
         public float BPM;
     }
 
+    public static event Action OnMusicChanged;
+    public static float beatMultiplier;
+
     [SerializeField] DJMinigame[] djMinigames;
     [SerializeField] ClipAndBMPs[] clips;
 
@@ -21,19 +25,22 @@ public class MusicController : MonoBehaviour
     }
 
     public void StartMusicAndGames() {
-        int clipIndex = Random.Range(0, clips.Length);
+        int clipIndex = UnityEngine.Random.Range(0, clips.Length);
 
         audioSource.clip = clips[clipIndex].audioClip;
         audioSource.Play();
 
+        beatMultiplier = 1 / (60 / clips[clipIndex].BPM);
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player")) {
             foreach (Animator animator in player.GetComponentsInChildren<Animator>()) {
-                animator.SetFloat("Beat", 1 / (60 / clips[clipIndex].BPM));
+                animator.SetFloat("Beat", beatMultiplier);
             }
         }
 
         foreach(DJMinigame djMinigame in djMinigames) {
             djMinigame.StartMovement();
         }
+
+        OnMusicChanged.Invoke();
     }
 }
