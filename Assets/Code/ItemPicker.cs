@@ -28,7 +28,7 @@ public class ItemPicker : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Item item;
-        if (other.TryGetComponent<Item>(out item))
+        if (other.TryGetComponent<Item>(out item) && !HasItem)
         {
             CurrentItemData = item.Data;
             // update ui
