@@ -6,26 +6,28 @@ public class CharacterDJMinigameInteraction : MonoBehaviour
 {
     public DJMinigame DJMinigame { get; set; }
 
+    public bool InDJMinigame { get { return DJMinigame && DJMinigame.MinigameActive; } }
+
     public void OnMinigameSouthButton() {
-        if (DJMinigame && DJMinigame.MinigameActive) {
+        if (InDJMinigame) {
             DJMinigame.ReceiveInput(MinigameButton.SOUTH);
         }
     }
 
     public void OnMinigameEastButton() {
-        if (DJMinigame && DJMinigame.MinigameActive) {
+        if (InDJMinigame) {
             DJMinigame.ReceiveInput(MinigameButton.EAST);
         }
     }
 
     public void OnMinigameWestButton() {
-        if (DJMinigame && DJMinigame.MinigameActive) {
+        if (InDJMinigame) {
             DJMinigame.ReceiveInput(MinigameButton.WEST);
         }
     }
 
     public void OnMinigameNorthButton() {
-        if (DJMinigame && DJMinigame.MinigameActive) {
+        if (InDJMinigame) {
             DJMinigame.ReceiveInput(MinigameButton.NORTH);
         }
     }

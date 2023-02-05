@@ -998,6 +998,8 @@ MonoBehaviour:
   _itemPicker: {fileID: 8870835819245187016}
   _debugText: {fileID: 8870835819650460673}
   StunnerTest: {fileID: 259035853489278180}
+  drinkSfx: {fileID: 0}
+  drinkMusics: []
 --- !u!136 &2384903291921942781
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1135,6 +1137,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7a0daa24f929f457f909d4615c1e7ab2, type: 3}
   _movement: {fileID: 8870835819245187019}
   _influence: {fileID: 5972657309720533824}
+  _djMinigameInteraction: {fileID: 9112374262877955239}
   IsStunned: 0
   StunnedTimeInSeconds: 2
 --- !u!114 &5972657309720533824
