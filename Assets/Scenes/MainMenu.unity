@@ -508,7 +508,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1631181427}
   - component: {fileID: 1631181426}
-  - component: {fileID: 1631181428}
   - component: {fileID: 1631181429}
   m_Layer: 0
   m_Name: EventSystem
@@ -547,47 +546,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &1631181428
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631181424}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 6278983495997394304, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 6352426000316341454, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 7535979122824389933, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 8999729766769215414, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 1951986674162615994, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -2819101191208908814, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -8965916859564274046, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 1426012083392433254, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -8373909873723014850, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 1882360157913819255, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -611678547071370401, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 7955362524650577365, guid: 0bc75e6d58c81bd4a8d06896a5203618, type: 2}
-    value: {fileID: 0}
-  m_ExposedReferences:
-    m_References: []
 --- !u!114 &1631181429
 MonoBehaviour:
   m_ObjectHideFlags: 0
