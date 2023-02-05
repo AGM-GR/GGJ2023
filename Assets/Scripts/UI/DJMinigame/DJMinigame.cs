@@ -66,7 +66,7 @@ public class DJMinigame : MonoBehaviour {
             djButtons[i].Initialize(BPM, invert, skipLimit, pressThreshold, speedMultiplier);
         }
 
-        Animator anim = character.CharacterAnimator;
+        Animator anim = GetComponentInChildren<Animator>();
         if (anim) {
             anim.SetFloat("frequency", 1 / (60 / BPM));
         }

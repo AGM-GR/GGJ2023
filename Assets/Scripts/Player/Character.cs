@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -17,8 +15,8 @@ public class Character : MonoBehaviour
     {
         CharacterIndex = index;
         characterColor = (CarColor) index;
-        Models[CharacterIndex].SetActive(true);
-        CharacterAnimator = Models[CharacterIndex].GetComponent<Animator>();
+        Models[/*CharacterIndex*/ 0].SetActive(true);
+        CharacterAnimator = Models[/*CharacterIndex*/ 0].GetComponentInChildren<Animator>();
 
         IsInit = true;
     }
