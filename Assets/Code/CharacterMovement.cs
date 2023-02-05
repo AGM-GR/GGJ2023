@@ -137,5 +137,6 @@ public class CharacterMovement : MonoBehaviour
         yield return new WaitForSeconds(speedUpDuration);
         _characterInfluence.AutoIfluence = false;
         _currentSpeedMultiplier = 1f;
+        MusicController.Instance.EndEnergyDrink();
     }
 }
