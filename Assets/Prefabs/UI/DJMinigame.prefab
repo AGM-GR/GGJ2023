@@ -1058,8 +1058,16 @@ MonoBehaviour:
     halfBeats: 0
   skipLimit: 250
   pressThreshold: 35
-  successClip: {fileID: 8300000, guid: 9a8dbfdceeec576478732d564d690ce6, type: 3}
-  failClip: {fileID: 8300000, guid: 5ec8c971a16dcbd49b162b78d6fba2b7, type: 3}
+  successClips:
+  - {fileID: 8300000, guid: f79da442903b14bdbae874e02dfb6647, type: 3}
+  - {fileID: 8300000, guid: 13495b1411d9347f1b4d0d262e47446f, type: 3}
+  - {fileID: 8300000, guid: bdb76716ac9b64e6dad97bdb25040d9d, type: 3}
+  - {fileID: 8300000, guid: dda8e508f89a74da4b9df7d56cb280bc, type: 3}
+  - {fileID: 8300000, guid: 7bc794e0804654b46b8832f914646ed0, type: 3}
+  - {fileID: 8300000, guid: 0d9abe9bbe51648a58e046cb848bee49, type: 3}
+  - {fileID: 8300000, guid: 6b2a64724f6014454b5860d77a552382, type: 3}
+  - {fileID: 8300000, guid: 231f869aa34e14168b6edc4dcb371e89, type: 3}
+  failClip: {fileID: 8300000, guid: e6529ee476c6a4edaab8da2690d8f33a, type: 3}
   tierUpClip: {fileID: 8300000, guid: 54613b32d9c96f440ac484de8113a41c, type: 3}
   targetText: {fileID: 3773409290864616388}
 --- !u!82 &1982160591279406845
@@ -1071,10 +1079,10 @@ AudioSource:
   m_GameObject: {fileID: 3447512605558087842}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2868926809042417121, guid: e5893a023d556914f8f4ac5d82fc200b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

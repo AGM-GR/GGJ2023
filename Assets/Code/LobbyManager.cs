@@ -69,6 +69,7 @@ public class LobbyManager : MonoBehaviour
         _inputManager.enabled = false;
         this.gameObject.SetActive(false);
         FindObjectOfType<ItemsSpawner>().enabled = true;
+        FindObjectOfType<GameplayTimer>().enabled = true;
         musicController.StartMusicAndGames();
     }
 

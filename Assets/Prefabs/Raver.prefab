@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 3342752930871031561}
   _initialDissolveValue: 0.4
+  _defaultMaterial: {fileID: 2100000, guid: 914e5ba73e359154988f546d7e6f461a, type: 2}
 --- !u!82 &3564467881356556525
 AudioSource:
   m_ObjectHideFlags: 0
@@ -125,10 +126,10 @@ AudioSource:
   m_GameObject: {fileID: 3643196353454003164}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2868926809042417121, guid: e5893a023d556914f8f4ac5d82fc200b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

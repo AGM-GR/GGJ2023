@@ -840,6 +840,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 42643565}
     m_Modifications:
+    - target: {fileID: 1725700819436290653, guid: edc6077ca8239d54f86b1a0ed6981ff0, type: 3}
+      propertyPath: startSelected
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5178507942385634133, guid: edc6077ca8239d54f86b1a0ed6981ff0, type: 3}
       propertyPath: m_Name
       value: ButtonEmpezar
