@@ -9,6 +9,7 @@ public class LobbyManager : MonoBehaviour
     private PlayerInputManager _inputManager;
     public int ConnectedPlayersAmount;
     public Button PlayGameButton;
+    public MusicController musicController;
     public List<Animator> characterBanners;
 
     [Header("Lobby Input Actions")]
@@ -68,6 +69,7 @@ public class LobbyManager : MonoBehaviour
         _inputManager.enabled = false;
         this.gameObject.SetActive(false);
         FindObjectOfType<ItemsSpawner>().enabled = true;
+        musicController.StartMusicAndGames();
     }
 
     private static void AllowPlayersMovement()
