@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -11,6 +12,7 @@ public class Character : MonoBehaviour
 
     public CarColor CharacterColor { get { return characterColor; } }
 
+
     public void Initialize(int index)
     {
         CharacterIndex = index;
@@ -19,5 +21,8 @@ public class Character : MonoBehaviour
         CharacterAnimator = Models[/*CharacterIndex*/ 0].GetComponentInChildren<Animator>();
 
         IsInit = true;
+
+        var spawningPoint = FindObjectsOfType<CharacterSpawningPoint>().Where(c => c.color == characterColor).First();
+        transform.position = spawningPoint.transform.position;
     }
 }
