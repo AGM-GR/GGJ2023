@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     [SerializeField] CarColor characterColor;
     public int CharacterIndex;
     public GameObject[] Models;
-    public Animator CharacterAnimator;
+    [HideInInspector] public Animator CharacterAnimator;
 
     public bool IsInit;
 

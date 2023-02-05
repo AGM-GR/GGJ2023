@@ -8,14 +8,15 @@ public class ActionsController : MonoBehaviour
     public ItemPicker _itemPicker;
     public TextMeshProUGUI _debugText;
     private Interactable _targetInteractable;
-    public Character character;
-    private Animator _animator => character.CharacterAnimator;
+    private Character _character;
+    private Animator _animator => _character.CharacterAnimator;
 
     public GameObject StunnerTest;
 
 
     private void Awake()
     {
+        _character = GetComponent<Character>();
         Initialize();
     }
 

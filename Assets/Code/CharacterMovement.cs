@@ -11,6 +11,8 @@ public class CharacterMovement : MonoBehaviour
     public float SpeedDampTime = 0.2f;
     public float RotateSpeed = 6f;
     public float FloorOffsetY = 0.75f;
+    [Space]
+    [Header("Debug")]
     public bool startWithMovement;
 
     // Private fields
@@ -23,14 +25,15 @@ public class CharacterMovement : MonoBehaviour
     // Component dependences
     private Camera _mainCamera;
     private Rigidbody _rb;
+    private Character _character;
     private Animator Animator => _character.CharacterAnimator;
-
-    public Character _character;
 
     public bool IsMovementAllowed { get; set; }
 
     private void Awake()
     {
+        _character = GetComponent<Character>();
+
         if (startWithMovement)
         {
             IsMovementAllowed = true;

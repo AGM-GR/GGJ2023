@@ -3,17 +3,20 @@ using System.Threading.Tasks;
 
 public class PlayerStunner : MonoBehaviour
 {
+    private Character _character;
+
     public CharacterMovement _movement;
-    public Character character;
-
-
     public CharacterInfluenceAction _influence;
     public bool IsStunned;
     [Space]
     public float StunnedTimeInSeconds = 2;
 
-    private Animator Animator => character.CharacterAnimator;
+    private Animator Animator => _character.CharacterAnimator;
 
+    private void Start()
+    {
+        _character = GetComponent<Character>();
+    }
 
 
     private async void OnTriggerEnter(Collider other)
