@@ -584,6 +584,9 @@ MonoBehaviour:
   CharacterIndex: 0
   Models:
   - {fileID: 2317794935355093821}
+  - {fileID: 932048966526315077}
+  - {fileID: 7620267000619118802}
+  - {fileID: 3801527891320528179}
   CharacterAnimator: {fileID: 0}
   IsInit: 0
 --- !u!114 &8870835819245186993
