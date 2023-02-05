@@ -11,6 +11,7 @@ public class DJMinigame : MonoBehaviour {
         public float speedMultiplier;
         public int successGoalToLevelUp;
         public float raveInfluence;
+        public bool halfBeats;
     }
 
     [Header("Game settings")]
@@ -131,6 +132,7 @@ public class DJMinigame : MonoBehaviour {
     }
 
     private void FailedInput(bool closing = true) {
+        Debug.Log("FAIL!");
         if (closing) {
             audioSource.PlayOneShot(failClip);
             StartCoroutine(DeactivateNextFrame());
@@ -188,7 +190,7 @@ public class DJMinigame : MonoBehaviour {
     }
 
     private void ResetAllButtons() {
-        float distance = BPM * speedMultiplier;
+        float distance = BPM * speedMultiplier * (tiers[currentTier].halfBeats ? 2 : 1);
         for (int i = 0; i < djButtons.Length; ++i) {
             djButtons[i].Reset(distance * (i + 1) + distance * normalizedBeatTime, speedMultiplier);
         }

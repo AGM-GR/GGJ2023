@@ -15,8 +15,7 @@ public class Car : Interactable
     float carInfluence;
     int currentRavers;
 
-    private void Start()
-    {
+    private void Awake() {
         djMinigame.SetCar(this);
     }
 
