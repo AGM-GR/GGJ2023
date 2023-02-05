@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class RaverMaterials : MonoBehaviour
 {
+    public Renderer _renderer;
+
     public Material[] _playerMaterial;
     public Material _raverMaterial;
 
-    private Renderer _renderer;
-
-    private void Awake()
+    private void OnValidate()
     {
-        _renderer = GetComponent<Renderer>();
+        if (_renderer == null)
+            _renderer = GetComponent<Renderer>();
     }
 
     public void SetPlayerMaterial(int playerIndex)

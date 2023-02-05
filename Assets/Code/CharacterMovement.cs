@@ -32,6 +32,7 @@ public class CharacterMovement : MonoBehaviour
     private Camera _mainCamera;
     private Rigidbody _rb;
     private Character _character;
+    private CharacterInfluenceAction _characterInfluence;
     private Animator Animator => _character.CharacterAnimator;
     private Coroutine speedUpCoroutine;
 
@@ -54,6 +55,7 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         _character = GetComponent<Character>();
+        _characterInfluence = GetComponent<CharacterInfluenceAction>();
 
         if (startWithMovement)
         {
@@ -128,8 +130,10 @@ public class CharacterMovement : MonoBehaviour
 
     private IEnumerator SpeedUpTime()
     {
+        _characterInfluence.AutoIfluence = true;
         _currentSpeedMultiplier = speedUpMultiplier;
         yield return new WaitForSeconds(speedUpDuration);
+        _characterInfluence.AutoIfluence = false;
         _currentSpeedMultiplier = 1f;
     }
 }

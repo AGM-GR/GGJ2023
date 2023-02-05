@@ -10,6 +10,7 @@ public class CharacterInfluenceAction : MonoBehaviour
     private Car mycar;
 
     public bool CanInfluence { get; set; }
+    public bool AutoIfluence { get; set; }
 
     private void OnValidate()
     {
@@ -25,6 +26,17 @@ public class CharacterInfluenceAction : MonoBehaviour
         {
             if (car.CarColor == thisCharacter.CharacterColor)
                 mycar = car;
+        }
+    }
+
+    private void Update()
+    {
+        if (AutoIfluence && CanInfluence)
+        {
+            foreach (RaverBase raver in influenceTrigger.raversInInfluenceRange)
+            {
+                raver.InfluencedByPlayer(thisCharacter.CharacterColor, mycar);
+            }
         }
     }
 
