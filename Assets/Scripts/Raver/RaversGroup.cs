@@ -69,12 +69,13 @@ public class RaversGroup : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
+    public override void InfluencedByPlayer(CarColor carColor, Car influencingCar)
     {
-        base.InfluencedByPlayer(raveColor, influencingCar);
+        base.InfluencedByPlayer(carColor, influencingCar);
         foreach (Raver raver in _raversInGroup)
         {
-            raver.SetPlayerMaterial(raveColor);
+            raver.SetPlayerMaterial(carColor);
+            raver.InfluenceCircle(carColor);
         }
         SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
