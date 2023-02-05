@@ -59,7 +59,7 @@ public class Car : Interactable
                 picker.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
                 picker.GetComponent<CharacterMovement>().IsMovementAllowed = false;
                 djMinigame.Activate(picker.GetComponent<Character>());
-                //picker.GetComponent<Character>().CharacterAnimator.SetTrigger("Scratch");
+                picker.GetComponent<Character>().CharacterAnimator.SetTrigger("Scratch");
             }
         }
         else
