@@ -138,5 +138,6 @@ public class CharacterMovement : MonoBehaviour
         _characterInfluence.AutoIfluence = false;
         _currentSpeedMultiplier = 1f;
         MusicController.Instance.EndEnergyDrink();
+        ItemsSpawner.EnergyDrinkSpawned = false;
     }
 }
