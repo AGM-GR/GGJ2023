@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class Car : Interactable
@@ -9,7 +10,6 @@ public class Car : Interactable
     [SerializeField] float raverLossPeriod;
 
     CharacterDJMinigameInteraction interaction;
-    CharacterMovement movement;
     float carInfluence;
     int currentRavers;
 
@@ -18,22 +18,29 @@ public class Car : Interactable
     bool losingRavers;
     float timeSinceLastLoss;
 
+    public AudioSource aSource;
+    public AudioClip sabotageSfx;
+
     public Vector3 PointsExit { get { return pointsExit.transform.position; } }
     public CarColor CarColor { get { return color; } }
     public int CurrentRavers => currentRavers;
-    public int CharacterIndex => movement.GetComponent<Character>().CharacterIndex;
+    public int CharacterIndex;
 
     public System.Action<float> onInfluenceChanged;
 
-    private void Awake() {
+    private void Awake()
+    {
         djMinigame.SetCar(this);
         pointsExit = GetComponentInChildren<RaversExit>();
     }
 
-    private void Update() {
-        if (losingRavers && currentRavers > 0) {
+    private void Update()
+    {
+        if (losingRavers && currentRavers > 0)
+        {
             timeSinceLastLoss += Time.deltaTime;
-            if (timeSinceLastLoss >= raverLossPeriod) {
+            if (timeSinceLastLoss >= raverLossPeriod)
+            {
                 timeSinceLastLoss -= raverLossPeriod;
                 currentRavers--;
                 raversAmountText.text = currentRavers.ToString();
@@ -76,16 +83,19 @@ public class Car : Interactable
 
     private void Sabotage()
     {
+        aSource.PlayOneShot(sabotageSfx);             
         djMinigame.LowestTier();
         losingRavers = true;
     }
 
-    public void LowTierPassed() {
+    public void LowTierPassed()
+    {
         timeSinceLastLoss = 0;
         losingRavers = false;
     }
 
-    public void SetInfluence(float carInfluence) {
+    public void SetInfluence(float carInfluence)
+    {
         this.carInfluence = carInfluence;
         onInfluenceChanged?.Invoke(carInfluence);
     }
@@ -95,7 +105,8 @@ public class Car : Interactable
         return carInfluence;
     }
 
-    public void IncreaseRavers(int amount) {
+    public void IncreaseRavers(int amount)
+    {
         currentRavers += amount;
         raversAmountText.text = currentRavers.ToString();
     }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ActionsController : MonoBehaviour
 {
@@ -15,10 +16,15 @@ public class ActionsController : MonoBehaviour
 
     private Coroutine stunnerCoroutine;
 
+    public AudioClip drinkSfx;
+    public List<AudioClip> drinkMusics;
+    AudioSource aSource;
+
     private void Awake()
     {
         _character = GetComponent<Character>();
         _characterMovement = GetComponent<CharacterMovement>();
+        aSource = GetComponent<AudioSource>();
     }
 
     public void OnStartMinigame()
@@ -50,6 +56,8 @@ public class ActionsController : MonoBehaviour
                 case ItemType.Scissors:
                     break;
                 case ItemType.EnergyDrink:
+                    aSource.PlayOneShot(drinkSfx);
+                    aSource.PlayOneShot(drinkMusics.GetRandomElement());
                     _characterMovement.AddSpeedUp();
                     break;
             }
