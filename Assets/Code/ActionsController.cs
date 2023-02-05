@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using TMPro;
-using UnityEngine.TextCore.Text;
 using System.Collections;
 
 public class ActionsController : MonoBehaviour
@@ -22,7 +21,8 @@ public class ActionsController : MonoBehaviour
         _characterMovement = GetComponent<CharacterMovement>();
     }
 
-    public void OnStartMinigame() {
+    public void OnStartMinigame()
+    {
         _targetInteractable?.Interact(_itemPicker);
     }
 
