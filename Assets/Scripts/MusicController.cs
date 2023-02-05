@@ -14,6 +14,12 @@ public class MusicController : MonoBehaviour
         public float BPM;
     }
 
+    [System.Serializable]
+    private struct ClipBPMAndCarColor {
+        public ClipAndBMPs clipAndBPM;
+        public CarColor color;
+    }
+
     public static event Action OnMusicChanged;
     public static float beatMultiplier;
 
@@ -27,7 +33,7 @@ public class MusicController : MonoBehaviour
     [SerializeField] float energyDrinkVolume = 1;
     [SerializeField] float fadeSpeed = 1;
     [SerializeField] Animator energyDrinkVFX;
-    [SerializeField] List<AudioClip> drinkMusics;
+    [SerializeField] List<ClipBPMAndCarColor> drinkMusics;
 
     bool crossFading;
     float t;
@@ -67,14 +73,16 @@ public class MusicController : MonoBehaviour
         OnMusicChanged.Invoke();
     }
 
-    public void PlayEnergyDrink() {
+    public void PlayEnergyDrink(CarColor color) {
         crossFading = false;
         musicAudioSource.volume = 0;
-        energyDrinkAudioSource.clip = drinkMusics.GetRandomElement();
+
+        ClipBPMAndCarColor clipData = GetClipData(color);
+        energyDrinkAudioSource.clip = clipData.clipAndBPM.audioClip;
         energyDrinkAudioSource.volume = energyDrinkVolume;
         energyDrinkAudioSource.Play();
 
-        energyDrinkVFX.SetFloat("Beat", beatMultiplier);
+        energyDrinkVFX.SetFloat("Beat", 1 / (60 / clipData.clipAndBPM.BPM));
         energyDrinkVFX.SetTrigger("RootStart");
     }
 
@@ -82,5 +90,9 @@ public class MusicController : MonoBehaviour
         t = 0;
         crossFading = true;
         energyDrinkVFX.SetTrigger("RootEnd");
+    }
+
+    private ClipBPMAndCarColor GetClipData(CarColor color) {
+        return drinkMusics.Find(x => x.color == color);
     }
 }

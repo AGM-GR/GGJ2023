@@ -51,7 +51,7 @@ public class ActionsController : MonoBehaviour
                 case ItemType.Scissors:
                     break;
                 case ItemType.EnergyDrink:
-                    MusicController.Instance.PlayEnergyDrink();
+                    MusicController.Instance.PlayEnergyDrink(_character.CharacterColor);
                     _characterMovement.AddSpeedUp();
                     break;
             }
