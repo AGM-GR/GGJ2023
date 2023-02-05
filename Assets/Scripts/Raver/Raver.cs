@@ -30,6 +30,9 @@ public class Raver : RaverBase
 
     public override void EnableRaver()
     {
+        base.EnableRaver();
+        SetRaverMaterial();
+
         gameObject.SetActive(true);
         _navMeshAgent.enabled = true;
         _raverSpawner.RaverEnabled();
@@ -37,6 +40,7 @@ public class Raver : RaverBase
 
     public override void DisableRaver()
     {
+        base.DisableRaver();
         _raverSpawner.RaverDisabled();
         _navMeshAgent.enabled = false;
         gameObject.SetActive(false);
@@ -46,7 +50,7 @@ public class Raver : RaverBase
     {
         base.InfluencedByPlayer(raveColor, influencingCar);
         SetPlayerMaterial(raveColor);
-        SetDestination(influencingCar.transform.position);
+        SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
     }
 
