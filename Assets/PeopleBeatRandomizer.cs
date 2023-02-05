@@ -10,8 +10,8 @@ public class PeopleBeatRandomizer : MonoBehaviour
         {
             a.SetFloat("Beat", 2.8f);
 
-            List<string> states = new List<string>() { };
-            a.Play("Idle", 0, UnityEngine.Random.value);
+            List<string> states = new List<string>() { "Idle", "Idle1", "Idle2", "Idle3", "Idle4", "IdleRelaxed" };
+            a.Play(states.GetRandomElement(), 0, UnityEngine.Random.value);
         }
     }
 }

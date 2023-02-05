@@ -7,6 +7,11 @@ public class CarWinnerSetter : MonoBehaviour
     private void Start()
     {
         int winnerIndex = PlayerPrefs.GetInt("Winner");
-        cars[winnerIndex].SetActive(true);
+        var winner = cars[winnerIndex];
+        winner.SetActive(true);
+
+        Animator a = winner.GetComponentInChildren<Animator>();
+        a.SetFloat("Beat", 2.8f);
+        a.SetTrigger("Scratch");
     }
 }

@@ -100,7 +100,7 @@ public class DJMinigame : MonoBehaviour {
         MinigameActive = false;
         if (character) {
             character.GetComponent<CharacterMovement>().IsMovementAllowed = true;
-            character.CharacterAnimator.SetTrigger("ScratchEnd");
+            //character.CharacterAnimator.SetTrigger("ScratchEnd");
         }
     }
 
