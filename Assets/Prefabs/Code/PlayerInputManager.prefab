@@ -84,6 +84,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6425989994842439142}
     m_Modifications:
+    - target: {fileID: 5295466173383026209, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_text
+      value: La Vane
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295466173439267921, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_text
+      value: El Richarl
+      objectReference: {fileID: 0}
     - target: {fileID: 5295466173807665896, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -100,6 +108,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5295466173807665899, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_Name
+      value: Character banner - El Richarl
+      objectReference: {fileID: 0}
     - target: {fileID: 5295466173817770136, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -116,6 +128,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5295466173817770139, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_Name
+      value: Character banner - La Vane
+      objectReference: {fileID: 0}
     - target: {fileID: 5295466174120869813, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -131,6 +147,22 @@ PrefabInstance:
     - target: {fileID: 5295466174120869813, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295466174120869814, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_Name
+      value: Character banner - La Jessy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295466174824630540, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_text
+      value: La Jessy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926022613333987714, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b7735abfa21448e3ae32eaca31101ca, type: 3}
+    - target: {fileID: 7037066948720899677, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_text
+      value: El Rulas
       objectReference: {fileID: 0}
     - target: {fileID: 7037066948953220500, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
       propertyPath: m_Name
@@ -224,6 +256,30 @@ PrefabInstance:
       propertyPath: _inputManager
       value: 
       objectReference: {fileID: 6425989994842439141}
+    - target: {fileID: 7037066948953220521, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: characterBanners.Array.data[0]
+      value: 
+      objectReference: {fileID: 76148474638745570}
+    - target: {fileID: 7037066948953220521, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: characterBanners.Array.data[1]
+      value: 
+      objectReference: {fileID: 3016111942352154526}
+    - target: {fileID: 7037066948953220521, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: characterBanners.Array.data[2]
+      value: 
+      objectReference: {fileID: 3016111942337093102}
+    - target: {fileID: 7037066948953220521, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: characterBanners.Array.data[3]
+      value: 
+      objectReference: {fileID: 3016111941445075123}
+    - target: {fileID: 7037066949060147727, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037066949060147727, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7037066949090623716, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -240,8 +296,61 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7037066949090623719, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_Name
+      value: Character banner - El Rulas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8842738415513574633, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e404adf132f44165804b8d40c8bc901, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+--- !u!95 &76148474638745570 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 76148473113955924, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+  m_PrefabInstance: {fileID: 1596125622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3016111941445075123 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3016111942768472325, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+  m_PrefabInstance: {fileID: 1596125622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3016111942337093102 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3016111940812549208, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+  m_PrefabInstance: {fileID: 1596125622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3016111942352154526 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3016111940789624360, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+  m_PrefabInstance: {fileID: 1596125622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7037066950152670143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7037066949060147721, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}
+  m_PrefabInstance: {fileID: 1596125622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1712951051
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7037066950152670143}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f1d685b0619fdd478f80b592faf0f13, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!224 &7037066950276371486 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7037066948953220520, guid: f8e1ba536eb2ee848ab017c55d8183ea, type: 3}

@@ -46,7 +46,7 @@ public class CharacterInfluenceAction : MonoBehaviour
 
             if (closerRaver != null)
             {
-                closerRaver.InfluencedByPlayer(thisCharacter.CharacterColor, mycar.transform.position);
+                closerRaver.InfluencedByPlayer(thisCharacter.CharacterColor, mycar);
             }
         }
     }

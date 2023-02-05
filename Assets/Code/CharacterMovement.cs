@@ -62,8 +62,7 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         // TEST
-        IsMovementAllowed = IsIdleOrLocomotion() && _character.IsInit;
-
+        IsMovementAllowed = _character.IsInit && IsIdleOrLocomotion();
         Rotate();
     }
 
