@@ -9,6 +9,9 @@ public class ItemsSpawner : NavMeshSpawner<Item>
     public float _spawnRatio = 0.1f;
     private int _totalActiveItems = 0;
 
+    public AudioSource aSource;
+    public AudioClip spawnSfx;
+
 
     private IEnumerator Start()
     {
@@ -21,6 +24,7 @@ public class ItemsSpawner : NavMeshSpawner<Item>
                     Item raverSpawned = SpawnRandom();
                     if (raverSpawned != null)
                     {
+                        aSource.PlayOneShot(spawnSfx);
                         raverSpawned.Spawner = this;
                         yield return new WaitForSeconds(_spawnRatio);
                         raverSpawned.gameObject.SetActive(true);
