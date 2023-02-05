@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Cinemachine;
 
 public class PlayerStunner : MonoBehaviour
 {
@@ -17,12 +18,15 @@ public class PlayerStunner : MonoBehaviour
 
     private Animator Animator => _character.CharacterAnimator;
 
+    private CinemachineBasicMultiChannelPerlin noise;
+
     AudioSource aSource;
 
     private void Start()
     {
         _character = GetComponent<Character>();
         aSource = GetComponent<AudioSource>();
+        noise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
 
@@ -40,13 +44,17 @@ public class PlayerStunner : MonoBehaviour
     }
 
 
-    private void StartStun(Collider other)
+    private async void StartStun(Collider other)
     {
         Animator.SetTrigger("GetHit");
         other.gameObject.SetActive(false);
         IsStunned = true;
         _influence.CanInfluence = false;
         _movement.IsMovementAllowed = false;
+
+        noise.m_AmplitudeGain = 1;
+        await Task.Delay(100);
+        noise.m_AmplitudeGain = 0;
     }
 
     private void EndStun()
