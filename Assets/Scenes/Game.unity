@@ -1564,6 +1564,9 @@ MonoBehaviour:
   - {fileID: 189806295}
   - {fileID: 189806294}
   - {fileID: 189806293}
+  clips:
+  - audioClip: {fileID: 8300000, guid: 718ec807bc6d947128b58453f3a85d86, type: 3}
+    BPM: 156
 --- !u!95 &1824409887 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3016111942337093102, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}

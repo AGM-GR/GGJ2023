@@ -44,7 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfe3300afb137c41bf5f806c9193b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefabs: []
+  Prefabs:
+  - Prefab: {fileID: 8764874478580199030, guid: 2747259c851e3bd4090568748280fe32, type: 3}
+    SpawnProbability: 0.3334
+  - Prefab: {fileID: 448643550364072591, guid: 2c0070c9c3dbadd48ab0ad63d8a9ad9d, type: 3}
+    SpawnProbability: 0.6667
+  - Prefab: {fileID: 448643550364072591, guid: 1e585de400952094abc9d03a2b0c8d58, type: 3}
+    SpawnProbability: 1
   _spawnRadios:
   - spawnRadio: 20
     spawnProbability: 1

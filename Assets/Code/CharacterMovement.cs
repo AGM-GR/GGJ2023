@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,9 @@ public class CharacterMovement : MonoBehaviour
     public float SpeedDampTime = 0.2f;
     public float RotateSpeed = 6f;
     public float FloorOffsetY = 0.75f;
+    [Header("Speed Up")]
+    public float speedUpMultiplier = 1.5f;
+    public float speedUpDuration = 12f;
     [Space]
     [Header("Debug")]
     public bool startWithMovement;
@@ -22,13 +26,30 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector3 _moveDirection = Vector3.zero;
 
+    private float _currentSpeedMultiplier = 1f;
+
     // Component dependences
     private Camera _mainCamera;
     private Rigidbody _rb;
     private Character _character;
     private Animator Animator => _character.CharacterAnimator;
+    private Coroutine speedUpCoroutine;
 
-    public bool IsMovementAllowed { get; set; }
+    public bool IsMovementAllowed
+    {
+        get { return _isMovementAllowed; }
+        set
+        {
+            if (value == false)
+            {
+                _inputAmount = 0;
+                _rb.velocity = Vector3.zero;
+            }
+            _isMovementAllowed = value;
+        }
+    }
+
+    public bool _isMovementAllowed;
 
     private void Awake()
     {
@@ -56,7 +77,7 @@ public class CharacterMovement : MonoBehaviour
 
         Move();
         Animator.SetFloat("Speed", _inputAmount);
-        _rb.velocity = _moveDirection * MoveSpeed * _inputAmount;
+        _rb.velocity = _moveDirection * MoveSpeed * _inputAmount * _currentSpeedMultiplier;
     }
 
     private void Update()
@@ -75,7 +96,6 @@ public class CharacterMovement : MonoBehaviour
     {
         _moveDirection = Vector3.zero; // reset movement
 
-
         Vector3 correctedVertical = _verticalAxis * _mainCamera.transform.forward;
         Vector3 correctedHorizontal = _horizontalAxis * _mainCamera.transform.right;
 
@@ -88,11 +108,27 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
+
+
     private void Rotate()
     {
         if (_moveDirection == Vector3.zero) return;
         Quaternion rot = Quaternion.LookRotation(_moveDirection);
         Quaternion targetRotation = Quaternion.Slerp(transform.rotation, rot, Time.fixedDeltaTime * _inputAmount * RotateSpeed);
         transform.rotation = targetRotation;
+    }
+
+    public void AddSpeedUp()
+    {
+        if (speedUpCoroutine != null)
+            StopCoroutine(speedUpCoroutine);
+        speedUpCoroutine = StartCoroutine(SpeedUpTime());
+    }
+
+    private IEnumerator SpeedUpTime()
+    {
+        _currentSpeedMultiplier = speedUpMultiplier;
+        yield return new WaitForSeconds(speedUpDuration);
+        _currentSpeedMultiplier = 1f;
     }
 }

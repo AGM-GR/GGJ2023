@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9441be625f7128543b87bf179942d30e, type: 3}
-  m_Name: Baseball Bat
+  m_Name: EnergyDrink
   m_EditorClassIdentifier: 
-  Name: Baseball Bat
-  Type: 1
+  Name: Energy Drink
+  Type: 3
   Prefab: {fileID: 0}
-  PreviewSprite: {fileID: 21300000, guid: ee869800fbf863d44ae3009ce10d7ec3, type: 3}
+  PreviewSprite: {fileID: 21300000, guid: 0d0560f8eb9edc848a030e891469e50b, type: 3}
   NeedsTargetInteractable: 0
-  AnimationTrigger: Attack
-  MilisecondsDelayToHideItem: 1500
+  AnimationTrigger: 
