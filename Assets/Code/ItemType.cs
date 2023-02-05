@@ -1,4 +1,4 @@
 ﻿public enum ItemType
 {
-    None, BaseballBat, Scissors
+    None, BaseballBat, Scissors, EnergyDrink
 }
