@@ -2,6 +2,9 @@
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using System;
+using System.Threading.Tasks;
 
 public class ActionsController : MonoBehaviour
 {
@@ -20,11 +23,15 @@ public class ActionsController : MonoBehaviour
     public List<AudioClip> drinkMusics;
     AudioSource aSource;
 
+    private CinemachineBasicMultiChannelPerlin noise;
+
+
     private void Awake()
     {
         _character = GetComponent<Character>();
         _characterMovement = GetComponent<CharacterMovement>();
         aSource = GetComponent<AudioSource>();
+        noise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     public void OnStartMinigame()
@@ -56,9 +63,9 @@ public class ActionsController : MonoBehaviour
                 case ItemType.Scissors:
                     break;
                 case ItemType.EnergyDrink:
-                    aSource.PlayOneShot(drinkSfx);
-                    aSource.PlayOneShot(drinkMusics.GetRandomElement());
+                    MusicController.Instance.PlayEnergyDrink(_character.CharacterColor);
                     _characterMovement.AddSpeedUp();
+                    ShakeCamera(200);
                     break;
             }
 
@@ -69,6 +76,15 @@ public class ActionsController : MonoBehaviour
 
             _itemPicker.UseItem();
         }
+    }
+
+
+    private async void ShakeCamera(int msDelay)
+    {
+        await Task.Delay(msDelay);
+        noise.m_AmplitudeGain = 1;
+        await Task.Delay(100);
+        noise.m_AmplitudeGain = 0;
     }
 
     private IEnumerator DisableStunnerTest(float stunerTime)

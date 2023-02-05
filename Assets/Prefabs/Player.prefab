@@ -998,12 +998,6 @@ MonoBehaviour:
   _itemPicker: {fileID: 8870835819245187016}
   _debugText: {fileID: 8870835819650460673}
   StunnerTest: {fileID: 259035853489278180}
-  drinkSfx: {fileID: 8300000, guid: a73144b0d5c914c46aeec159e3620631, type: 3}
-  drinkMusics:
-  - {fileID: 8300000, guid: 4e530d1bba31b497f94ffbc8fe3422e9, type: 3}
-  - {fileID: 8300000, guid: 4a3d580f3544e45e1acca3648d48e8ef, type: 3}
-  - {fileID: 8300000, guid: 96220c9fba5c1421daf44dcb03807ae1, type: 3}
-  - {fileID: 8300000, guid: 622dc9b7657974341815b43207929885, type: 3}
 --- !u!136 &2384903291921942781
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1093,8 +1087,8 @@ MonoBehaviour:
   SpeedDampTime: 0.2
   RotateSpeed: 6
   FloorOffsetY: 0.75
-  speedUpMultiplier: 1.6
-  speedUpDuration: 8
+  speedUpMultiplier: 2
+  speedUpDuration: 7
   startWithMovement: 0
   _isMovementAllowed: 0
 --- !u!114 &8870835819245187016
@@ -1165,7 +1159,7 @@ AudioSource:
   m_GameObject: {fileID: 8870835819245186992}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2868926809042417121, guid: e5893a023d556914f8f4ac5d82fc200b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1912,7 +1906,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 1b083a48c63df4818ad4df16796f1298, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 000f9cd47a097d24e9af537ef8134200, type: 2}
+      objectReference: {fileID: 22100000, guid: f63459ff7d219c1448ff9f9b12543007, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b083a48c63df4818ad4df16796f1298, type: 3}
 --- !u!4 &1936168843636914705 stripped
@@ -2259,7 +2253,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: f944b1903d2a74ade813bc73fa1354e7, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 000f9cd47a097d24e9af537ef8134200, type: 2}
+      objectReference: {fileID: 22100000, guid: 04ea75c501529cf429f93aba2e29ccd7, type: 2}
     - target: {fileID: 6658518068518882799, guid: f944b1903d2a74ade813bc73fa1354e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2649,7 +2643,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: a74de2ce9277f44f5823308903d69430, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 000f9cd47a097d24e9af537ef8134200, type: 2}
+      objectReference: {fileID: 22100000, guid: 8638c60c274d4714d8fe1a5c9590ec39, type: 2}
     - target: {fileID: 7968883414460782803, guid: a74de2ce9277f44f5823308903d69430, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

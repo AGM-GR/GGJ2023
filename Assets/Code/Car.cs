@@ -6,6 +6,7 @@ public class Car : Interactable
 {
     [SerializeField] CarColor color;
     [SerializeField] TextMeshProUGUI raversAmountText;
+    [SerializeField] TextMeshProUGUI raversSpeedMultiplierText;
     [SerializeField] DJMinigame djMinigame;
     [SerializeField] float raverLossPeriod;
 
@@ -30,6 +31,7 @@ public class Car : Interactable
 
     private void Awake()
     {
+        raversAmountText.text = "0";
         djMinigame.SetCar(this);
         pointsExit = GetComponentInChildren<RaversExit>();
     }
@@ -97,6 +99,7 @@ public class Car : Interactable
     public void SetInfluence(float carInfluence)
     {
         this.carInfluence = carInfluence;
+        raversSpeedMultiplierText.text = "X" + carInfluence.ToString();
         onInfluenceChanged?.Invoke(carInfluence);
     }
 

@@ -95,14 +95,14 @@ MonoBehaviour:
   _spawnRadios:
   - spawnRadio: 6
     spawnProbability: 1
-  - spawnRadio: 12
+  - spawnRadio: 13
     spawnProbability: 0.7
-  - spawnRadio: 18
+  - spawnRadio: 17
     spawnProbability: 0.2
-  - spawnRadio: 24
+  - spawnRadio: 19
     spawnProbability: 0.1
   meshGround: {fileID: 5075584716663242230}
-  _maxRaverCount: 120
+  _maxRaverCount: 90
   _raversSpawnBatch: 10
   _spawnRatio: 0.1
   _exitAreas:
@@ -703,8 +703,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.000001, y: 0.1, z: 9.999999}
-  m_Center: {x: 0.000061035156, y: 0, z: 0}
+  m_Size: {x: 10.000001, y: 1, z: 9.999999}
+  m_Center: {x: 0.000061035156, y: 0.5, z: 0}
 --- !u!114 &5075584716830250700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,8 +928,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.000002, y: 0.1, z: 10.000001}
-  m_Center: {x: -0.000030517578, y: 0, z: 1.1368684e-13}
+  m_Size: {x: 10.000002, y: 1, z: 10.000001}
+  m_Center: {x: -0.000030517578, y: 0.5, z: 1.1368684e-13}
 --- !u!114 &5075584716960926941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,8 +1153,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 0.1, z: 9.999999}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 1, z: 9.999999}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &5075584717017604775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,8 +1280,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.000002, y: 0.1, z: 10.000001}
-  m_Center: {x: -0.000030517578, y: 0, z: -1.1368684e-13}
+  m_Size: {x: 10.000002, y: 1, z: 10.000001}
+  m_Center: {x: -0.000030517578, y: 0.5, z: -1.1368684e-13}
 --- !u!114 &5075584717852107593
 MonoBehaviour:
   m_ObjectHideFlags: 0
