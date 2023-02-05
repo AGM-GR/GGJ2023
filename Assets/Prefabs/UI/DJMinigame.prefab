@@ -1481,6 +1481,7 @@ MonoBehaviour:
   pressThreshold: 35
   successClip: {fileID: 8300000, guid: 9a8dbfdceeec576478732d564d690ce6, type: 3}
   failClip: {fileID: 8300000, guid: 5ec8c971a16dcbd49b162b78d6fba2b7, type: 3}
+  tierUpClip: {fileID: 8300000, guid: 54613b32d9c96f440ac484de8113a41c, type: 3}
   targetText: {fileID: 3773409290864616388}
 --- !u!82 &1982160591279406845
 AudioSource:

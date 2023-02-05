@@ -27,6 +27,7 @@ public class DJMinigame : MonoBehaviour {
     [Header("AudioClips")]
     [SerializeField] AudioClip successClip;
     [SerializeField] AudioClip failClip;
+    [SerializeField] AudioClip tierUpClip;
 
     [Header("References")]
     [SerializeField] TextMeshProUGUI targetText;
@@ -99,7 +100,7 @@ public class DJMinigame : MonoBehaviour {
         MinigameActive = false;
         if (character) {
             character.GetComponent<CharacterMovement>().IsMovementAllowed = true;
-            character.CharacterAnimator.SetTrigger("ScratchEnd");
+            character.GetComponent<Animator>().SetTrigger("ScratchEnd");
         }
     }
 
@@ -132,7 +133,6 @@ public class DJMinigame : MonoBehaviour {
     }
 
     private void FailedInput(bool closing = true) {
-        Debug.Log("FAIL!");
         if (closing) {
             audioSource.PlayOneShot(failClip);
             StartCoroutine(DeactivateNextFrame());
@@ -152,6 +152,8 @@ public class DJMinigame : MonoBehaviour {
             currentTier++;
         }
         ResetTier();
+        audioSource.PlayOneShot(tierUpClip);
+        StartCoroutine(DeactivateNextFrame());
     }
 
     private void TierDown() {
@@ -160,7 +162,6 @@ public class DJMinigame : MonoBehaviour {
     }
 
     public void LowestTier() {
-        print("EPA");
         currentTier = 0;
         ResetTier();
     }
@@ -180,20 +181,22 @@ public class DJMinigame : MonoBehaviour {
     }
 
     public void ButtonExitedThreshold(DJButton button) {
-        if (!button.Succeded) {
-            FailedInput(false);
-        }
+        if (MinigameActive) {
+            if (!button.Succeded) {
+                FailedInput(false);
+            }
 
-        if (currentPressableButton == button) {
-            currentPressableButton = null;
+            if (currentPressableButton == button) {
+                currentPressableButton = null;
+            }
         }
     }
 
     private void ResetAllButtons() {
         float distance = BPM * speedMultiplier * (tiers[currentTier].halfBeats ? 2 : 1);
         for (int i = 0; i < djButtons.Length; ++i) {
-            djButtons[i].Reset(distance * (i + 1) + distance * normalizedBeatTime, speedMultiplier);
+            djButtons[i].Reset(distance * (i + 1) + distance * normalizedBeatTime, speedMultiplier, tiers[currentTier].halfBeats);
         }
-        currentPressableButton = djButtons[0];
+        currentPressableButton = null;
     }
 }
