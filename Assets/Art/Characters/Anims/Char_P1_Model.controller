@@ -39,13 +39,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 701931068408194757, guid: 463a2df1fb5334ed792fc9e59bbb8493, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Beat
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -151,13 +151,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -6775884027671718737, guid: bdca9663c718243208e33539ffd44e8a, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Beat
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -225,13 +225,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -6727083100194758068}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Beat
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -324,6 +324,12 @@ AnimatorController:
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Beat
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -752,13 +758,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 8644993156642295495, guid: fb63830cb9dc44bfa8eed626002d745f, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Beat
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
