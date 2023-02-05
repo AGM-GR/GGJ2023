@@ -96,10 +96,11 @@ public class ActionsController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Interactable interactable;
-        if (other.TryGetComponent<Interactable>(out interactable) && ((Car)interactable).CarColor == _character.CharacterColor)
+        if (other.TryGetComponent<Interactable>(out interactable))
         {
             _targetInteractable = interactable;
-            interactable.Highlight();
+            if (((Car)interactable).CarColor == _character.CharacterColor)
+                interactable.Highlight();
         }
     }
 
@@ -108,9 +109,10 @@ public class ActionsController : MonoBehaviour
     {
 
         Interactable interactable;
-        if (other.TryGetComponent<Interactable>(out interactable) && ((Car)interactable).CarColor == _character.CharacterColor) {
+        if (other.TryGetComponent<Interactable>(out interactable)) {
             _targetInteractable = null;
-            interactable.Unhighlight();
+            if (((Car)interactable).CarColor == _character.CharacterColor)
+                interactable.Unhighlight();
         }
     }
 }

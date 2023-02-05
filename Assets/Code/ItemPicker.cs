@@ -52,7 +52,7 @@ public class ItemPicker : MonoBehaviour
     {
         _slot.HideItem();
 
-        if (_currentItemPrefab != null)
+        if (_currentItemPrefab != null && CurrentItemData.Type == ItemType.BaseballBat)
         {
             BaseballTrailPrefab[(int)_character.CharacterColor].SetActive(true);
             await Task.Delay(CurrentItemData.MilisecondsDelayToHideItem);
