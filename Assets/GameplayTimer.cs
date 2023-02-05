@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameplayTimer : MonoBehaviour
 {
     private Car[] _cars;
-    public Slider slider;
+    public TextMeshProUGUI TimeText;
 
     public int TotalTimeInMinutes;
     private int _secondsLeft = 0;
@@ -18,8 +19,6 @@ public class GameplayTimer : MonoBehaviour
 
         var totalSeconds = TotalTimeInMinutes * 60;
         _secondsLeft = totalSeconds;
-        slider.minValue = 0;
-        slider.maxValue = _secondsLeft;
         StartCoroutine(StartTimer());
     }
 
@@ -27,7 +26,13 @@ public class GameplayTimer : MonoBehaviour
     {
         do
         {
-            slider.value = _secondsLeft;
+            var span = new TimeSpan(0, 0, _secondsLeft); //Or TimeSpan.FromSeconds(seconds); (see Jakob C´s answer)
+            var result = string.Format("{0}:{1:00}",
+                                        (int)span.TotalMinutes,
+                                        span.Seconds);
+
+
+            TimeText.text = result;
             yield return new WaitForSeconds(1);
             _secondsLeft--;
 
