@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefabs:
   - Prefab: {fileID: 5929326618934049044, guid: 2c7298652a2ab1f45b84225ffa4c426b, type: 3}
-    SpawnProbability: 0.05
+    SpawnProbability: 0.08
   - Prefab: {fileID: 2356853690545132120, guid: 4a2010bf64fcaca4a90f3136f9217bd7, type: 3}
-    SpawnProbability: 0.45
+    SpawnProbability: 0.25
   - Prefab: {fileID: 8764874478580199030, guid: 2747259c851e3bd4090568748280fe32, type: 3}
     SpawnProbability: 1
   _spawnRadios:
@@ -61,8 +61,9 @@ MonoBehaviour:
     spawnProbability: 0.1
   meshGround: {fileID: 0}
   _maxItemsCount: 6
-  _itemsSpawnBatch: 1
-  _spawnRatio: 0.5
+  _itemsSpawnBatch: 2
+  _spawnRatio: 0.2
+  nextBatchRatio: 2
   onlyOneDrink: 1
   aSource: {fileID: 7752631181872021022}
   spawnSfx: {fileID: 8300000, guid: 4e4d5c0bb40ef4a06af1cff0dca4b099, type: 3}
