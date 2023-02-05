@@ -12,6 +12,7 @@ public class PlayerStunner : MonoBehaviour
 
     public CharacterMovement _movement;
     public CharacterInfluenceAction _influence;
+    public CharacterDJMinigameInteraction _djMinigameInteraction;
     public bool IsStunned;
     [Space]
     public float StunnedTimeInSeconds = 2;
@@ -46,6 +47,11 @@ public class PlayerStunner : MonoBehaviour
 
     private async void StartStun(Collider other)
     {
+        if (_djMinigameInteraction.InDJMinigame)
+        {
+            _djMinigameInteraction.DJMinigame.Deactivate();
+        }
+
         Animator.SetTrigger("GetHit");
         other.gameObject.SetActive(false);
         IsStunned = true;

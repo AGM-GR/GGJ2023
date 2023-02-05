@@ -158,6 +158,7 @@ public class DJMinigame : MonoBehaviour {
             currentTier++;
         }
         ResetTier();
+        car.LowTierPassed();
         audioSource.PlayOneShot(tierUpClip);
         StartCoroutine(DeactivateNextFrame());
     }

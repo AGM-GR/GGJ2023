@@ -9,6 +9,7 @@ public class ItemsSpawner : NavMeshSpawner<Item>
     public int _maxItemsCount = 100;
     public int _itemsSpawnBatch = 10;
     public float _spawnRatio = 0.1f;
+    public float nextBatchRatio = 2f;
     public bool onlyOneDrink = true;
     private int _totalActiveItems = 0;
 
@@ -49,7 +50,7 @@ public class ItemsSpawner : NavMeshSpawner<Item>
                     }
                 }
 
-                yield return new WaitForSeconds(_spawnRatio);
+                yield return new WaitForSeconds(nextBatchRatio);
             }
             else
             {
