@@ -61,10 +61,22 @@ MonoBehaviour:
   fadeSpeed: 0.5
   energyDrinkVFX: {fileID: 0}
   drinkMusics:
-  - {fileID: 8300000, guid: 4e530d1bba31b497f94ffbc8fe3422e9, type: 3}
-  - {fileID: 8300000, guid: 4a3d580f3544e45e1acca3648d48e8ef, type: 3}
-  - {fileID: 8300000, guid: 96220c9fba5c1421daf44dcb03807ae1, type: 3}
-  - {fileID: 8300000, guid: 622dc9b7657974341815b43207929885, type: 3}
+  - clipAndBPM:
+      audioClip: {fileID: 8300000, guid: 4e530d1bba31b497f94ffbc8fe3422e9, type: 3}
+      BPM: 142.5
+    color: 0
+  - clipAndBPM:
+      audioClip: {fileID: 8300000, guid: 4a3d580f3544e45e1acca3648d48e8ef, type: 3}
+      BPM: 190
+    color: 1
+  - clipAndBPM:
+      audioClip: {fileID: 8300000, guid: 96220c9fba5c1421daf44dcb03807ae1, type: 3}
+      BPM: 191
+    color: 2
+  - clipAndBPM:
+      audioClip: {fileID: 8300000, guid: 622dc9b7657974341815b43207929885, type: 3}
+      BPM: 171
+    color: 3
 --- !u!82 &5660881669556069605
 AudioSource:
   m_ObjectHideFlags: 0
