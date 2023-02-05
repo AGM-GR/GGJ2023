@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum CarColor
 {
-    RED,
-    GREEN,
-    BLUE, 
-    PURPLE
+    BLUE,
+    YELLOW,
+    PURPLE, 
+    RED
 }

@@ -200,6 +200,39 @@ MonoBehaviour:
   - {fileID: 5295466173817770139}
   - {fileID: 5295466173807665899}
   - {fileID: 5295466174120869814}
+  startGame:
+    m_Name: Start Game
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 6bdfc807-6170-470b-a109-9a24c9532439
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 581f3716-f096-4a41-adde-25d746394694
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Start Game
+      m_Flags: 0
+    - m_Name: 
+      m_Id: dc1f79a5-3e78-4546-94ae-1acbf694dade
+      m_Path: <Gamepad>/start
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Start Game
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 0e51170d-260a-4ef1-8297-7d0157217299
+      m_Path: <HID::Razer Razer Raiju Tournament Edition Wired>/button10
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Start Game
+      m_Flags: 0
+    m_Flags: 1
 --- !u!1 &7037066949060147721
 GameObject:
   m_ObjectHideFlags: 0

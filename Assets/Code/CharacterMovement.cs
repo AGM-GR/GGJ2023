@@ -11,6 +11,8 @@ public class CharacterMovement : MonoBehaviour
     public float SpeedDampTime = 0.2f;
     public float RotateSpeed = 6f;
     public float FloorOffsetY = 0.75f;
+    [Space]
+    [Header("Debug")]
     public bool startWithMovement;
 
     // Private fields
@@ -23,12 +25,17 @@ public class CharacterMovement : MonoBehaviour
     // Component dependences
     private Camera _mainCamera;
     private Rigidbody _rb;
-    private Animator _animator;
+    private Character _character;
+    private Animator Animator => _character.CharacterAnimator;
 
     public bool IsMovementAllowed { get; set; }
 
-    private void Awake() {
-        if (startWithMovement) {
+    private void Awake()
+    {
+        _character = GetComponent<Character>();
+
+        if (startWithMovement)
+        {
             IsMovementAllowed = true;
         }
     }
@@ -37,7 +44,6 @@ public class CharacterMovement : MonoBehaviour
     {
         _mainCamera = Camera.main;
         _rb = GetComponent<Rigidbody>();
-        _animator = GetComponentInChildren<Animator>();
     }
 
 
@@ -49,15 +55,22 @@ public class CharacterMovement : MonoBehaviour
         _horizontalAxis = value.Get<Vector2>().x;
 
         Move();
-        _animator.SetFloat("Speed", _inputAmount);
+        Animator.SetFloat("Speed", _inputAmount);
         _rb.velocity = _moveDirection * MoveSpeed * _inputAmount;
     }
 
     private void Update()
     {
+        // TEST
+        IsMovementAllowed = IsIdleOrLocomotion() && _character.IsInit;
+
         Rotate();
     }
 
+    private bool IsIdleOrLocomotion()
+    {
+        return Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") || Animator.GetCurrentAnimatorStateInfo(0).IsName("Locomotion");
+    }
 
     private void Move()
     {

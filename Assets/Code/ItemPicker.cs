@@ -6,8 +6,8 @@ using UnityEngine;
 /// </summary>
 public class ItemPicker : MonoBehaviour
 {
-    public Character _user;
-    public ItemData CurrentItemData; // just one slot
+    private Character _character;
+    [HideInInspector] public ItemData CurrentItemData; // just one slot
     private ItemSlot _slot; // just one slot
 
     public bool HasItem => CurrentItemData != null;
@@ -15,7 +15,8 @@ public class ItemPicker : MonoBehaviour
 
     private void Start()
     {
-        _slot = FindObjectsOfType<ItemSlot>().Where(s => s.Rave == _user.CharacterColor).First();
+        _character = GetComponent<Character>();
+        _slot = FindObjectsOfType<ItemSlot>().Where(s => s.Rave == _character.CharacterColor).First();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,7 +26,7 @@ public class ItemPicker : MonoBehaviour
         {
             CurrentItemData = item.Data;
             // update ui
-            item.Pick(_user.CharacterColor);
+            item.Pick(_character.CharacterColor);
         }
     }
 
