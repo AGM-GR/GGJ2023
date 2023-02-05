@@ -22,7 +22,7 @@ public class Character : MonoBehaviour
 
         IsInit = true;
 
-        var spawningPoint = FindObjectsOfType<CharacterSpawningPoint>().Where(c => c.color == characterColor).First();
-        transform.position = spawningPoint.transform.position;
+       // var spawningPoint = FindObjectsOfType<CharacterSpawningPoint>().Where(c => c.color == characterColor).First();
+       // transform.position = spawningPoint.transform.position;
     }
 }
