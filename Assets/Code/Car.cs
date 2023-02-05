@@ -16,6 +16,8 @@ public class Car : Interactable
 
     public Vector3 PointsExit { get { return pointsExit.transform.position; } }
     public CarColor CarColor { get { return color; } }
+    public int CurrentRavers => currentRavers;
+    public int CharacterIndex => movement.GetComponent<Character>().CharacterIndex;
 
     public System.Action<float> onInfluenceChanged;
 

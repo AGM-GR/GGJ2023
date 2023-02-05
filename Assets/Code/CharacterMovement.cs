@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -69,25 +70,26 @@ public class CharacterMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-
-    public void OnMove(InputValue value)
+    private void Update()
     {
-        if(!IsMovementAllowed) return;
+        IsMovementAllowed = _character.IsInit && IsIdleOrLocomotion();
+        Rotate();
 
-        _verticalAxis = value.Get<Vector2>().y;
-        _horizontalAxis = value.Get<Vector2>().x;
+        if (!IsMovementAllowed) return;
 
         Move();
         Animator.SetFloat("Speed", _inputAmount);
         _rb.velocity = _moveDirection * MoveSpeed * _inputAmount * _currentSpeedMultiplier;
+
+    }  
+
+
+    public void OnMove(InputValue value)
+    {
+        _verticalAxis = value.Get<Vector2>().y;
+        _horizontalAxis = value.Get<Vector2>().x;
     }
 
-    private void Update()
-    {
-        // TEST
-        IsMovementAllowed = _character.IsInit && IsIdleOrLocomotion();
-        Rotate();
-    }
 
     private bool IsIdleOrLocomotion()
     {
