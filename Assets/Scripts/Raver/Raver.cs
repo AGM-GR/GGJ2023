@@ -8,11 +8,33 @@ public class Raver : RaverBase
     [SerializeField]
     private float _baseSpeed = 2f;
     [SerializeField]
+    private float beatSpeedMultiplier = 0.2f;
+    [SerializeField]
     private NavMeshAgent _navMeshAgent;
     [SerializeField]
     private RaverMaterials _raverMaterials;
+    [SerializeField]
+    private SpriteRenderer circle;
+    [SerializeField]
+    private Color blueColor;
+    [SerializeField]
+    private Color redColor;
+    [SerializeField]
+    private Color yellowColor;
+    [SerializeField]
+    private Color purpleColor;
+
+    private Animator animator;
 
     public NavMeshAgent NavMeshAgent => _navMeshAgent;
+
+    private void Awake() {
+        animator = GetComponentInChildren<Animator>();        
+    }
+
+    private void Start() {
+        MusicController.OnMusicChanged += SetAnimatorBeat;        
+    }
 
     private void OnValidate()
     {
@@ -33,9 +55,13 @@ public class Raver : RaverBase
         base.EnableRaver();
         SetRaverMaterial();
 
+        _navMeshAgent.speed = _baseSpeed;
         gameObject.SetActive(true);
         _navMeshAgent.enabled = true;
         _raverSpawner.RaverEnabled();
+        circle.enabled = false;
+        SetAnimatorBeat();
+        SetAnimationSpeed();
     }
 
     public override void DisableRaver()
@@ -46,17 +72,24 @@ public class Raver : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
+    public override void InfluencedByPlayer(CarColor carColor, Car influencingCar)
     {
-        base.InfluencedByPlayer(raveColor, influencingCar);
-        SetPlayerMaterial(raveColor);
+        base.InfluencedByPlayer(carColor, influencingCar);
+        SetPlayerMaterial(carColor);
         SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
+        InfluenceCircle(carColor);
+    }
+
+    public void InfluenceCircle(CarColor carColor) {
+        circle.enabled = true;
+        circle.color = GetColorByCarColor(carColor);
     }
 
     public override void ChangeSpeedMultiplier(float speedMultiplier)
     {
         _navMeshAgent.speed = _baseSpeed * speedMultiplier;
+        SetAnimationSpeed();
     }
 
     public void SetRaverMaterial()
@@ -67,5 +100,29 @@ public class Raver : RaverBase
     public void SetPlayerMaterial(CarColor raveColor)
     {
         _raverMaterials.SetPlayerMaterial((int)raveColor);
+    }
+
+    private Color GetColorByCarColor(CarColor carColor) {
+        switch (carColor) {
+            case CarColor.BLUE:
+                return blueColor;
+            case CarColor.PURPLE:
+                return purpleColor;
+            case CarColor.RED:
+                return redColor;
+            case CarColor.YELLOW:
+                return yellowColor;
+            default:
+                return Color.white;
+        }
+    }
+
+    public void  SetAnimatorBeat() {
+        animator.SetFloat("Beat", MusicController.beatMultiplier);
+    }
+
+    private void SetAnimationSpeed() {
+        //animator.SetFloat("Speed", 0.011f);
+        animator.SetFloat("Speed", _navMeshAgent.speed * beatSpeedMultiplier);
     }
 }

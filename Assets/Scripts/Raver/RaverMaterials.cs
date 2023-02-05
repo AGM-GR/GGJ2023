@@ -17,11 +17,11 @@ public class RaverMaterials : MonoBehaviour
 
     public void SetPlayerMaterial(int playerIndex)
     {
-        _renderer.sharedMaterial = _playerMaterial[playerIndex];
+        //_renderer.sharedMaterial = _playerMaterial[playerIndex];
     }
 
     public void SetRaverMaterial()
     {
-        _renderer.sharedMaterial = _raverMaterial;
+        //_renderer.sharedMaterial = _raverMaterial;
     }
 }
