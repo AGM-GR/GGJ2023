@@ -71,7 +71,7 @@ public abstract class RaverBase : MonoBehaviour
 
         if (_currentState == RaverState.IDLE)
         {
-            yield return new WaitForSeconds(Random.Range(0.2f, 1f));
+            yield return new WaitForSeconds(Random.Range(0.8f, 1.4f));
 
             if (_currentState == RaverState.IDLE)
             {

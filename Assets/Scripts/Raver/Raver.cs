@@ -53,7 +53,6 @@ public class Raver : RaverBase
     public override void EnableRaver()
     {
         base.EnableRaver();
-        SetRaverMaterial();
 
         _navMeshAgent.speed = _baseSpeed;
         gameObject.SetActive(true);
@@ -62,6 +61,7 @@ public class Raver : RaverBase
         circle.enabled = false;
         SetAnimatorBeat();
         SetAnimationSpeed();
+        _raverMaterials.DoDissolve(0.6f);
     }
 
     public override void DisableRaver()
@@ -75,7 +75,6 @@ public class Raver : RaverBase
     public override void InfluencedByPlayer(CarColor carColor, Car influencingCar)
     {
         base.InfluencedByPlayer(carColor, influencingCar);
-        SetPlayerMaterial(carColor);
         SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
         InfluenceCircle(carColor);
@@ -90,16 +89,6 @@ public class Raver : RaverBase
     {
         _navMeshAgent.speed = _baseSpeed * speedMultiplier;
         SetAnimationSpeed();
-    }
-
-    public void SetRaverMaterial()
-    {
-        _raverMaterials.SetRaverMaterial();
-    }
-
-    public void SetPlayerMaterial(CarColor raveColor)
-    {
-        _raverMaterials.SetPlayerMaterial((int)raveColor);
     }
 
     private Color GetColorByCarColor(CarColor carColor) {

@@ -8,14 +8,20 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MaleGroup_Color
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords: []
+  m_Shader: {fileID: 4800000, guid: 8750d3619374ac2439af6b2013749396, type: 3}
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _DISSOLVE
+  - _DISSOLVE_LOCAL_SPACE
+  - _DISSOLVE_SHADOW
+  - _SHADOWFULLALPHA_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -34,6 +40,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: 8aaa8d5c3dcd2d94a9ef1d1cbda56930, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -61,20 +71,27 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DissolveGlowTightness: 0
+    - _DissolveMode: 1
+    - _DissolveProgression: 0
+    - _DissolveShadow: 1
+    - _DissolveSize: 5
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.9
     - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
+    - _Metallic: 0.7
+    - _Mode: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ShadowMode: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.99034953, g: 1, b: 0, a: 1}
+    - _DissolveGlow: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -74,7 +74,7 @@ public class RaversGroup : RaverBase
         base.InfluencedByPlayer(carColor, influencingCar);
         foreach (Raver raver in _raversInGroup)
         {
-            raver.SetPlayerMaterial(carColor);
+            //raver.SetPlayerMaterial(carColor);
             raver.InfluenceCircle(carColor);
         }
         SetDestination(influencingCar.PointsExit);
