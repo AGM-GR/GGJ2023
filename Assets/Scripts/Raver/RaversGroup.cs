@@ -42,6 +42,7 @@ public class RaversGroup : RaverBase
 
     public override void EnableRaver()
     {
+        base.EnableRaver();
         gameObject.SetActive(true);
 
         for (int i=0; i < _raversInGroup.Length; i++)
@@ -58,6 +59,8 @@ public class RaversGroup : RaverBase
 
     public override void DisableRaver()
     {
+        base.DisableRaver();
+
         foreach (Raver raver in _raversInGroup)
         {
             raver.DisableRaver();

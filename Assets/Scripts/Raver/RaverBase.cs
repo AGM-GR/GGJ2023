@@ -31,9 +31,18 @@ public abstract class RaverBase : MonoBehaviour
         _finalDestination = destination;
     }
 
-    public abstract void EnableRaver();
+    public virtual void EnableRaver()
+    {
+        _currentState = RaverState.IDLE;
+    }
 
-    public abstract void DisableRaver();
+    public virtual void DisableRaver()
+    {
+        // Disconnec the old car
+        if (_currentInfluencingCar != null)
+            _currentInfluencingCar.onInfluenceChanged -= ChangeSpeedMultiplier;
+        _currentInfluencingCar = null;
+    }
 
     public virtual void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
     {
