@@ -43,8 +43,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1333936
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.14
+  m_Center: {x: 0, y: 1.14, z: 0}
 --- !u!1 &2426157343659302058
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!114 &589278177152257944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 8870835819245186999}
   - component: {fileID: 2803676385956394543}
   - component: {fileID: 8870835819245186993}
-  - component: {fileID: 8870835819245186996}
+  - component: {fileID: 2384903291921942781}
   - component: {fileID: 8870835819245186997}
   - component: {fileID: 9112374262877955239}
   - component: {fileID: 8870835819245187018}
@@ -561,23 +561,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ccb338282c7384d9166a579ffe7f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SphereCollider: {fileID: 8870835819245186996}
   _itemPicker: {fileID: 8870835819245187016}
   _debugText: {fileID: 8870835819650460673}
   StunnerTest: {fileID: 259035853489278180}
---- !u!135 &8870835819245186996
-SphereCollider:
+--- !u!136 &2384903291921942781
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8870835819245186992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 13400000, guid: f52af1649eaaea542a9c9d715b681894, type: 2}
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.2
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &8870835819245186997
 Rigidbody:
   m_ObjectHideFlags: 0

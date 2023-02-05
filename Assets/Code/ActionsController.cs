@@ -5,7 +5,6 @@ using System.Collections;
 
 public class ActionsController : MonoBehaviour
 {
-    public SphereCollider SphereCollider;
     public ItemPicker _itemPicker;
     public TextMeshProUGUI _debugText;
     private Interactable _targetInteractable;
@@ -21,12 +20,6 @@ public class ActionsController : MonoBehaviour
     {
         _character = GetComponent<Character>();
         _characterMovement = GetComponent<CharacterMovement>();
-        Initialize();
-    }
-
-    private void Initialize()
-    {
-        SphereCollider.isTrigger = true;
     }
 
     public void OnStartMinigame() {
