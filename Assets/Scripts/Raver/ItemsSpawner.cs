@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class ItemsSpawner : NavMeshSpawner<Item>
 {
+    public static bool EnergyDrinkSpawned = false;
+    
     [Header("Items Spawner")]
     public int _maxItemsCount = 100;
     public int _itemsSpawnBatch = 10;
     public float _spawnRatio = 0.1f;
+    public bool onlyOneDrink = true;
     private int _totalActiveItems = 0;
 
     public AudioSource aSource;
@@ -15,19 +18,33 @@ public class ItemsSpawner : NavMeshSpawner<Item>
 
     private IEnumerator Start()
     {
+        EnergyDrinkSpawned = false;
+
         while (true)
         {
             if (_totalActiveItems < _maxItemsCount)
             {
                 for (int i = 0; i < _itemsSpawnBatch; i++)
                 {
-                    Item raverSpawned = SpawnRandom();
-                    if (raverSpawned != null)
+                    Item itemSpawned = SpawnRandom();
+                    while (itemSpawned != null && onlyOneDrink && itemSpawned.Data.Type == ItemType.EnergyDrink && EnergyDrinkSpawned) 
                     {
+                        itemSpawned.gameObject.SetActive(false);
+                        itemSpawned = SpawnRandom();
+                    }
+
+                    if (itemSpawned != null)
+                    {
+                        if (itemSpawned.Data.Type == ItemType.EnergyDrink)
+                        {
+                            EnergyDrinkSpawned = true;
+                        }
+
+                        itemSpawned.GetComponent<Animator>().SetFloat("Beat", MusicController.beatMultiplier);
                         aSource.PlayOneShot(spawnSfx);
-                        raverSpawned.Spawner = this;
+                        itemSpawned.Spawner = this;
                         yield return new WaitForSeconds(_spawnRatio);
-                        raverSpawned.gameObject.SetActive(true);
+                        itemSpawned.gameObject.SetActive(true);
                         _totalActiveItems++;
                     }
                 }
