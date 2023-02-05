@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour {
-    [SerializeField] RaveColor characterColor;
+    [SerializeField] CarColor characterColor;
 
-    public RaveColor CharacterColor { get { return characterColor; } }
+    public CarColor CharacterColor { get { return characterColor; } }
+
+    public void SetCharacterColor(CarColor carColor)
+    {
+        characterColor = carColor;
+    }
 }

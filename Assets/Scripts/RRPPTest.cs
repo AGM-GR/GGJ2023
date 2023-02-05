@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RRPPTest : MonoBehaviour
 {
-    [SerializeField] RaveColor color;
+    [SerializeField] CarColor color;
     [SerializeField] Transform raveTarget;
 
     private void OnTriggerEnter(Collider other) {

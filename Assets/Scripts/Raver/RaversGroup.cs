@@ -14,6 +14,10 @@ public class RaversGroup : RaverBase
     private void Awake()
     {
         _raversOffsetInGroup = new Vector3[_raversInGroup.Length];
+        foreach (Raver raver in _raversInGroup)
+        {
+            raver.RaversGroup = this;
+        }
     }
 
     public override void SetSpawner(RaversSpawner spawner)
@@ -60,8 +64,9 @@ public class RaversGroup : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(RaveColor raveColor, Vector3 destination)
+    public override void InfluencedByPlayer(CarColor raveColor, Vector3 destination)
     {
+        base.InfluencedByPlayer(raveColor, destination);
         foreach (Raver raver in _raversInGroup)
         {
             raver.SetPlayerMaterial(raveColor);

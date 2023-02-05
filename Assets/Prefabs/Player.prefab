@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8870835819245186999}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &7194206468657080100
 SphereCollider:
@@ -45,6 +45,64 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.1333936
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2426157343659302058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7818478831211465011}
+  - component: {fileID: 5773042757638996136}
+  - component: {fileID: 589278177152257944}
+  m_Layer: 0
+  m_Name: Influence Ravers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7818478831211465011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426157343659302058}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 8870835819245186999}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5773042757638996136
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426157343659302058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &589278177152257944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426157343659302058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11e8c9dc2d377149af024bf149a9c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8870835819117567088
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +339,7 @@ GameObject:
   - component: {fileID: 8870835819245187019}
   - component: {fileID: 8870835819245187016}
   - component: {fileID: 8870835819245187017}
-  - component: {fileID: 4314146313003985751}
+  - component: {fileID: 5972657309720533824}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -304,6 +362,7 @@ Transform:
   - {fileID: 8870835821101816182}
   - {fileID: 8870835819117567089}
   - {fileID: 8870835819185453334}
+  - {fileID: 7818478831211465011}
   - {fileID: 8659478534643567610}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -378,7 +437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07bf304a3834ec41a804146c40d254d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  djMinigame: {fileID: 0}
 --- !u!114 &8870835819245187018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5d3cd6c7776aa49ad14078a30a0ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _user: {fileID: 4314146313003985751}
+  _user: {fileID: 2803676385956394543}
   CurrentItemData: {fileID: 0}
 --- !u!114 &8870835819245187017
 MonoBehaviour:
@@ -454,8 +512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 8870835819245187019}
+  _influence: {fileID: 5972657309720533824}
   IsStunned: 0
---- !u!114 &4314146313003985751
+--- !u!114 &5972657309720533824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -464,10 +523,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8870835819245186992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd2212070b480af458b4080cff35ef63, type: 3}
+  m_Script: {fileID: 11500000, guid: a482df28bed21554dbfb47d63344fbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rave: 0
+  influenceTrigger: {fileID: 589278177152257944}
 --- !u!1 &8870835819650460675
 GameObject:
   m_ObjectHideFlags: 0

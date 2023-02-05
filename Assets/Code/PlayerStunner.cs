@@ -4,7 +4,11 @@ using System.Threading.Tasks;
 public class PlayerStunner : MonoBehaviour
 {
     public CharacterMovement _movement;
+    public Animator _animator;
+    public CharacterInfluenceAction _influence;
     public bool IsStunned;
+    [Space]
+    public float StunnedTimeInSeconds = 2;
 
     private async void OnTriggerEnter(Collider other)
     {
@@ -13,15 +17,27 @@ public class PlayerStunner : MonoBehaviour
             // vfx!
             // sfx!
 
-            other.gameObject.SetActive(false);
-
-            IsStunned = true;
-            Debug.Log("Start stun!");
-            _movement.IsMovementAllowed = false;
-            await Task.Delay(2000);
-            Debug.Log("End stun!");
-            _movement.IsMovementAllowed = true;
-            IsStunned = false;
+            StartStun(other);
+            await Task.Delay((int)(StunnedTimeInSeconds * 1000));
+            EndStun();
         }
+    }
+
+
+    private void StartStun(Collider other)
+    {
+        _animator.SetTrigger("GetHit");
+        other.gameObject.SetActive(false);
+        IsStunned = true;
+        _influence.CanInfluence = false;
+        _movement.IsMovementAllowed = false;
+    }
+
+    private void EndStun()
+    {
+        _animator.SetTrigger("GetUp");
+        _influence.CanInfluence = true;
+        _movement.IsMovementAllowed = true;
+        IsStunned = false;
     }
 }

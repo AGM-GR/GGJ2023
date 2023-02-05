@@ -1458,17 +1458,25 @@ MonoBehaviour:
   currentTier: 1
   tiers:
   - duration: -1
-    speedMultiplier: 0
-    successGoalToLevelUp: 0
+    speedMultiplier: 0.25
+    successGoalToLevelUp: 2
+    raveInfluence: 0
+    halfBeats: 1
   - duration: -1
     speedMultiplier: 0.25
     successGoalToLevelUp: 4
+    raveInfluence: 0
+    halfBeats: 1
   - duration: 10
     speedMultiplier: 0.5
     successGoalToLevelUp: 8
+    raveInfluence: 0
+    halfBeats: 0
   - duration: 5
     speedMultiplier: 1
     successGoalToLevelUp: 12
+    raveInfluence: 0
+    halfBeats: 0
   skipLimit: 200
   pressThreshold: 35
   successClip: {fileID: 8300000, guid: 9a8dbfdceeec576478732d564d690ce6, type: 3}

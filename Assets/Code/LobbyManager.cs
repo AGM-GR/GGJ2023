@@ -9,10 +9,7 @@ public class LobbyManager : MonoBehaviour
     private PlayerInputManager _inputManager;
     public int ConnectedPlayersAmount;
     public Button PlayGameButton;
-    public List<GameObject> characterBanners;
-
-
-    private int _currentPlayerIndex = 0;
+    public List<Animator> characterBanners;
 
     private void Awake()
     {
@@ -21,23 +18,37 @@ public class LobbyManager : MonoBehaviour
 
         _inputManager = FindObjectOfType<PlayerInputManager>();
         _inputManager.onPlayerJoined += (p) => OnPlayerJoined(p);
+        _inputManager.onPlayerLeft += (p) => OnPlayerLeft(p);
 
-        characterBanners.ForEach(b => b.SetActive(false));
+        //characterBanners.ForEach(a => a.SetTrigger("PlayerEntry"));
     }
 
     private void OnPlayerJoined(PlayerInput player)
     {
         Debug.Log("Player joined!");
         // Assign rave to a player
-        characterBanners[_currentPlayerIndex].SetActive(true);
-        player.GetComponent<PlayerUser>().Rave = (RaveColor)_currentPlayerIndex;
-        _currentPlayerIndex++;
+        characterBanners[player.playerIndex].SetTrigger("PlayerEntry");
+        player.GetComponent<Character>().SetCharacterColor((CarColor)player.playerIndex);
 
         ConnectedPlayersAmount++;
-        if (ConnectedPlayersAmount >= 2)
-        {
-            PlayGameButton.interactable = true;
-        }
+        RefreshPlayButton();
+    }
+
+    private void RefreshPlayButton()
+    {
+        PlayGameButton.interactable = ConnectedPlayersAmount >= 2;
+    }
+
+    private void OnPlayerLeft(PlayerInput player)
+    {
+        Debug.Log("Player left!");
+
+        // Assign rave to a player
+        characterBanners[player.playerIndex].SetTrigger("PlayerDisconnect");
+
+        ConnectedPlayersAmount--;
+        RefreshPlayButton();
+
     }
 
 
@@ -52,6 +63,9 @@ public class LobbyManager : MonoBehaviour
     private static void AllowPlayersMovement()
     {
         var characterMovements = FindObjectsOfType<CharacterMovement>().ToList();
-        characterMovements.ForEach(o => o.IsMovementAllowed = true);
+        characterMovements.ForEach(o => {
+            o.GetComponent<CharacterInfluenceAction>().CanInfluence = true;
+            o.IsMovementAllowed = true;
+        });
     }
 }

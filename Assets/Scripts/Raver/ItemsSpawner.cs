@@ -18,7 +18,6 @@ public class ItemsSpawner : NavMeshSpawner<Item>
             {
                 for (int i = 0; i < _itemsSpawnBatch; i++)
                 {
-                    Debug.Log("Spawn");
                     Item raverSpawned = SpawnRandom();
                     if (raverSpawned != null)
                     {

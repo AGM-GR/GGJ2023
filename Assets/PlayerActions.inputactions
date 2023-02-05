@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "InfluenceRaver",
+                    "type": "Button",
+                    "id": "e6a3c420-25f0-495d-b1f3-a3ecf59f3fcd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "ExecuteAction",
                     "type": "Button",
                     "id": "9183c799-00d3-423b-9599-481d1500b9f0",
@@ -30,7 +39,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "MinigameWestButton",
@@ -39,7 +48,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "MinigameEastButton",
@@ -48,12 +57,21 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "MinigameNorthButton",
                     "type": "Button",
                     "id": "e73774eb-7253-406a-96b9-dad757e79853",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "StartMinigame",
+                    "type": "Button",
+                    "id": "8aa3d6c8-07ad-4c06-a9ff-eec8e3485d77",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -229,7 +247,7 @@
                 {
                     "name": "",
                     "id": "ca0c6420-31ca-4ead-8e09-06c1c48a08b5",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -240,7 +258,7 @@
                 {
                     "name": "",
                     "id": "7626a3d8-8821-4491-89c1-b6042494846f",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -251,7 +269,7 @@
                 {
                     "name": "",
                     "id": "721fde91-33dd-4f7e-b0a8-d493ad4434b6",
-                    "path": "<HID::Razer Razer Raiju Tournament Edition Wired>/button2",
+                    "path": "<Joystick>/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
@@ -344,6 +362,72 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "MinigameNorthButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d780a4e-0e75-4ad0-9a80-58367b59c84e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "InfluenceRaver",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7298c24a-2025-47a8-92aa-6afbfd2c4a4d",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "InfluenceRaver",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c90597d3-6efe-4f0c-8fec-b62b36f0d539",
+                    "path": "<HID::Razer Razer Raiju Tournament Edition Wired>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "InfluenceRaver",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3c8a449-2530-4293-828e-181498e3765d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "StartMinigame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1909ced2-9440-4b72-a667-b30e8cc0ff4d",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "StartMinigame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe91809f-becb-4142-9ad7-65ad11cf9846",
+                    "path": "<HID::Razer Razer Raiju Tournament Edition Wired>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "StartMinigame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
