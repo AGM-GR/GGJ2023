@@ -46,7 +46,7 @@ public class Raver : RaverBase
     {
         base.InfluencedByPlayer(raveColor, influencingCar);
         SetPlayerMaterial(raveColor);
-        SetDestination(influencingCar.transform.position);
+        SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
     }
 

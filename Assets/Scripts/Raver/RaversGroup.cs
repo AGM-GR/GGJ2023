@@ -11,6 +11,8 @@ public class RaversGroup : RaverBase
 
     private Vector3[] _raversOffsetInGroup;
 
+    public int AmountOfRavers { get { return _raversInGroup.Length; } }
+
     private void Awake()
     {
         _raversOffsetInGroup = new Vector3[_raversInGroup.Length];

@@ -12,12 +12,16 @@ public class Car : Interactable
     float carInfluence;
     int currentRavers;
 
+    RaversExit pointsExit;
+
+    public Vector3 PointsExit { get { return pointsExit.transform.position; } }
     public CarColor CarColor { get { return color; } }
 
     public System.Action<float> onInfluenceChanged;
 
     private void Awake() {
         djMinigame.SetCar(this);
+        pointsExit = GetComponentInChildren<RaversExit>();
     }
 
     public override void Interact(ItemPicker picker)
@@ -66,5 +70,10 @@ public class Car : Interactable
     public float GetSpeedMultiplierByInfluence()
     {
         return carInfluence;
+    }
+
+    public void IncreaseRavers(int amount) {
+        currentRavers += amount;
+        raversAmountText.text = currentRavers.ToString();
     }
 }
