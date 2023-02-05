@@ -7,10 +7,11 @@ public class Item : MonoBehaviour
     public ItemSlot Slot;
 
     public ItemsSpawner Spawner;
+    private Animator _animator;
 
-    public void Spawn()
+    private void Start()
     {
-        // anim, vfx, etc
+        _animator = GetComponent<Animator>();
     }
 
     public void Pick(CarColor color)
@@ -21,6 +22,7 @@ public class Item : MonoBehaviour
         Slot.ShowItem(Data);
 
         Spawner.ItemDisabled();
+        _animator.SetTrigger("OpenBox");
     }
 
 }
