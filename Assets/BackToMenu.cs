@@ -24,7 +24,7 @@ public class BackToMenu : MonoBehaviour
 
     IEnumerator Fade()
     {
-        for (float f = 1f; f >= 0; f -= 0.1f)
+        for (float f = 1f; f >= 0; f -= 0.01f)
         {
             Color c = fadeImg.color;
             c.a = f;
