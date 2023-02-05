@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7517a9bc796c0c47969c163d7df9d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ImgGO: {fileID: 4905185215402164150}
   Img: {fileID: 1475947937541518793}
   Rave: 3
 --- !u!1 &2203135437028404618
@@ -548,6 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7517a9bc796c0c47969c163d7df9d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ImgGO: {fileID: 1201123742107719243}
   Img: {fileID: 6762894412909102781}
   Rave: 1
 --- !u!1 &2321327756865373488
@@ -1566,6 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7517a9bc796c0c47969c163d7df9d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ImgGO: {fileID: 3416597136334369224}
   Img: {fileID: 6934455342244697619}
   Rave: 0
 --- !u!1 &5881903696927715238
@@ -1712,6 +1715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7517a9bc796c0c47969c163d7df9d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ImgGO: {fileID: 8431570419915794615}
   Img: {fileID: 926998823899509666}
   Rave: 2
 --- !u!1 &7618265292555952095
