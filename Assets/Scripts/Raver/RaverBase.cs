@@ -13,6 +13,7 @@ public abstract class RaverBase : MonoBehaviour
 
     internal Vector3 _finalDestination;
     internal RaversSpawner _raverSpawner;
+    internal Car _currentInfluencingCar;
 
     internal RaverState _currentState;
 
@@ -34,10 +35,20 @@ public abstract class RaverBase : MonoBehaviour
 
     public abstract void DisableRaver();
 
-    public virtual void InfluencedByPlayer(CarColor raveColor, Vector3 destination)
+    public virtual void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
     {
         _currentState = RaverState.INFLUENCED;
+
+        // Disconnec the old car
+        if (_currentInfluencingCar != null)
+            _currentInfluencingCar.onInfluenceChanged -= ChangeSpeedMultiplier;
+
+        // Connec to new car
+        _currentInfluencingCar = influencingCar;
+        _currentInfluencingCar.onInfluenceChanged += ChangeSpeedMultiplier;
     }
+
+    public abstract void ChangeSpeedMultiplier(float speedMultiplier);
 
     public virtual void StartRaverLogic()
     {

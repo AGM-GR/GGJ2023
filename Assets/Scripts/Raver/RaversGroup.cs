@@ -64,14 +64,23 @@ public class RaversGroup : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(CarColor raveColor, Vector3 destination)
+    public override void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
     {
-        base.InfluencedByPlayer(raveColor, destination);
+        base.InfluencedByPlayer(raveColor, influencingCar);
         foreach (Raver raver in _raversInGroup)
         {
             raver.SetPlayerMaterial(raveColor);
         }
-        SetDestination(destination);
+        SetDestination(influencingCar.transform.position);
+        ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
+    }
+
+    public override void ChangeSpeedMultiplier(float speedMultiplier)
+    {
+        foreach (Raver raver in _raversInGroup)
+        {
+            raver.ChangeSpeedMultiplier(speedMultiplier);
+        }
     }
 
     private void OnDrawGizmosSelected()
