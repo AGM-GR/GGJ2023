@@ -104,6 +104,12 @@ public class DJMinigame : MonoBehaviour {
         }
     }
 
+    public void StartMovement() {
+        foreach (DJButton djButton in djButtons) {
+            djButton.InMovement = true;
+        }
+    }
+
     public void ReceiveInput(MinigameButton button) {
         if (currentPressableButton) {
             if (!currentPressableButton.AlreadyTried) {

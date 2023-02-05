@@ -1184,6 +1184,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
+      propertyPath: musicController
+      value: 
+      objectReference: {fileID: 1738024868}
+    - target: {fileID: 7037066950276371487, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}
       propertyPath: characterBanners.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1424,8 +1428,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1738024867}
   - component: {fileID: 1738024866}
+  - component: {fileID: 1738024868}
   m_Layer: 0
-  m_Name: Music
+  m_Name: MusicController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1442,7 +1447,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d15366e706eebea4080f9d49ba805303, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1542,6 +1547,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1738024868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738024865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfac2cb5a0fe28540b593239fdfc2dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  djMinigames:
+  - {fileID: 189806296}
+  - {fileID: 189806295}
+  - {fileID: 189806294}
+  - {fileID: 189806293}
 --- !u!95 &1824409887 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3016111942337093102, guid: 883ccf1346cf8c64f96ccfd74f739996, type: 3}

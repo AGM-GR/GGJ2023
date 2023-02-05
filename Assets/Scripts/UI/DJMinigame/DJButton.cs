@@ -14,6 +14,7 @@ public class DJButton : MonoBehaviour
     public MinigameButton CurrentMinigameButton { get; private set; }
     public bool AlreadyTried { get; set; }
     public bool Succeded { get; set; }
+    public bool InMovement { get; set; }
 
     float skipLimit;
     float BPM;
@@ -56,17 +57,19 @@ public class DJButton : MonoBehaviour
     }
 
     private void Update() {
-        RectTransform rect = GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(rect.anchoredPosition.x - BPM * (1 / (60 / BPM)) * speedMultiplier * Time.deltaTime * (invert ? -1 : 1), rect.anchoredPosition.y);
-        if (!pressable && InPressableSpace()) {
-            pressable = true;
-            djMinigame.ButtonEnteredThreshold(this);
-        } else if (pressable && !InPressableSpace()) {
-            pressable = false;
-            djMinigame.ButtonExitedThreshold(this);
-        } else if ((!invert && transform.localPosition.x < -skipLimit) || (invert && transform.localPosition.x > skipLimit)) {
-            SetNewPosition(transform.localPosition.x + BPM * speedMultiplier * transform.parent.childCount * (invert ? -1 : 1) * (halfBeats ? 2 : 1));
-            ResetMinigameButton();
+        if (InMovement) {
+            RectTransform rect = GetComponent<RectTransform>();
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x - BPM * (1 / (60 / BPM)) * speedMultiplier * Time.deltaTime * (invert ? -1 : 1), rect.anchoredPosition.y);
+            if (!pressable && InPressableSpace()) {
+                pressable = true;
+                djMinigame.ButtonEnteredThreshold(this);
+            } else if (pressable && !InPressableSpace()) {
+                pressable = false;
+                djMinigame.ButtonExitedThreshold(this);
+            } else if ((!invert && transform.localPosition.x < -skipLimit) || (invert && transform.localPosition.x > skipLimit)) {
+                SetNewPosition(transform.localPosition.x + BPM * speedMultiplier * transform.parent.childCount * (invert ? -1 : 1) * (halfBeats ? 2 : 1));
+                ResetMinigameButton();
+            }
         }
     }
 
