@@ -18,3 +18,4 @@ MonoBehaviour:
   PreviewSprite: {fileID: 21300000, guid: ee869800fbf863d44ae3009ce10d7ec3, type: 3}
   NeedsTargetInteractable: 0
   AnimationTrigger: Attack
+  MilisecondsDelayToHideItem: 1500

@@ -11,4 +11,5 @@ public class ItemData : ScriptableObject
 
     public bool NeedsTargetInteractable;
     public string AnimationTrigger;
+    public int MilisecondsDelayToHideItem;
 }

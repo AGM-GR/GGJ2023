@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 
 /// <summary>
@@ -9,6 +10,11 @@ public class ItemPicker : MonoBehaviour
     private Character _character;
     [HideInInspector] public ItemData CurrentItemData; // just one slot
     private ItemSlot _slot; // just one slot
+
+    [Space]
+    private GameObject _currentItemPrefab;
+    public GameObject BaseballPrefab;
+    public GameObject BaseballTrailPrefab;
 
     public bool HasItem => CurrentItemData != null;
     public bool CurrentItemNeedsTarget => CurrentItemData.NeedsTargetInteractable;
@@ -27,13 +33,27 @@ public class ItemPicker : MonoBehaviour
             CurrentItemData = item.Data;
             // update ui
             item.Pick(_character.CharacterColor);
+
+            if(item.Data.Name == "Baseball Bat")
+            {
+                BaseballPrefab.SetActive(true);
+                _currentItemPrefab = BaseballPrefab;
+            }
         }
     }
 
-    public void UseItem()
+    public async void UseItem()
     {
-        CurrentItemData = null;
         _slot.HideItem();
-        // update ui
+
+        if (_currentItemPrefab != null)
+        {
+            BaseballTrailPrefab.SetActive(true);
+            await Task.Delay(CurrentItemData.MilisecondsDelayToHideItem);
+            _currentItemPrefab.SetActive(false);
+            BaseballTrailPrefab.SetActive(false);
+        }
+
+        CurrentItemData = null;
     }
 }

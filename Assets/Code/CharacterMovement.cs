@@ -35,7 +35,21 @@ public class CharacterMovement : MonoBehaviour
     private Animator Animator => _character.CharacterAnimator;
     private Coroutine speedUpCoroutine;
 
-    public bool IsMovementAllowed { get; set; }
+    public bool IsMovementAllowed
+    {
+        get { return _isMovementAllowed; }
+        set
+        {
+            if (value == false)
+            {
+                _inputAmount = 0;
+                _rb.velocity = Vector3.zero;
+            }
+            _isMovementAllowed = value;
+        }
+    }
+
+    public bool _isMovementAllowed;
 
     private void Awake()
     {
@@ -82,7 +96,6 @@ public class CharacterMovement : MonoBehaviour
     {
         _moveDirection = Vector3.zero; // reset movement
 
-
         Vector3 correctedVertical = _verticalAxis * _mainCamera.transform.forward;
         Vector3 correctedHorizontal = _horizontalAxis * _mainCamera.transform.right;
 
@@ -93,6 +106,8 @@ public class CharacterMovement : MonoBehaviour
         _inputAmount = Mathf.Clamp01(inputMagnitude);
         if (_inputAmount <= MinInputAmount) _inputAmount = 0;
     }
+
+
 
 
     private void Rotate()
