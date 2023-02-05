@@ -9,7 +9,10 @@ public class Car : Interactable
     [SerializeField] TextMeshProUGUI raversSpeedMultiplierText;
     [SerializeField] DJMinigame djMinigame;
     [SerializeField] float raverLossPeriod;
+
     [SerializeField] Animator animator;
+    [SerializeField] GameObject interactHint;
+
 
     CharacterDJMinigameInteraction interaction;
     float carInfluence;
@@ -51,6 +54,20 @@ public class Car : Interactable
         }
     }
 
+    public override void Highlight() {
+        base.Highlight();
+        interactHint.SetActive(true);
+    }
+
+    public override void Unhighlight() {
+        base.Unhighlight();
+        interactHint.SetActive(false);
+    }
+
+    public void ShowInteractHint() {
+        interactHint.SetActive(true);
+    }
+
     public override void Interact(ItemPicker picker)
     {
         if (picker.GetComponent<Character>().CharacterColor == color)
@@ -61,6 +78,7 @@ public class Car : Interactable
                 picker.GetComponent<CharacterMovement>().IsMovementAllowed = false;
                 djMinigame.Activate(picker.GetComponent<Character>());
                 picker.GetComponent<Character>().CharacterAnimator.SetTrigger("Scratch");
+                interactHint.SetActive(false);
             }
         }
         else
@@ -86,7 +104,7 @@ public class Car : Interactable
 
     private void Sabotage()
     {
-        aSource.PlayOneShot(sabotageSfx);             
+        aSource.PlayOneShot(sabotageSfx);
         djMinigame.LowestTier();
         losingRavers = true;
     }
