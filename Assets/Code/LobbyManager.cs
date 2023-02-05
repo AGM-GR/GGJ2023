@@ -11,6 +11,10 @@ public class LobbyManager : MonoBehaviour
     public Button PlayGameButton;
     public List<Animator> characterBanners;
 
+    [Header("Lobby Input Actions")]
+    [SerializeField] InputAction startGame = null;
+
+
     private void Awake()
     {
         PlayGameButton.interactable = false;
@@ -18,6 +22,24 @@ public class LobbyManager : MonoBehaviour
 
         _inputManager = FindObjectOfType<PlayerInputManager>();
         _inputManager.onPlayerJoined += (p) => OnPlayerJoined(p);
+    }
+
+    private void Update()
+    {
+        if (startGame.WasPressedThisFrame())
+        {
+            PlayGameButton.OnSubmit(null);
+        }
+    }
+
+    private void OnEnable()
+    {
+        startGame.Enable();
+    }
+
+    private void OnDisable()
+    {
+        startGame.Disable();
     }
 
     private void OnPlayerJoined(PlayerInput player)
