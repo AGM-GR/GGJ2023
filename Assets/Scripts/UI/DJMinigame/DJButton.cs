@@ -18,6 +18,7 @@ public class DJButton : MonoBehaviour
     float skipLimit;
     float BPM;
     bool invert;
+    bool halfBeats;
     float pressThreshold;
     float speedMultiplier;
 
@@ -45,12 +46,13 @@ public class DJButton : MonoBehaviour
         image.enabled = !disableImage;
     }
 
-    public void Reset(float newXPosition, float newSpeedMultiplier) {
+    public void Reset(float newXPosition, float newSpeedMultiplier, bool halfBeats) {
         speedMultiplier = newSpeedMultiplier;
         SetNewPosition(newXPosition);
         image.enabled = true;
         Succeded = false;
         AlreadyTried = false;
+        this.halfBeats = halfBeats;
     }
 
     private void Update() {
@@ -63,7 +65,7 @@ public class DJButton : MonoBehaviour
             pressable = false;
             djMinigame.ButtonExitedThreshold(this);
         } else if ((!invert && transform.localPosition.x < -skipLimit) || (invert && transform.localPosition.x > skipLimit)) {
-            SetNewPosition(transform.localPosition.x + BPM * speedMultiplier * transform.parent.childCount * (invert ? -1 : 1));
+            SetNewPosition(transform.localPosition.x + BPM * speedMultiplier * transform.parent.childCount * (invert ? -1 : 1) * (halfBeats ? 2 : 1));
             ResetMinigameButton();
         }
     }
@@ -85,6 +87,7 @@ public class DJButton : MonoBehaviour
         CurrentMinigameButton = (MinigameButton)Random.Range(0, 4);
         image.enabled = true;
         AlreadyTried = false;
+        Succeded = false;
         image.sprite = GetSprite(CurrentMinigameButton);
     }  
     

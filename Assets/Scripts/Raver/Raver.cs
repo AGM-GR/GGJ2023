@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Raver : RaverBase
 {
     [SerializeField]
+    private float _baseSpeed = 2f;
+    [SerializeField]
     private NavMeshAgent _navMeshAgent;
     [SerializeField]
     private RaverMaterials _raverMaterials;
@@ -40,11 +42,17 @@ public class Raver : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(CarColor raveColor, Vector3 destination)
+    public override void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
     {
-        base.InfluencedByPlayer(raveColor, destination);
+        base.InfluencedByPlayer(raveColor, influencingCar);
         SetPlayerMaterial(raveColor);
-        SetDestination(destination);
+        SetDestination(influencingCar.transform.position);
+        ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
+    }
+
+    public override void ChangeSpeedMultiplier(float speedMultiplier)
+    {
+        _navMeshAgent.speed = _baseSpeed * speedMultiplier;
     }
 
     public void SetRaverMaterial()

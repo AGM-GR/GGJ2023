@@ -9,11 +9,12 @@ public class Car : Interactable
 
     CharacterDJMinigameInteraction interaction;
     CharacterMovement movement;
+    float carInfluence;
+    int currentRavers;
 
     public CarColor CarColor { get { return color; } }
 
-    float carInfluence;
-    int currentRavers;
+    public System.Action<float> onInfluenceChanged;
 
     private void Awake() {
         djMinigame.SetCar(this);
@@ -55,5 +56,11 @@ public class Car : Interactable
 
     public void SetInfluence(float carInfluence) {
         this.carInfluence = carInfluence;
+        onInfluenceChanged?.Invoke(carInfluence);
+    }
+
+    public float GetSpeedMultiplierByInfluence()
+    {
+        return carInfluence;
     }
 }
