@@ -78,12 +78,15 @@ public class Raver : RaverBase
 
     public override void InfluencedByPlayer(CarColor carColor, Car influencingCar)
     {
+        if (influencingCar != _currentInfluencingCar) {
+            aSource.PlayOneShot(clips.GetRandomElement());
+        }
+
         base.InfluencedByPlayer(carColor, influencingCar);
         SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
         InfluenceCircle(carColor);
 
-        aSource.PlayOneShot(clips.GetRandomElement());
     }
 
     public void InfluenceCircle(CarColor carColor) {
