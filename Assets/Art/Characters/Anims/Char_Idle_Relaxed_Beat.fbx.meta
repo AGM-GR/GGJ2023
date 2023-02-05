@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bdca9663c718243208e33539ffd44e8a
+guid: d5a9133436f34433c869448abc0258af
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,19 +33,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle1
-      takeName: Idle1
-      internalID: -6775884027671718737
-      firstFrame: 0
-      lastFrame: 120
+      name: Idle_Relaxed
+      takeName: Idle_Relaxed
+      internalID: -8280209622319100531
+      firstFrame: 830
+      lastFrame: 950
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -60,7 +60,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 829.8
     isReadable: 0
   meshes:
     lODScreenPercentages: []

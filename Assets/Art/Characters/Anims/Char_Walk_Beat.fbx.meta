@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 463a2df1fb5334ed792fc9e59bbb8493
+guid: 2d80f22909cf94d348e5bfdfa0f7a638
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: DJ
-      takeName: DJ
-      internalID: 701931068408194757
-      firstFrame: 1250
-      lastFrame: 1490
+      name: Walk
+      takeName: Walk
+      internalID: 2667949614841947897
+      firstFrame: 450
+      lastFrame: 570
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -45,7 +45,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -60,7 +60,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1249.8
+      additiveReferencePoseFrame: 450
     isReadable: 0
   meshes:
     lODScreenPercentages: []

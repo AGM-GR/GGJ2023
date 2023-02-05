@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b02ac09175ff04105876de24499909b3
+guid: 463a2df1fb5334ed792fc9e59bbb8493
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,19 +33,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle3
-      takeName: Idle3
-      internalID: -2603478504544128241
-      firstFrame: 300
-      lastFrame: 420
+      name: DJ
+      takeName: DJ
+      internalID: 701931068408194757
+      firstFrame: 1250
+      lastFrame: 1490
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -60,7 +60,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 300
+      additiveReferencePoseFrame: 1249.8
     isReadable: 0
   meshes:
     lODScreenPercentages: []
