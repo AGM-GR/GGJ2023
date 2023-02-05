@@ -6,6 +6,7 @@ public class Car : Interactable
     [SerializeField] CarColor color;
     [SerializeField] TextMeshProUGUI raversAmountText;
     [SerializeField] DJMinigame djMinigame;
+    [SerializeField] float raverLossPeriod;
 
     CharacterDJMinigameInteraction interaction;
     CharacterMovement movement;
@@ -13,6 +14,9 @@ public class Car : Interactable
     int currentRavers;
 
     RaversExit pointsExit;
+
+    bool losingRavers;
+    float timeSinceLastLoss;
 
     public Vector3 PointsExit { get { return pointsExit.transform.position; } }
     public CarColor CarColor { get { return color; } }
@@ -24,6 +28,17 @@ public class Car : Interactable
     private void Awake() {
         djMinigame.SetCar(this);
         pointsExit = GetComponentInChildren<RaversExit>();
+    }
+
+    private void Update() {
+        if (losingRavers && currentRavers > 0) {
+            timeSinceLastLoss += Time.deltaTime;
+            if (timeSinceLastLoss >= raverLossPeriod) {
+                timeSinceLastLoss -= raverLossPeriod;
+                currentRavers--;
+                raversAmountText.text = currentRavers.ToString();
+            }
+        }
     }
 
     public override void Interact(ItemPicker picker)
@@ -61,7 +76,13 @@ public class Car : Interactable
 
     private void Sabotage()
     {
-        djMinigame.LowestTier(); // Lo pone a 0
+        djMinigame.LowestTier();
+        losingRavers = true;
+    }
+
+    public void LowTierPassed() {
+        timeSinceLastLoss = 0;
+        losingRavers = false;
     }
 
     public void SetInfluence(float carInfluence) {
