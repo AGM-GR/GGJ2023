@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
 
     public CarColor CharacterColor { get { return characterColor; } }
 
+    public bool IsMale => CharacterColor == CarColor.BLUE || CharacterColor == CarColor.PURPLE;
 
     public void Initialize(int index)
     {
@@ -24,5 +25,8 @@ public class Character : MonoBehaviour
 
         var spawningPoint = FindObjectsOfType<CharacterSpawningPoint>().Where(c => c.color == characterColor).First();
         transform.position = spawningPoint.transform.position;
+
+        var car = FindObjectsOfType<Car>().Where(c => c.CarColor == CharacterColor).First();
+        car.CharacterIndex = CharacterIndex;
     }
 }

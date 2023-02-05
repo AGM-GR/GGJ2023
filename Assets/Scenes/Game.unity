@@ -1260,6 +1260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gameplay Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 6749634173838764863, guid: 510236b39c6a43c47bfcdfd9106b5d56, type: 3}
+      propertyPath: TotalTimeInMinutes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6749634175103342160, guid: 510236b39c6a43c47bfcdfd9106b5d56, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

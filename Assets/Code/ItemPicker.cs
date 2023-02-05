@@ -16,12 +16,16 @@ public class ItemPicker : MonoBehaviour
     public GameObject BaseballPrefab;
     public GameObject BaseballTrailPrefab;
 
+    private AudioSource aSource;
+    public AudioClip pickItemSfx;
+
     public bool HasItem => CurrentItemData != null;
     public bool CurrentItemNeedsTarget => CurrentItemData.NeedsTargetInteractable;
 
     private void Start()
     {
         _character = GetComponent<Character>();
+        aSource = GetComponent<AudioSource>();
         _slot = FindObjectsOfType<ItemSlot>().Where(s => s.Rave == _character.CharacterColor).First();
     }
 
@@ -33,8 +37,9 @@ public class ItemPicker : MonoBehaviour
             CurrentItemData = item.Data;
             // update ui
             item.Pick(_character.CharacterColor);
+            aSource.PlayOneShot(pickItemSfx);
 
-            if(item.Data.Name == "Baseball Bat")
+            if (item.Data.Name == "Baseball Bat")
             {
                 BaseballPrefab.SetActive(true);
                 _currentItemPrefab = BaseballPrefab;

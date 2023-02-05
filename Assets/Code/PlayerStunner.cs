@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 public class PlayerStunner : MonoBehaviour
 {
+    public List<AudioClip> hitMaleSfx;
+    public List<AudioClip> hitFemaleSfx;
+
     private Character _character;
 
     public CharacterMovement _movement;
@@ -13,9 +17,12 @@ public class PlayerStunner : MonoBehaviour
 
     private Animator Animator => _character.CharacterAnimator;
 
+    AudioSource aSource;
+
     private void Start()
     {
         _character = GetComponent<Character>();
+        aSource = GetComponent<AudioSource>();
     }
 
 
@@ -24,8 +31,8 @@ public class PlayerStunner : MonoBehaviour
         if (other.CompareTag("Stunner") && !IsStunned)
         {
             // vfx!
-            // sfx!
-
+            AudioClip clip = _character.IsMale ? hitMaleSfx.GetRandomElement() : hitFemaleSfx.GetRandomElement();
+            aSource.PlayOneShot(clip);
             StartStun(other);
             await Task.Delay((int)(StunnedTimeInSeconds * 1000));
             EndStun();
