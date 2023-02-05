@@ -43,15 +43,19 @@ public class Car : Interactable
                 case ItemType.BaseballBat:
                     break;
                 case ItemType.Scissors:
-                    // reventar carro
                     Debug.Log("Revienta carro!");
+                    Sabotage();
                     picker.UseItem();
-                    // _carInfluenceLevel
                     break;
                 default:
                     break;
             }
         }
+    }
+
+    private void Sabotage()
+    {
+        djMinigame.LowestTier(); // Lo pone a 0
     }
 
     public void SetInfluence(float carInfluence) {

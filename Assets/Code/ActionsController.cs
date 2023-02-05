@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using TMPro;
-using UnityEngine.TextCore.Text;
 using System.Collections;
 
 public class ActionsController : MonoBehaviour
 {
-    public SphereCollider SphereCollider;
     public ItemPicker _itemPicker;
     public TextMeshProUGUI _debugText;
     private Interactable _targetInteractable;
@@ -21,15 +19,10 @@ public class ActionsController : MonoBehaviour
     {
         _character = GetComponent<Character>();
         _characterMovement = GetComponent<CharacterMovement>();
-        Initialize();
     }
 
-    private void Initialize()
+    public void OnStartMinigame()
     {
-        SphereCollider.isTrigger = true;
-    }
-
-    public void OnStartMinigame() {
         _targetInteractable?.Interact(_itemPicker);
     }
 
