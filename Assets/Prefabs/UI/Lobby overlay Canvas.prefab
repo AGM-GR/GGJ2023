@@ -986,7 +986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2942514627392957065, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_text
-      value: La Jenny
+      value: La Vane
       objectReference: {fileID: 0}
     - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_Color.b
@@ -1352,7 +1352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2942514627392957065, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_text
-      value: La Vane
+      value: La Jenny
       objectReference: {fileID: 0}
     - target: {fileID: 3009531053772951958, guid: de209bc4feba4404e8716fb99dab2522, type: 3}
       propertyPath: m_Color.b

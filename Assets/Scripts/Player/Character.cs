@@ -17,12 +17,12 @@ public class Character : MonoBehaviour
     {
         CharacterIndex = index;
         characterColor = (CarColor) index;
-        Models[/*CharacterIndex*/ 0].SetActive(true);
-        CharacterAnimator = Models[/*CharacterIndex*/ 0].GetComponentInChildren<Animator>();
+        Models[CharacterIndex].SetActive(true);
+        CharacterAnimator = Models[CharacterIndex].GetComponentInChildren<Animator>();
 
         IsInit = true;
 
-       // var spawningPoint = FindObjectsOfType<CharacterSpawningPoint>().Where(c => c.color == characterColor).First();
-       // transform.position = spawningPoint.transform.position;
+        var spawningPoint = FindObjectsOfType<CharacterSpawningPoint>().Where(c => c.color == characterColor).First();
+        transform.position = spawningPoint.transform.position;
     }
 }
