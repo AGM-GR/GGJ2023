@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 3342752930871031561}
   _initialDissolveValue: 0.4
+  _defaultMaterial: {fileID: 2100000, guid: 914e5ba73e359154988f546d7e6f461a, type: 2}
 --- !u!82 &3564467881356556525
 AudioSource:
   m_ObjectHideFlags: 0

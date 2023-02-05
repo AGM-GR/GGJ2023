@@ -6,6 +6,7 @@ public class RaverMaterials : MonoBehaviour
 {
     public Renderer _renderer;
     public float _initialDissolveValue;
+    public Material _defaultMaterial;
 
     private Material _dissolveMaterial;
 
@@ -23,7 +24,10 @@ public class RaverMaterials : MonoBehaviour
     public void ResetDissolve()
     {
         if (_dissolveMaterial != null)
+        {
+            _renderer.sharedMaterial = _dissolveMaterial;
             _dissolveMaterial.SetFloat("_DissolveProgression", 1f);
+        }
     }
 
     public void DoDissolve(float time)
@@ -41,6 +45,8 @@ public class RaverMaterials : MonoBehaviour
             _dissolveMaterial.SetFloat("_DissolveProgression", Mathf.Lerp(1f, _initialDissolveValue, alpha));
             yield return null;
         }
+
+        _renderer.sharedMaterial = _defaultMaterial;
     }
 
     /*public Material[] _playerMaterial;
