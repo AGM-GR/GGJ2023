@@ -25,7 +25,7 @@ public class DJMinigame : MonoBehaviour {
     [SerializeField] float pressThreshold = 35;
 
     [Header("AudioClips")]
-    [SerializeField] AudioClip successClip;
+    [SerializeField] AudioClip[] successClips;
     [SerializeField] AudioClip failClip;
     [SerializeField] AudioClip tierUpClip;
 
@@ -128,7 +128,7 @@ public class DJMinigame : MonoBehaviour {
     }
 
     private void CorrectInput() {
-        audioSource.PlayOneShot(successClip);
+        audioSource.PlayOneShot(successClips[Random.Range(0, successClips.Length)]);
         remainingSuccessesToTierUp--;
         targetText.text = remainingSuccessesToTierUp.ToString();
         currentPressableButton.Succeded = true;

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.6489142, g: 0.8773585, b: 0.8567248, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d1580b91fb9dd5a449eecdd06aea7783, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: af3bb14021d5b4043b75464202a59010, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1056,7 +1056,8 @@ GameObject:
   - component: {fileID: 73253930}
   - component: {fileID: 73253929}
   - component: {fileID: 73253932}
-  m_Layer: 0
+  - component: {fileID: 73253933}
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,6 +1150,66 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &73253933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73253928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 73253931}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &73605539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3639,6 +3700,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5312230640233279623, guid: facb91d6f209df94f95e404a958681ff, type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312230640233279623, guid: facb91d6f209df94f95e404a958681ff, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312230640233279623, guid: facb91d6f209df94f95e404a958681ff, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: da125c0ed933bb04fba69971208822f0, type: 2}
     - target: {fileID: 8831720043296830922, guid: facb91d6f209df94f95e404a958681ff, type: 3}
       propertyPath: m_Name
       value: Postpo Volume
@@ -8083,7 +8156,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9245283, g: 0.9052503, b: 0.7971876, a: 1}
+  m_Color: {r: 0.6886792, g: 0.5175764, b: 0.25663045, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -15910,7 +15983,7 @@ AudioSource:
   m_GameObject: {fileID: 1316015379}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1320047903422174658, guid: e5893a023d556914f8f4ac5d82fc200b, type: 2}
   m_audioClip: {fileID: 8300000, guid: ad9b2334fd2ba4cbe92e546991820f43, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

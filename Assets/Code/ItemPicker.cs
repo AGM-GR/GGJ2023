@@ -13,8 +13,8 @@ public class ItemPicker : MonoBehaviour
 
     [Space]
     private GameObject _currentItemPrefab;
-    public GameObject BaseballPrefab;
-    public GameObject BaseballTrailPrefab;
+    public GameObject[] BaseballPrefab;
+    public GameObject[] BaseballTrailPrefab;
 
     private AudioSource aSource;
     public AudioClip pickItemSfx;
@@ -41,8 +41,9 @@ public class ItemPicker : MonoBehaviour
 
             if (item.Data.Name == "Baseball Bat")
             {
-                BaseballPrefab.SetActive(true);
-                _currentItemPrefab = BaseballPrefab;
+
+                BaseballPrefab[(int)_character.CharacterColor].SetActive(true);
+                _currentItemPrefab = BaseballPrefab[(int)_character.CharacterColor];
             }
         }
     }
@@ -53,10 +54,10 @@ public class ItemPicker : MonoBehaviour
 
         if (_currentItemPrefab != null)
         {
-            BaseballTrailPrefab.SetActive(true);
+            BaseballTrailPrefab[(int)_character.CharacterColor].SetActive(true);
             await Task.Delay(CurrentItemData.MilisecondsDelayToHideItem);
             _currentItemPrefab.SetActive(false);
-            BaseballTrailPrefab.SetActive(false);
+            BaseballTrailPrefab[(int)_character.CharacterColor].SetActive(false);
         }
 
         CurrentItemData = null;
