@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8870835819117567089
 Transform:
   m_ObjectHideFlags: 0
@@ -592,7 +592,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &9112374262877955239
 MonoBehaviour:
@@ -653,6 +653,8 @@ MonoBehaviour:
   SpeedDampTime: 0.2
   RotateSpeed: 6
   FloorOffsetY: 0.75
+  speedUpMultiplier: 1.6
+  speedUpDuration: 8
   startWithMovement: 0
   _isMovementAllowed: 0
 --- !u!114 &8870835819245187016

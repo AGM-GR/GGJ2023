@@ -96,8 +96,9 @@ public class CharacterMovement : MonoBehaviour
     {
         _moveDirection = Vector3.zero; // reset movement
 
-        Vector3 correctedVertical = _verticalAxis * _mainCamera.transform.forward;
-        Vector3 correctedHorizontal = _horizontalAxis * _mainCamera.transform.right;
+
+        Vector3 correctedVertical = _verticalAxis * Vector3.forward;
+        Vector3 correctedHorizontal = _horizontalAxis * Vector3.right;
 
         Vector3 combinedInput = correctedVertical + correctedHorizontal;
         _moveDirection = new Vector3(combinedInput.normalized.x, 0, combinedInput.normalized.z);
