@@ -17,6 +17,7 @@ public abstract class RaverBase : MonoBehaviour
 
     internal RaverState _currentState;
 
+
     public RaversGroup RaversGroup { get; internal set; }
 
     public virtual void SetSpawner(RaversSpawner spawner)
@@ -47,6 +48,7 @@ public abstract class RaverBase : MonoBehaviour
     public virtual void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
     {
         _currentState = RaverState.INFLUENCED;
+       
 
         // Disconnec the old car
         if (_currentInfluencingCar != null)

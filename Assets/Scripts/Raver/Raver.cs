@@ -26,10 +26,14 @@ public class Raver : RaverBase
 
     private Animator animator;
 
+    public AudioSource aSource;
+    public List<AudioClip> clips;
+
+
     public NavMeshAgent NavMeshAgent => _navMeshAgent;
 
     private void Awake() {
-        animator = GetComponentInChildren<Animator>();        
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Start() {
@@ -78,6 +82,8 @@ public class Raver : RaverBase
         SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
         InfluenceCircle(carColor);
+
+        aSource.PlayOneShot(clips.GetRandomElement());
     }
 
     public void InfluenceCircle(CarColor carColor) {
