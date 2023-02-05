@@ -1039,22 +1039,22 @@ MonoBehaviour:
   - duration: -1
     speedMultiplier: 0.25
     successGoalToLevelUp: 2
-    raveInfluence: 0.8
+    raveInfluence: 0.5
     halfBeats: 1
   - duration: -1
     speedMultiplier: 0.25
     successGoalToLevelUp: 4
     raveInfluence: 1
     halfBeats: 1
-  - duration: 10
+  - duration: 30
     speedMultiplier: 0.5
     successGoalToLevelUp: 8
-    raveInfluence: 1.2
+    raveInfluence: 2
     halfBeats: 0
-  - duration: 5
+  - duration: 20
     speedMultiplier: 1
     successGoalToLevelUp: 12
-    raveInfluence: 1.4
+    raveInfluence: 4
     halfBeats: 0
   skipLimit: 250
   pressThreshold: 35
