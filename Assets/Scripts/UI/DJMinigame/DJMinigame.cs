@@ -179,6 +179,7 @@ public class DJMinigame : MonoBehaviour {
         remainingSuccessesToTierUp = tiers[currentTier].successGoalToLevelUp;
         targetText.text = tiers[currentTier].successGoalToLevelUp.ToString();
         car.SetInfluence(tiers[currentTier].raveInfluence);
+        car.SetAwesomessLevel(currentTier);
         ResetAllButtons();
     }
 

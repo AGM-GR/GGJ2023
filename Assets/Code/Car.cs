@@ -9,6 +9,7 @@ public class Car : Interactable
     [SerializeField] TextMeshProUGUI raversSpeedMultiplierText;
     [SerializeField] DJMinigame djMinigame;
     [SerializeField] float raverLossPeriod;
+    [SerializeField] Animator animator;
 
     CharacterDJMinigameInteraction interaction;
     float carInfluence;
@@ -112,5 +113,22 @@ public class Car : Interactable
     {
         currentRavers += amount;
         raversAmountText.text = currentRavers.ToString();
+    }
+
+    public void SetAwesomessLevel(int awesomeness) {
+        switch (awesomeness) {
+            case 0:
+                animator.SetTrigger("Mola1");
+                break;
+            case 1:
+                animator.SetTrigger("Mola2");
+                break;
+            case 2:
+                animator.SetTrigger("Mola3");
+                break;
+            case 3:
+                animator.SetTrigger("Mola4");
+                break;
+        }
     }
 }
