@@ -48,9 +48,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 2
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &18615635214715436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,8 +90,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 1.8
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4109622207866640672
@@ -106,13 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af55dd43001bdf46b2b9934e5d1fcce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 0}
-  _playerMaterial:
-  - {fileID: 2100000, guid: ffe5a4b1818533844aeb2c98639b6a0a, type: 2}
-  - {fileID: 2100000, guid: 62302a259a1b6f64d9fda05266dc4136, type: 2}
-  - {fileID: 2100000, guid: c41f3f8e671ecf7448fd8bff43025889, type: 2}
-  - {fileID: 2100000, guid: 07958792f7154e641a362f87bf90c9d8, type: 2}
-  _raverMaterial: {fileID: 2100000, guid: 347c0d03774d3574c98568b9fe033ab2, type: 2}
+  _renderer: {fileID: 3342752930871031561}
+  _initialDissolveValue: 0.4
 --- !u!1 &7993641958929611986
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7993641958929611986}
   m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.922, z: -0.00000008940697}
+  m_LocalPosition: {x: 0, y: 0.08, z: -0.00000008940697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -214,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c07c1d4e29ce44a788000a56efd7985, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c07c1d4e29ce44a788000a56efd7985, type: 3}
       propertyPath: m_LocalPosition.z
@@ -262,6 +257,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 914e5ba73e359154988f546d7e6f461a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c07c1d4e29ce44a788000a56efd7985, type: 3}
+--- !u!137 &3342752930871031561 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6084478636885746969, guid: 6c07c1d4e29ce44a788000a56efd7985, type: 3}
+  m_PrefabInstance: {fileID: 8796569115766657552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9050274256286184955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c07c1d4e29ce44a788000a56efd7985, type: 3}
