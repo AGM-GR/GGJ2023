@@ -33,6 +33,7 @@ public class Raver : RaverBase
         base.EnableRaver();
         SetRaverMaterial();
 
+        _navMeshAgent.speed = _baseSpeed;
         gameObject.SetActive(true);
         _navMeshAgent.enabled = true;
         _raverSpawner.RaverEnabled();

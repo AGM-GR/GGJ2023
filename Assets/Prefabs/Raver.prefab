@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dda77aeef16a75469ac325e5da1c666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _baseSpeed: 1
   _navMeshAgent: {fileID: 3643196353454003163}
   _raverMaterials: {fileID: 4109622207866640672}
 --- !u!195 &3643196353454003163
@@ -233,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af55dd43001bdf46b2b9934e5d1fcce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 3643196353454003161}
   _playerMaterial:
   - {fileID: 2100000, guid: ffe5a4b1818533844aeb2c98639b6a0a, type: 2}
   - {fileID: 2100000, guid: 62302a259a1b6f64d9fda05266dc4136, type: 2}
