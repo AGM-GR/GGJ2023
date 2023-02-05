@@ -76,7 +76,7 @@ public class RaversGroup : RaverBase
         {
             raver.SetPlayerMaterial(raveColor);
         }
-        SetDestination(influencingCar.transform.position);
+        SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
     }
 
