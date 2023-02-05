@@ -528,6 +528,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6afa14a1f8cce0d4393d4fe9e2cc3970, type: 3}
+--- !u!114 &520624898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4401297488753890060, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+  m_PrefabInstance: {fileID: 189806292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &520624899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5343533075408718377, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+  m_PrefabInstance: {fileID: 189806292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &520624900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5547079481733426508, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+  m_PrefabInstance: {fileID: 189806292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &520624901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5209556081340855069, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+  m_PrefabInstance: {fileID: 189806292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &793322077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1884,6 +1928,10 @@ PrefabInstance:
       propertyPath: raversAmountText
       value: 
       objectReference: {fileID: 189806297}
+    - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: raversSpeedMultiplierText
+      value: 
+      objectReference: {fileID: 520624901}
     - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: djMinigame
       value: 
@@ -1892,6 +1940,10 @@ PrefabInstance:
       propertyPath: raversAmountText
       value: 
       objectReference: {fileID: 189806300}
+    - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: raversSpeedMultiplierText
+      value: 
+      objectReference: {fileID: 520624900}
     - target: {fileID: 3366476337661357886, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1928,6 +1980,10 @@ PrefabInstance:
       propertyPath: raversAmountText
       value: 
       objectReference: {fileID: 1320378277}
+    - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: raversSpeedMultiplierText
+      value: 
+      objectReference: {fileID: 520624898}
     - target: {fileID: 7023280173764775152, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3208,6 +3264,10 @@ PrefabInstance:
       propertyPath: raversAmountText
       value: 
       objectReference: {fileID: 1320378278}
+    - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: raversSpeedMultiplierText
+      value: 
+      objectReference: {fileID: 520624899}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
 --- !u!4 &7381223091762940586 stripped
