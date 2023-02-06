@@ -22,11 +22,12 @@ public class ActionsController : MonoBehaviour
 
     private Coroutine stunnerCoroutine;
 
+    public ParticleSystem DrinkParticleSystem;
+
     public AudioClip drinkSfx;
     public List<AudioClip> drinkMusics;
-    AudioSource aSource;
-
-    private CinemachineBasicMultiChannelPerlin noise;
+    private AudioSource _aSource;
+    private CinemachineBasicMultiChannelPerlin _cmNoise;
 
 
     private void Awake()
@@ -34,8 +35,8 @@ public class ActionsController : MonoBehaviour
         _character = GetComponent<Character>();
         _characterMovement = GetComponent<CharacterMovement>();
         characterDJMinigameInteraction = GetComponent<CharacterDJMinigameInteraction>();
-        aSource = GetComponent<AudioSource>();
-        noise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        _aSource = GetComponent<AudioSource>();
+        _cmNoise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     public void OnStartMinigame()
@@ -69,6 +70,7 @@ public class ActionsController : MonoBehaviour
                 case ItemType.EnergyDrink:
                     MusicController.Instance.PlayEnergyDrink(_character.CharacterColor);
                     _characterMovement.AddSpeedUp();
+                    DrinkParticleSystem.gameObject.SetActive(true);
                     ShakeCamera(200);
                     break;
             }
@@ -86,9 +88,9 @@ public class ActionsController : MonoBehaviour
     private async void ShakeCamera(int msDelay)
     {
         await Task.Delay(msDelay);
-        noise.m_AmplitudeGain = 1;
+        _cmNoise.m_AmplitudeGain = 1;
         await Task.Delay(100);
-        noise.m_AmplitudeGain = 0;
+        _cmNoise.m_AmplitudeGain = 0;
     }
 
     private IEnumerator DisableStunnerTest(float stunerTime)
