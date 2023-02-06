@@ -70,34 +70,36 @@ public class Car : Interactable
 
     public override void Interact(ItemPicker picker)
     {
-        if (picker.GetComponent<Character>().CharacterColor == color)
-        {
-            if (!djMinigame.MinigameActive)
+        if (LobbyManager.Instance.GameStarted) {
+            if (picker.GetComponent<Character>().CharacterColor == color)
             {
-                picker.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
-                picker.GetComponent<CharacterMovement>().IsMovementAllowed = false;
-                djMinigame.Activate(picker.GetComponent<Character>());
-                picker.GetComponent<Character>().CharacterAnimator.SetTrigger("Scratch");
-                interactHint.SetActive(false);
+                if (!djMinigame.MinigameActive)
+                {
+                    picker.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
+                    picker.GetComponent<CharacterMovement>().IsMovementAllowed = false;
+                    djMinigame.Activate(picker.GetComponent<Character>());
+                    picker.GetComponent<Character>().CharacterAnimator.SetTrigger("Scratch");
+                    interactHint.SetActive(false);
+                }
             }
-        }
-        else
-        {
-            if (!picker.HasItem) return;
-
-            switch (picker.CurrentItemData.Type)
+            else
             {
-                case ItemType.None:
-                    break;
-                case ItemType.BaseballBat:
-                    break;
-                case ItemType.Scissors:
-                    Debug.Log("Revienta carro!");
-                    Sabotage();
-                    picker.UseItem();
-                    break;
-                default:
-                    break;
+                if (!picker.HasItem) return;
+
+                switch (picker.CurrentItemData.Type)
+                {
+                    case ItemType.None:
+                        break;
+                    case ItemType.BaseballBat:
+                        break;
+                    case ItemType.Scissors:
+                        Debug.Log("Revienta carro!");
+                        Sabotage();
+                        picker.UseItem();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
