@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9445df695d34d91489c366f99004d821, type: 3}
+    - target: {fileID: 1200338928328310479, guid: 2747259c851e3bd4090568748280fe32, type: 3}
+      propertyPath: m_IsLocked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8764874478580199026, guid: 2747259c851e3bd4090568748280fe32, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764874478580199029, guid: 2747259c851e3bd4090568748280fe32, type: 3}
       propertyPath: m_Name
-      value: Root Drink
+      value: Root Drink Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8764874478580199030, guid: 2747259c851e3bd4090568748280fe32, type: 3}
       propertyPath: Data
