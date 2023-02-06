@@ -11,8 +11,11 @@ public class ActionsController : MonoBehaviour
     public ItemPicker _itemPicker;
     public TextMeshProUGUI _debugText;
     private Interactable _targetInteractable;
+    
     private Character _character;
     private CharacterMovement _characterMovement;
+    private CharacterDJMinigameInteraction characterDJMinigameInteraction;
+    
     private Animator _animator => _character.CharacterAnimator;
 
     public GameObject StunnerTest;
@@ -30,6 +33,7 @@ public class ActionsController : MonoBehaviour
     {
         _character = GetComponent<Character>();
         _characterMovement = GetComponent<CharacterMovement>();
+        characterDJMinigameInteraction = GetComponent<CharacterDJMinigameInteraction>();
         aSource = GetComponent<AudioSource>();
         noise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
@@ -48,7 +52,7 @@ public class ActionsController : MonoBehaviour
     // Actually: Use item
     private void ExecuteAction()
     {
-        if (_itemPicker.HasItem)
+        if (_itemPicker.HasItem && !characterDJMinigameInteraction.InDJMinigame)
         {
             _animator.SetTrigger(_itemPicker.CurrentItemData.AnimationTrigger);
 
