@@ -1131,12 +1131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0a2da3537493b429a428f5962dd96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitMaleSfx:
-  - {fileID: 8300000, guid: 8a59dac90ffb241ff948047a3002ac15, type: 3}
-  - {fileID: 8300000, guid: aa4619a542fb446159b22eb53ff52ccb, type: 3}
-  hitFemaleSfx:
-  - {fileID: 8300000, guid: 486971601997648f4b2e980cbfb9fe3d, type: 3}
-  - {fileID: 8300000, guid: 7a0daa24f929f457f909d4615c1e7ab2, type: 3}
+  hitClips:
+  - {fileID: 8300000, guid: e5acbad11adeb3c439d5edac686881ff, type: 3}
+  - {fileID: 8300000, guid: ea9c51f644982ca4e896fcbe2abf1c26, type: 3}
+  - {fileID: 8300000, guid: 47fbdfb57a963b349b58afec8d2a4ff1, type: 3}
+  - {fileID: 8300000, guid: 769c0a5c062b380418da0737f1b63799, type: 3}
   _movement: {fileID: 8870835819245187019}
   _influence: {fileID: 5972657309720533824}
   _djMinigameInteraction: {fileID: 9112374262877955239}

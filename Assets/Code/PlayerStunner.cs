@@ -5,8 +5,7 @@ using Cinemachine;
 
 public class PlayerStunner : MonoBehaviour
 {
-    public List<AudioClip> hitMaleSfx;
-    public List<AudioClip> hitFemaleSfx;
+    public List<AudioClip> hitClips;
 
     private Character _character;
 
@@ -36,7 +35,7 @@ public class PlayerStunner : MonoBehaviour
         if (other.CompareTag("Stunner") && !IsStunned)
         {
             // vfx!
-            AudioClip clip = _character.IsMale ? hitMaleSfx.GetRandomElement() : hitFemaleSfx.GetRandomElement();
+            AudioClip clip = hitClips[_character.CharacterIndex];
             aSource.PlayOneShot(clip);
             StartStun(other);
             await Task.Delay((int)(StunnedTimeInSeconds * 1000));

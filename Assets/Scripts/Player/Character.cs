@@ -17,16 +17,21 @@ public class Character : MonoBehaviour
     public void Initialize(int index)
     {
         CharacterIndex = index;
-        characterColor = (CarColor) index;
+        characterColor = (CarColor)index;
         Models[CharacterIndex].SetActive(true);
         CharacterAnimator = Models[CharacterIndex].GetComponentInChildren<Animator>();
 
         IsInit = true;
 
-        var spawningPoint = FindObjectsOfType<CharacterSpawningPoint>().Where(c => c.color == characterColor).First();
-        transform.position = spawningPoint.transform.position;
+        MoveToSpawningPoint();
 
         var car = FindObjectsOfType<Car>().Where(c => c.CarColor == CharacterColor).First();
         car.CharacterIndex = CharacterIndex;
+    }
+
+    private void MoveToSpawningPoint()
+    {
+        var spawningPoint = FindObjectsOfType<CharacterSpawningPoint>().Where(c => c.color == characterColor).First();
+        transform.position = spawningPoint.transform.position;
     }
 }
