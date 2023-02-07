@@ -7,16 +7,17 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Female_Color
+  m_Name: MaleGroup_MAT
   m_Shader: {fileID: 4800000, guid: 8750d3619374ac2439af6b2013749396, type: 3}
   m_ValidKeywords:
   - _ALPHATEST_ON
   - _DISSOLVE
   - _DISSOLVE_LOCAL_SPACE
   - _DISSOLVE_SHADOW
+  - _EMISSION
   - _SHADOWFULLALPHA_ON
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2450
@@ -47,11 +48,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 57b48d4c5290a4ecdbc20df1b3536515, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7459064ab50084937a367412c1c7f700, type: 3}
+        m_Texture: {fileID: 2800000, guid: 21fd3e3a007914f6982d14127b37830d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -93,5 +94,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveGlow: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
