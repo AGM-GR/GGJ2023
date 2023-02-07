@@ -152,7 +152,7 @@ PrefabInstance:
     - target: {fileID: 628391451089865693, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: _defaultMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 42617b43eaccca8439e83b070db2c37e, type: 2}
+      objectReference: {fileID: 2100000, guid: 13415cd7905484ce69d848af04eea7ef, type: 2}
     - target: {fileID: 1940527566662059559, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -228,7 +228,7 @@ PrefabInstance:
     - target: {fileID: 628391451089865693, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: _defaultMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 42617b43eaccca8439e83b070db2c37e, type: 2}
+      objectReference: {fileID: 2100000, guid: 13415cd7905484ce69d848af04eea7ef, type: 2}
     - target: {fileID: 1940527566662059559, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -304,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 628391451089865693, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: _defaultMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 42617b43eaccca8439e83b070db2c37e, type: 2}
+      objectReference: {fileID: 2100000, guid: 13415cd7905484ce69d848af04eea7ef, type: 2}
     - target: {fileID: 1940527566662059559, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -380,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 628391451089865693, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: _defaultMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 42617b43eaccca8439e83b070db2c37e, type: 2}
+      objectReference: {fileID: 2100000, guid: 13415cd7905484ce69d848af04eea7ef, type: 2}
     - target: {fileID: 1940527566662059559, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
