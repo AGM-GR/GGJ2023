@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LobbyManager : MonoBehaviour
 {
     public static LobbyManager Instance { get; private set; }
+    const int minPlayerAmount = 2;
 
     private PlayerInputManager _inputManager;
     public int ConnectedPlayersAmount;
@@ -64,7 +65,7 @@ public class LobbyManager : MonoBehaviour
 
     private void RefreshPlayButton()
     {
-        PlayGameButton.interactable = ConnectedPlayersAmount >= 2;
+        PlayGameButton.interactable = ConnectedPlayersAmount >= minPlayerAmount;
     }
 
 
