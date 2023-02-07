@@ -45,7 +45,13 @@ public class GameplayTimer : MonoBehaviour
     {
         int max = _cars.Select(c => c.CurrentRavers).Max();
         int winnerIndex = _cars.Where(c => c.CurrentRavers == max).Select(c => c.CharacterIndex).First();
+
+        var scoresOrdered = _cars.OrderByDescending(c => c.CurrentRavers).Select(c => c.CurrentRavers).ToArray();
+        var indexesOrdered = _cars.OrderByDescending(c => c.CurrentRavers).Select(c => c.CharacterIndex).ToArray();
+
         PlayerPrefs.SetInt("Winner", winnerIndex);
+        PlayerPrefs.SetString("Scores", string.Join(",", scoresOrdered));
+        PlayerPrefs.SetString("Indexes", string.Join(",", indexesOrdered));
         SceneManager.LoadScene("EndGameScene");
     }
 }
