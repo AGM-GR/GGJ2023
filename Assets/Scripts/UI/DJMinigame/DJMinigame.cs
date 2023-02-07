@@ -33,6 +33,7 @@ public class DJMinigame : MonoBehaviour {
     [SerializeField] TextMeshProUGUI targetText;
 
     public bool MinigameActive { get; set; }
+    public bool IsOnMaxTier => currentTier == tiers.Length - 1;
 
     Car car;
     Character character;

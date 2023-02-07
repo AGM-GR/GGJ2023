@@ -57,7 +57,10 @@ public class Car : Interactable
     // en realidad es la mesa de DJ
     public override void Highlight() {
         base.Highlight();
-        interactHint.SetActive(true);
+        if (!djMinigame.IsOnMaxTier)
+        {
+            interactHint.SetActive(true);
+        }
     }
 
     public override void Unhighlight() {
@@ -78,23 +81,13 @@ public class Car : Interactable
             {
                 StartMinigameIfPossible(character);
             }
-            //else
-            //{
-            //    if (!picker.HasItem) return;
-            //    if (picker.CurrentItemData.Type == ItemType.Scissors)
-            //    {
-            //        Debug.Log("Revienta carro!");
-            //        Sabotage();
-            //        picker.UseItem();
-            //    }
-            //}
         }
     }
 
 
     private void StartMinigameIfPossible(Character character)
     {
-        if (!djMinigame.MinigameActive)
+        if (!djMinigame.MinigameActive && !djMinigame.IsOnMaxTier)
         {
             character.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
             character.GetComponent<CharacterMovement>().IsMovementAllowed = false;
@@ -103,13 +96,6 @@ public class Car : Interactable
             interactHint.SetActive(false);
         }
     }
-
-    //private void Sabotage()
-    //{
-    //    aSource.PlayOneShot(sabotageSfx);
-    //    djMinigame.LowestTier();
-    //    losingRavers = true;
-    //}
 
     public void LowTierPassed()
     {
