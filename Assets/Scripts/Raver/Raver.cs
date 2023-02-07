@@ -32,12 +32,18 @@ public class Raver : RaverBase
 
     public NavMeshAgent NavMeshAgent => _navMeshAgent;
 
-    private void Awake() {
-        animator = GetComponentInChildren<Animator>();
+    private void OnEnable()
+    {
+        MusicController.OnMusicChanged += SetAnimatorBeat;
     }
 
-    private void Start() {
-        MusicController.OnMusicChanged += SetAnimatorBeat;        
+    private void OnDisable()
+    {
+        MusicController.OnMusicChanged -= SetAnimatorBeat;
+    }
+    
+    private void Awake() {
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void OnValidate()
