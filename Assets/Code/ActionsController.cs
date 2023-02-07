@@ -11,27 +11,32 @@ public class ActionsController : MonoBehaviour
     public ItemPicker _itemPicker;
     public TextMeshProUGUI _debugText;
     private Interactable _targetInteractable;
+    
     private Character _character;
     private CharacterMovement _characterMovement;
+    private CharacterDJMinigameInteraction characterDJMinigameInteraction;
+    
     private Animator _animator => _character.CharacterAnimator;
 
     public GameObject StunnerTest;
 
     private Coroutine stunnerCoroutine;
 
+    public ParticleSystem DrinkParticleSystem;
+
     public AudioClip drinkSfx;
     public List<AudioClip> drinkMusics;
-    AudioSource aSource;
-
-    private CinemachineBasicMultiChannelPerlin noise;
+    private AudioSource _aSource;
+    private CinemachineBasicMultiChannelPerlin _cmNoise;
 
 
     private void Awake()
     {
         _character = GetComponent<Character>();
         _characterMovement = GetComponent<CharacterMovement>();
-        aSource = GetComponent<AudioSource>();
-        noise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        characterDJMinigameInteraction = GetComponent<CharacterDJMinigameInteraction>();
+        _aSource = GetComponent<AudioSource>();
+        _cmNoise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     public void OnStartMinigame()
@@ -48,7 +53,7 @@ public class ActionsController : MonoBehaviour
     // Actually: Use item
     private void ExecuteAction()
     {
-        if (_itemPicker.HasItem)
+        if (_itemPicker.HasItem && !characterDJMinigameInteraction.InDJMinigame)
         {
             _animator.SetTrigger(_itemPicker.CurrentItemData.AnimationTrigger);
 
@@ -65,6 +70,7 @@ public class ActionsController : MonoBehaviour
                 case ItemType.EnergyDrink:
                     MusicController.Instance.PlayEnergyDrink(_character.CharacterColor);
                     _characterMovement.AddSpeedUp();
+                    DrinkParticleSystem.gameObject.SetActive(true);
                     ShakeCamera(200);
                     break;
             }
@@ -82,9 +88,9 @@ public class ActionsController : MonoBehaviour
     private async void ShakeCamera(int msDelay)
     {
         await Task.Delay(msDelay);
-        noise.m_AmplitudeGain = 1;
+        _cmNoise.m_AmplitudeGain = 1;
         await Task.Delay(100);
-        noise.m_AmplitudeGain = 0;
+        _cmNoise.m_AmplitudeGain = 0;
     }
 
     private IEnumerator DisableStunnerTest(float stunerTime)
@@ -99,7 +105,8 @@ public class ActionsController : MonoBehaviour
         if (other.TryGetComponent<Interactable>(out interactable))
         {
             _targetInteractable = interactable;
-            interactable.Highlight();
+            if (((Car)interactable).CarColor == _character.CharacterColor)
+                interactable.Highlight();
         }
     }
 
@@ -108,10 +115,10 @@ public class ActionsController : MonoBehaviour
     {
 
         Interactable interactable;
-        if (other.TryGetComponent<Interactable>(out interactable))
-        {
+        if (other.TryGetComponent<Interactable>(out interactable)) {
             _targetInteractable = null;
-            interactable.Unhighlight();
+            if (((Car)interactable).CarColor == _character.CharacterColor)
+                interactable.Unhighlight();
         }
     }
 }

@@ -5,13 +5,13 @@ using Cinemachine;
 
 public class PlayerStunner : MonoBehaviour
 {
-    public List<AudioClip> hitMaleSfx;
-    public List<AudioClip> hitFemaleSfx;
+    public List<AudioClip> hitClips;
 
     private Character _character;
 
     public CharacterMovement _movement;
     public CharacterInfluenceAction _influence;
+    public CharacterDJMinigameInteraction _djMinigameInteraction;
     public bool IsStunned;
     [Space]
     public float StunnedTimeInSeconds = 2;
@@ -35,7 +35,7 @@ public class PlayerStunner : MonoBehaviour
         if (other.CompareTag("Stunner") && !IsStunned)
         {
             // vfx!
-            AudioClip clip = _character.IsMale ? hitMaleSfx.GetRandomElement() : hitFemaleSfx.GetRandomElement();
+            AudioClip clip = hitClips[_character.CharacterIndex];
             aSource.PlayOneShot(clip);
             StartStun(other);
             await Task.Delay((int)(StunnedTimeInSeconds * 1000));
@@ -46,6 +46,11 @@ public class PlayerStunner : MonoBehaviour
 
     private async void StartStun(Collider other)
     {
+        if (_djMinigameInteraction.InDJMinigame)
+        {
+            _djMinigameInteraction.DJMinigame.Deactivate();
+        }
+
         Animator.SetTrigger("GetHit");
         other.gameObject.SetActive(false);
         IsStunned = true;

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour
 {
+    public static LobbyManager Instance { get; private set; }
+
     private PlayerInputManager _inputManager;
     public int ConnectedPlayersAmount;
     public Button PlayGameButton;
@@ -15,9 +17,12 @@ public class LobbyManager : MonoBehaviour
     [Header("Lobby Input Actions")]
     [SerializeField] InputAction startGame = null;
 
+    public bool GameStarted { get; set; }
 
     private void Awake()
     {
+        Instance = this;
+
         PlayGameButton.interactable = false;
         PlayGameButton.onClick.AddListener(StartGame);
 
@@ -71,6 +76,7 @@ public class LobbyManager : MonoBehaviour
         FindObjectOfType<ItemsSpawner>().enabled = true;
         FindObjectOfType<GameplayTimer>().enabled = true;
         musicController.StartMusicAndGames();
+        GameStarted = true;
     }
 
     private static void AllowPlayersMovement()

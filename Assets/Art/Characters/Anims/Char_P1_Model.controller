@@ -355,13 +355,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -8280209622319100531, guid: d5a9133436f34433c869448abc0258af, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Beat
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -381,13 +381,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -6877026360070407083, guid: 7901f6f85281d4fc7900d3a8cbc2dfa2, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Beat
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -533,13 +533,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 2562888284788868603, guid: 022be0a63845a4331ab83669661a10ae, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Beat
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -719,13 +719,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -2603478504544128241, guid: b02ac09175ff04105876de24499909b3, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Beat
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 

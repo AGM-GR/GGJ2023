@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 3927291423710060969}
   - component: {fileID: 5474638778261375389}
   - component: {fileID: 547596687770426236}
+  - component: {fileID: 1200338928328310479}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -173,6 +174,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1183024399 &1200338928328310479
+LookAtConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012883692293862751}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 180, z: 0}
+  m_Roll: 0
+  m_WorldUpObject: {fileID: 0}
+  m_UseUpObject: 0
+  m_IsContraintActive: 1
+  m_IsLocked: 0
+  m_Sources: []
 --- !u!1 &8695876251401832955
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +391,7 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 1f6c0afcd1cb6f54cba0dcf96aaaabf6, type: 2}
   Slot: {fileID: 0}
   Spawner: {fileID: 0}
+  _iconLookAt: {fileID: 1200338928328310479}
 --- !u!95 &6921074981472232269
 Animator:
   serializedVersion: 5

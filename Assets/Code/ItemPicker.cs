@@ -29,14 +29,14 @@ public class ItemPicker : MonoBehaviour
         _slot = FindObjectsOfType<ItemSlot>().Where(s => s.Rave == _character.CharacterColor).First();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private async void OnTriggerEnter(Collider other)
     {
         Item item;
         if (other.TryGetComponent<Item>(out item) && !HasItem)
         {
             CurrentItemData = item.Data;
             // update ui
-            item.Pick(_character.CharacterColor);
+            await item.Pick(_character.CharacterColor);
             aSource.PlayOneShot(pickItemSfx);
 
             if (item.Data.Name == "Baseball Bat")
@@ -52,7 +52,7 @@ public class ItemPicker : MonoBehaviour
     {
         _slot.HideItem();
 
-        if (_currentItemPrefab != null)
+        if (_currentItemPrefab != null && CurrentItemData.Type == ItemType.BaseballBat)
         {
             BaseballTrailPrefab[(int)_character.CharacterColor].SetActive(true);
             await Task.Delay(CurrentItemData.MilisecondsDelayToHideItem);

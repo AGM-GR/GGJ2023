@@ -72,7 +72,7 @@ public class DJMinigame : MonoBehaviour {
             anim.SetFloat("frequency", 1 / (60 / BPM));
         }
 
-        Deactivate();
+        Deactivate(false);
     }
     
     private void Update() {
@@ -95,12 +95,16 @@ public class DJMinigame : MonoBehaviour {
         this.character = character;
     }
 
-    public void Deactivate() {
+    public void Deactivate(bool showInteractHint = true) {
         transform.localPosition = new Vector3(deactivatedXPosition, transform.localPosition.y, 0);
         MinigameActive = false;
         if (character) {
             character.GetComponent<CharacterMovement>().IsMovementAllowed = true;
             character.CharacterAnimator.SetTrigger("ScratchEnd");
+        }
+
+        if (showInteractHint) {
+            car.ShowInteractHint();
         }
     }
 
@@ -179,6 +183,7 @@ public class DJMinigame : MonoBehaviour {
         remainingSuccessesToTierUp = tiers[currentTier].successGoalToLevelUp;
         targetText.text = tiers[currentTier].successGoalToLevelUp.ToString();
         car.SetInfluence(tiers[currentTier].raveInfluence);
+        car.SetAwesomessLevel(currentTier);
         ResetAllButtons();
     }
 
