@@ -27,7 +27,6 @@ public class ActionsController : MonoBehaviour
     public AudioClip drinkSfx;
     public List<AudioClip> drinkMusics;
     private AudioSource _aSource;
-    private CinemachineBasicMultiChannelPerlin _cmNoise;
 
 
     private void Awake()
@@ -36,7 +35,6 @@ public class ActionsController : MonoBehaviour
         _characterMovement = GetComponent<CharacterMovement>();
         characterDJMinigameInteraction = GetComponent<CharacterDJMinigameInteraction>();
         _aSource = GetComponent<AudioSource>();
-        _cmNoise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     public void OnStartMinigame()
@@ -51,46 +49,53 @@ public class ActionsController : MonoBehaviour
 
 
     // Actually: Use item
-    private void ExecuteAction()
+    private async void ExecuteAction()
     {
         if (_itemPicker.HasItem && !characterDJMinigameInteraction.InDJMinigame)
         {
             _animator.SetTrigger(_itemPicker.CurrentItemData.AnimationTrigger);
 
-            switch (_itemPicker.CurrentItemData.Type)
+            if (!_itemPicker.CurrentItemNeedsTarget)
             {
-                case ItemType.BaseballBat:
-                    StunnerTest.SetActive(true);
-                    if (stunnerCoroutine != null)
-                        StopCoroutine(stunnerCoroutine);
-                    stunnerCoroutine = StartCoroutine(DisableStunnerTest(1.17f));
-                    break;
-                case ItemType.Scissors:
-                    break;
-                case ItemType.EnergyDrink:
-                    MusicController.Instance.PlayEnergyDrink(_character.CharacterColor);
-                    _characterMovement.AddSpeedUp();
-                    DrinkParticleSystem.gameObject.SetActive(true);
-                    ShakeCamera(200);
-                    break;
+                await HandleNonTargetItems();
             }
-
-            if (_itemPicker.CurrentItemNeedsTarget && _targetInteractable != null)
+            else
             {
-                _targetInteractable.Interact(_itemPicker);
+                if (_targetInteractable != null)
+                {
+                    _targetInteractable.Interact(_itemPicker);
+                }
             }
 
             _itemPicker.UseItem();
         }
     }
 
-
-    private async void ShakeCamera(int msDelay)
+    private async Task HandleNonTargetItems()
     {
-        await Task.Delay(msDelay);
-        _cmNoise.m_AmplitudeGain = 1;
-        await Task.Delay(100);
-        _cmNoise.m_AmplitudeGain = 0;
+        switch (_itemPicker.CurrentItemData.Type)
+        {
+            case ItemType.BaseballBat:
+                StunnerTest.SetActive(true);
+                if (stunnerCoroutine != null)
+                    StopCoroutine(stunnerCoroutine);
+                stunnerCoroutine = StartCoroutine(DisableStunnerTest(1.17f));
+                break;
+            case ItemType.EnergyDrink:
+
+                DrinkParticleSystem.gameObject.SetActive(true);
+                MusicController.Instance.PlayEnergyDrink(_character.CharacterColor);
+                await ZoomCamera();
+                _characterMovement.AddSpeedUp();
+                break;
+        }
+    }
+
+    private async Task ZoomCamera()
+    {
+        _character.ZoomController.ZoomIn();
+        await Task.Delay(1500);
+        _character.ZoomController.ZoomOut();
     }
 
     private IEnumerator DisableStunnerTest(float stunerTime)

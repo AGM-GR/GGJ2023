@@ -7,6 +7,8 @@ public class Character : MonoBehaviour
     public int CharacterIndex;
     public GameObject[] Models;
     [HideInInspector] public Animator CharacterAnimator;
+    public Transform refCameraPoint;
+    [HideInInspector] public CameraZoomController ZoomController;
 
     public bool IsInit;
 
@@ -27,6 +29,11 @@ public class Character : MonoBehaviour
 
         var car = FindObjectsOfType<Car>().Where(c => c.CarColor == CharacterColor).First();
         car.CharacterIndex = CharacterIndex;
+
+
+        var cam = FindObjectsOfType<CameraZoomController>().Where(c => c.carColor == CharacterColor).First();
+        cam.Setup(this);
+        ZoomController = cam;
     }
 
     private void MoveToSpawningPoint()

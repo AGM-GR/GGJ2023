@@ -595,6 +595,37 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!1 &5365950996632287096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4640060770300309490}
+  m_Layer: 7
+  m_Name: Camera follow ref point
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4640060770300309490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5365950996632287096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 8870835819245186999}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7620267000619118802
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +991,7 @@ Transform:
   - {fileID: 8659478534643567610}
   - {fileID: 7074469306833408618}
   - {fileID: 4514040472124336614}
+  - {fileID: 4640060770300309490}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -983,6 +1015,8 @@ MonoBehaviour:
   - {fileID: 7620267000619118802}
   - {fileID: 3801527891320528179}
   CharacterAnimator: {fileID: 0}
+  refCameraPoint: {fileID: 4640060770300309490}
+  ZoomController: {fileID: 0}
   IsInit: 0
 --- !u!114 &8870835819245186993
 MonoBehaviour:
@@ -1092,7 +1126,7 @@ MonoBehaviour:
   RotateSpeed: 6
   FloorOffsetY: 0.75
   speedUpMultiplier: 2
-  speedUpDuration: 7
+  speedUpDuration: 5.5
   startWithMovement: 0
   _isMovementAllowed: 0
 --- !u!114 &8870835819245187016

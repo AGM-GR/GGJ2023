@@ -49,9 +49,9 @@ MonoBehaviour:
   - Prefab: {fileID: 5929326618934049044, guid: 2c7298652a2ab1f45b84225ffa4c426b, type: 3}
     SpawnProbability: 0.2
   - Prefab: {fileID: 2356853690545132120, guid: 4a2010bf64fcaca4a90f3136f9217bd7, type: 3}
-    SpawnProbability: 0.5
+    SpawnProbability: 0.4
   - Prefab: {fileID: 8764874478580199030, guid: 2747259c851e3bd4090568748280fe32, type: 3}
-    SpawnProbability: 0.5
+    SpawnProbability: 0.4
   _spawnRadios:
   - spawnRadio: 6
     spawnProbability: 0.7

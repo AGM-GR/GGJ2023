@@ -26,7 +26,7 @@ public class PlayerStunner : MonoBehaviour
     {
         _character = GetComponent<Character>();
         aSource = GetComponent<AudioSource>();
-        noise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        noise = GameObject.FindWithTag("MainVCam").GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
 

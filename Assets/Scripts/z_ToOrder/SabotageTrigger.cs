@@ -18,7 +18,7 @@ public class SabotageTrigger : Interactable
         {
             Debug.Log("Revienta carro!");
             Sabotage();
-            picker.UseItem();
+            //picker.UseItem();
             Unhighlight();
         }
     }
