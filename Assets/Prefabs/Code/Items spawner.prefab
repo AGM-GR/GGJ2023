@@ -57,7 +57,7 @@ MonoBehaviour:
     spawnProbability: 0.7
   - spawnRadio: 10
     spawnProbability: 0.5
-  - spawnRadio: 16
+  - spawnRadio: 14
     spawnProbability: 0.3
   meshGround: {fileID: 0}
   _maxItemsCount: 4
