@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 23eebcdd39b36dc429e1c7f06acf00b2, type: 2}
+--- !u!1 &85320546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9208252904778545546, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &189806292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -604,6 +609,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &622663574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9208252905539082354, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &793322077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,6 +673,26 @@ PrefabInstance:
       propertyPath: meshGround
       value: 
       objectReference: {fileID: 1501295581}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[1].Prefab
+      value: 
+      objectReference: {fileID: 8764874478580199030, guid: 2747259c851e3bd4090568748280fe32, type: 3}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[2].Prefab
+      value: 
+      objectReference: {fileID: 2356853690545132120, guid: 4a2010bf64fcaca4a90f3136f9217bd7, type: 3}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[0].SpawnProbability
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[1].SpawnProbability
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: Prefabs.Array.data[2].SpawnProbability
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 202737967340706559, guid: 9e2915c82fd123c438a4982916671235, type: 3}
       propertyPath: m_Name
       value: Items spawner
@@ -1058,9 +1088,19 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5075584716663242230, guid: 895897e4db8b28747a7329039885594f, type: 3}
   m_PrefabInstance: {fileID: 1091077045}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1537619501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5444490815412513819, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1611239614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7381223090799694948, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645448649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9208252905099268014, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
   m_PrefabInstance: {fileID: 7381223091762940585}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1682517470
@@ -1400,6 +1440,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1457588102, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 555493507715847936, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Coche Amarillo - Jenny
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064939255254180858, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661033614590815177, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.54003906
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661033614685518869, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.54003906
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661033615409941041, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.54003906
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585512574042431, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585512574042431, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1533
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585512574042431, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -901
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585513367494855, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585513367494855, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 342
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585513367494855, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -934
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585514270783259, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585514270783259, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1576
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833585514270783259, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -112
+      objectReference: {fileID: 0}
     - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: djMinigame
       value: 
@@ -1412,6 +1512,14 @@ PrefabInstance:
       propertyPath: raversSpeedMultiplierText
       value: 
       objectReference: {fileID: 520624901}
+    - target: {fileID: 2542796507853922208, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.54003906
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877882354624095154, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: djMinigame
       value: 
@@ -1424,6 +1532,42 @@ PrefabInstance:
       propertyPath: raversSpeedMultiplierText
       value: 
       objectReference: {fileID: 520624900}
+    - target: {fileID: 3003448375080426230, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: djMinigame
+      value: 
+      objectReference: {fileID: 189806293}
+    - target: {fileID: 3003448375080426230, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: interactHint
+      value: 
+      objectReference: {fileID: 622663574}
+    - target: {fileID: 3258014552360866990, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258014552360866990, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 341
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258014552360866990, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -112
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366035218399647245, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: djMinigame
+      value: 
+      objectReference: {fileID: 189806296}
+    - target: {fileID: 3366035218399647245, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: interactHint
+      value: 
+      objectReference: {fileID: 1537619501}
+    - target: {fileID: 3366476338688882060, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Coche Morado - Richarl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056020575992385751, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: djMinigame
       value: 
@@ -1436,6 +1580,34 @@ PrefabInstance:
       propertyPath: raversSpeedMultiplierText
       value: 
       objectReference: {fileID: 520624898}
+    - target: {fileID: 5444490815412513819, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723039521785128296, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: djMinigame
+      value: 
+      objectReference: {fileID: 189806295}
+    - target: {fileID: 5723039521785128296, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: interactHint
+      value: 
+      objectReference: {fileID: 1645448649}
+    - target: {fileID: 7023280172637022366, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Coche Rojo - Vane
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377441675070179300, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: djMinigame
+      value: 
+      objectReference: {fileID: 189806294}
+    - target: {fileID: 7377441675070179300, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: interactHint
+      value: 
+      objectReference: {fileID: 85320546}
+    - target: {fileID: 7381223090142585957, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Coche Azul - Rulas
+      objectReference: {fileID: 0}
     - target: {fileID: 7381223092061443980, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Name
       value: Environment
@@ -1496,6 +1668,10 @@ PrefabInstance:
       propertyPath: raversSpeedMultiplierText
       value: 
       objectReference: {fileID: 520624899}
+    - target: {fileID: 9208252904778545546, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
 --- !u!95 &7381223091762940591 stripped

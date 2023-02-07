@@ -20,11 +20,10 @@ public class Car : Interactable
 
     RaversExit pointsExit;
 
-    bool losingRavers;
+    [HideInInspector] public bool losingRavers;
     float timeSinceLastLoss;
 
     public AudioSource aSource;
-    public AudioClip sabotageSfx;
 
     public Vector3 PointsExit { get { return pointsExit.transform.position; } }
     public CarColor CarColor { get { return color; } }
@@ -54,6 +53,8 @@ public class Car : Interactable
         }
     }
 
+
+    // en realidad es la mesa de DJ
     public override void Highlight() {
         base.Highlight();
         interactHint.SetActive(true);
@@ -70,46 +71,45 @@ public class Car : Interactable
 
     public override void Interact(ItemPicker picker)
     {
-        if (LobbyManager.Instance.GameStarted) {
-            if (picker.GetComponent<Character>().CharacterColor == color)
+        if (LobbyManager.Instance.GameStarted)
+        {
+            var character = picker.GetComponent<Character>();
+            if (character.CharacterColor == color)
             {
-                if (!djMinigame.MinigameActive)
-                {
-                    picker.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
-                    picker.GetComponent<CharacterMovement>().IsMovementAllowed = false;
-                    djMinigame.Activate(picker.GetComponent<Character>());
-                    picker.GetComponent<Character>().CharacterAnimator.SetTrigger("Scratch");
-                    interactHint.SetActive(false);
-                }
+                StartMinigameIfPossible(character);
             }
-            else
-            {
-                if (!picker.HasItem) return;
-
-                switch (picker.CurrentItemData.Type)
-                {
-                    case ItemType.None:
-                        break;
-                    case ItemType.BaseballBat:
-                        break;
-                    case ItemType.Scissors:
-                        Debug.Log("Revienta carro!");
-                        Sabotage();
-                        picker.UseItem();
-                        break;
-                    default:
-                        break;
-                }
-            }
+            //else
+            //{
+            //    if (!picker.HasItem) return;
+            //    if (picker.CurrentItemData.Type == ItemType.Scissors)
+            //    {
+            //        Debug.Log("Revienta carro!");
+            //        Sabotage();
+            //        picker.UseItem();
+            //    }
+            //}
         }
     }
 
-    private void Sabotage()
+
+    private void StartMinigameIfPossible(Character character)
     {
-        aSource.PlayOneShot(sabotageSfx);
-        djMinigame.LowestTier();
-        losingRavers = true;
+        if (!djMinigame.MinigameActive)
+        {
+            character.GetComponent<CharacterDJMinigameInteraction>().DJMinigame = djMinigame;
+            character.GetComponent<CharacterMovement>().IsMovementAllowed = false;
+            djMinigame.Activate(character);
+            character.CharacterAnimator.SetTrigger("Scratch");
+            interactHint.SetActive(false);
+        }
     }
+
+    //private void Sabotage()
+    //{
+    //    aSource.PlayOneShot(sabotageSfx);
+    //    djMinigame.LowestTier();
+    //    losingRavers = true;
+    //}
 
     public void LowTierPassed()
     {

@@ -105,8 +105,21 @@ public class ActionsController : MonoBehaviour
         if (other.TryGetComponent<Interactable>(out interactable))
         {
             _targetInteractable = interactable;
-            if (((Car)interactable).CarColor == _character.CharacterColor)
+
+            // mis ojos... :(
+            if (interactable is Car && ((Car)interactable).CarColor == _character.CharacterColor)
+            {
                 interactable.Highlight();
+            }
+
+
+            if (interactable is SabotageTrigger && ((SabotageTrigger)interactable).car.CarColor != _character.CharacterColor)
+            {
+                if (_itemPicker.HasItem && _itemPicker.CurrentItemData.Type == ItemType.Scissors)
+                {
+                    interactable.Highlight();
+                }
+            }
         }
     }
 
@@ -115,10 +128,20 @@ public class ActionsController : MonoBehaviour
     {
 
         Interactable interactable;
-        if (other.TryGetComponent<Interactable>(out interactable)) {
+        if (other.TryGetComponent<Interactable>(out interactable))
+        {
             _targetInteractable = null;
-            if (((Car)interactable).CarColor == _character.CharacterColor)
+
+            if (interactable is Car && ((Car)interactable).CarColor == _character.CharacterColor)
+            {
                 interactable.Unhighlight();
+            }
+
+
+            if (interactable is SabotageTrigger && ((SabotageTrigger)interactable).car.CarColor != _character.CharacterColor)
+            {
+                interactable.Unhighlight();
+            }
         }
     }
 }
