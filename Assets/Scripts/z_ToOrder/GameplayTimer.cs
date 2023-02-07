@@ -10,14 +10,14 @@ public class GameplayTimer : MonoBehaviour
     private Car[] _cars;
     public TextMeshProUGUI TimeText;
 
-    public int TotalTimeInMinutes;
+    public float TotalTimeInMinutes;
     private int _secondsLeft = 0;
 
     private void Start()
     {
         _cars = FindObjectsOfType<Car>();
 
-        var totalSeconds = TotalTimeInMinutes * 60;
+        int totalSeconds = Mathf.FloorToInt(TotalTimeInMinutes * 60f);
         _secondsLeft = totalSeconds;
         StartCoroutine(StartTimer());
     }
@@ -26,7 +26,7 @@ public class GameplayTimer : MonoBehaviour
     {
         do
         {
-            var span = new TimeSpan(0, 0, _secondsLeft); //Or TimeSpan.FromSeconds(seconds); (see Jakob C´s answer)
+            var span = new TimeSpan(0, 0, _secondsLeft);
             var result = string.Format("{0}:{1:00}",
                                         (int)span.TotalMinutes,
                                         span.Seconds);
@@ -45,13 +45,22 @@ public class GameplayTimer : MonoBehaviour
     {
         int max = _cars.Select(c => c.CurrentRavers).Max();
         int winnerIndex = _cars.Where(c => c.CurrentRavers == max).Select(c => c.CharacterIndex).First();
-
-        var scoresOrdered = _cars.OrderByDescending(c => c.CurrentRavers).Select(c => c.CurrentRavers).ToArray();
-        var indexesOrdered = _cars.OrderByDescending(c => c.CurrentRavers).Select(c => c.CharacterIndex).ToArray();
-
         PlayerPrefs.SetInt("Winner", winnerIndex);
-        PlayerPrefs.SetString("Scores", string.Join(",", scoresOrdered));
-        PlayerPrefs.SetString("Indexes", string.Join(",", indexesOrdered));
+
+        //var scoresOrdered = _cars.OrderByDescending(c => c.CurrentRavers).Select(c => c.CurrentRavers).ToArray();
+        //var indexesOrdered = _cars.OrderByDescending(c => c.CurrentRavers).Select(c => c.CharacterIndex).ToArray();
+
+
+        var scores = _cars
+            .Where(c => c.CharacterIndex != -1)
+            .OrderBy(c => c.CharacterIndex)
+            .Select(c => c.CurrentRavers)
+            .ToArray();
+
+
+        PlayerPrefs.SetString("Scores", string.Join(",", scores));
+
+        //PlayerPrefs.SetString("Indexes", string.Join(",", indexesOrdered));
         SceneManager.LoadScene("EndGameScene");
     }
 }

@@ -10269,7 +10269,7 @@ GameObject:
   - component: {fileID: 779323389}
   - component: {fileID: 779323388}
   m_Layer: 0
-  m_Name: w
+  m_Name: point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20450,6 +20450,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3643196353454003175, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
   m_PrefabInstance: {fileID: 1732088032}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741865279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2618315809323054485, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
+  m_PrefabInstance: {fileID: 1988727177089710936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741865280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2152925324674873275, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
+  m_PrefabInstance: {fileID: 1988727177089710936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741865281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4326523114466764532, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
+  m_PrefabInstance: {fileID: 1988727177089710936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741865282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6243322335486956814, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
+  m_PrefabInstance: {fileID: 1988727177089710936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1742756193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21317,6 +21337,11 @@ MonoBehaviour:
   - {fileID: 1988727177089710939}
   - {fileID: 1988727177089710938}
   - {fileID: 1988727177089710937}
+  characterBanners:
+  - {fileID: 1741865282}
+  - {fileID: 1741865281}
+  - {fileID: 1741865280}
+  - {fileID: 1741865279}
   winnerGOs:
   - {fileID: 1988727177089710944}
   - {fileID: 1988727177089710943}
@@ -25223,6 +25248,22 @@ PrefabInstance:
     - target: {fileID: 1576254045403358477, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
       propertyPath: m_Name
       value: Results canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152925324674873275, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618315809323054485, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326523114466764532, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243322335486956814, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b12b8173161c224e8ccc1f250b6f2b5, type: 3}

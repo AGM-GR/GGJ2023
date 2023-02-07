@@ -6,6 +6,7 @@ public class CarWinnerSetter : MonoBehaviour
 {
     public GameObject[] cars;
     public List<TextMeshProUGUI> scoreTexts;
+    public List<GameObject> characterBanners;
     public List<GameObject> winnerGOs;
     
     private void Start()
@@ -20,9 +21,10 @@ public class CarWinnerSetter : MonoBehaviour
         string[] scores = PlayerPrefs.GetString("Scores").Split(",");
         //string[] indexes = PlayerPrefs.GetString("Indexes").Split(","); // para poder ordenarlos.
 
-        for (int i = 0; i < scoreTexts.Count; i++)
+        for (int i = 0; i < scores.Length; i++)
         {
             scoreTexts[i].text = scores[i];
+            characterBanners[i].SetActive(true);
         }
 
     }

@@ -4894,7 +4894,7 @@ MonoBehaviour:
   interactHint: {fileID: 0}
   losingRavers: 0
   aSource: {fileID: 8185283764447932267}
-  CharacterIndex: 0
+  CharacterIndex: -1
 --- !u!135 &7161646325585718419
 SphereCollider:
   m_ObjectHideFlags: 0
