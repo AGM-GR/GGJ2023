@@ -1500,6 +1500,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -112
       objectReference: {fileID: 0}
+    - target: {fileID: 2087871607006060761, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087871607006060761, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: djMinigame
       value: 
