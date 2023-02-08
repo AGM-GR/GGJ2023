@@ -781,7 +781,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 23.2, y: -35.195}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 39.7856, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5642282572081474097
 CanvasRenderer:
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eres el Dios de las Raves
+  m_text: Eres una leyenda de las Raves
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a99a72660f14bab41b781059e96376d0, type: 2}
   m_sharedMaterial: {fileID: -5186961739705484819, guid: a99a72660f14bab41b781059e96376d0, type: 2}
