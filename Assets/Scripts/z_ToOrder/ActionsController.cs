@@ -111,19 +111,10 @@ public class ActionsController : MonoBehaviour
         {
             _targetInteractable = interactable;
 
-            // mis ojos... :(
-            if (interactable is Car && ((Car)interactable).CarColor == _character.CharacterColor)
+            if (interactable is Car)
             {
+                (interactable as Car).highlightingCharacter = this._character;
                 interactable.Highlight();
-            }
-
-
-            if (interactable is SabotageTrigger && ((SabotageTrigger)interactable).car.CarColor != _character.CharacterColor)
-            {
-                if (_itemPicker.HasItem && _itemPicker.CurrentItemData.Type == ItemType.Scissors)
-                {
-                    interactable.Highlight();
-                }
             }
         }
     }
@@ -137,14 +128,9 @@ public class ActionsController : MonoBehaviour
         {
             _targetInteractable = null;
 
-            if (interactable is Car && ((Car)interactable).CarColor == _character.CharacterColor)
+            if (interactable is Car)
             {
-                interactable.Unhighlight();
-            }
-
-
-            if (interactable is SabotageTrigger && ((SabotageTrigger)interactable).car.CarColor != _character.CharacterColor)
-            {
+                (interactable as Car).highlightingCharacter = this._character;
                 interactable.Unhighlight();
             }
         }

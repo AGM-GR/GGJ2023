@@ -2430,12 +2430,24 @@ PrefabInstance:
       value: Coche Amarillo - Jenny
       objectReference: {fileID: 0}
     - target: {fileID: 1064939254487859714, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Pulsa para Flipar rojo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064939254487859714, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1064939254937114078, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Pulsa para Flipar amarillo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064939254937114078, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064939255254180858, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Pulsa para Flipar morado
       objectReference: {fileID: 0}
     - target: {fileID: 1064939255254180858, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
@@ -2502,6 +2514,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 189806293}
     - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: fliparteHint
+      value: 
+      objectReference: {fileID: 7381223091762940589}
+    - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: sabotearHint
+      value: 
+      objectReference: {fileID: 622663574}
+    - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: raversAmountText
       value: 
       objectReference: {fileID: 189806297}
@@ -2521,6 +2541,14 @@ PrefabInstance:
       propertyPath: djMinigame
       value: 
       objectReference: {fileID: 189806296}
+    - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: fliparteHint
+      value: 
+      objectReference: {fileID: 7381223091762940586}
+    - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: sabotearHint
+      value: 
+      objectReference: {fileID: 1537619501}
     - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: raversAmountText
       value: 
@@ -2570,6 +2598,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4216374385571395179, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Pulsa para Flipar azul
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216374385571395179, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2590,6 +2622,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 189806295}
     - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: fliparteHint
+      value: 
+      objectReference: {fileID: 7381223091762940587}
+    - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: sabotearHint
+      value: 
+      objectReference: {fileID: 1645448649}
+    - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: raversAmountText
       value: 
       objectReference: {fileID: 1320378277}
@@ -2597,6 +2637,10 @@ PrefabInstance:
       propertyPath: raversSpeedMultiplierText
       value: 
       objectReference: {fileID: 520624898}
+    - target: {fileID: 5444490815412513819, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Pulsa para Sabotear azul
+      objectReference: {fileID: 0}
     - target: {fileID: 5444490815412513819, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2778,6 +2822,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 189806294}
     - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: fliparteHint
+      value: 
+      objectReference: {fileID: 7381223091762940588}
+    - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: sabotearHint
+      value: 
+      objectReference: {fileID: 85320546}
+    - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: raversAmountText
       value: 
       objectReference: {fileID: 1320378278}
@@ -2786,12 +2838,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 520624899}
     - target: {fileID: 9208252904778545546, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Pulsa para Sabotear morado
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208252904778545546, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9208252905099268014, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Pulsa para Sabotear amarillo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208252905099268014, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208252905539082354, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Pulsa para Sabotear rojo
       objectReference: {fileID: 0}
     - target: {fileID: 9208252905539082354, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
@@ -2799,6 +2863,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+--- !u!1 &7381223091762940586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4216374385571395179, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7381223091762940587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1064939254937114078, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7381223091762940588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1064939255254180858, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7381223091762940589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1064939254487859714, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &7381223091762940591 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7381223091762940591, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}

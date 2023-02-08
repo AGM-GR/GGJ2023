@@ -105,7 +105,7 @@ public class DJMinigame : MonoBehaviour {
         }
 
         if (showInteractHint) {
-            car.ShowInteractHint();
+            car.ShowFliparteHint();
         }
     }
 

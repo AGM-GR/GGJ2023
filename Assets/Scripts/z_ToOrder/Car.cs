@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
+// DJ table
 public class Car : Interactable
 {
     [SerializeField] CarColor color;
@@ -11,7 +13,8 @@ public class Car : Interactable
     [SerializeField] float raverLossPeriod;
 
     [SerializeField] Animator animator;
-    [SerializeField] GameObject interactHint;
+    [SerializeField] GameObject fliparteHint;
+    [SerializeField] GameObject sabotearHint;
 
 
     CharacterDJMinigameInteraction interaction;
@@ -24,6 +27,10 @@ public class Car : Interactable
     float timeSinceLastLoss;
 
     public AudioSource aSource;
+    public AudioClip sabotageSfx;
+
+    [HideInInspector] public Character highlightingCharacter;
+
 
     public Vector3 PointsExit { get { return pointsExit.transform.position; } }
     public CarColor CarColor { get { return color; } }
@@ -55,21 +62,41 @@ public class Car : Interactable
 
 
     // en realidad es la mesa de DJ
-    public override void Highlight() {
+    public override void Highlight()
+    {
         base.Highlight();
-        if (!djMinigame.IsOnMaxTier)
+
+        if (IsCarOwner(highlightingCharacter))
         {
-            interactHint.SetActive(true);
+            if (!djMinigame.IsOnMaxTier)
+            {
+                fliparteHint.SetActive(true);
+            }
+        }
+        else
+        {
+            sabotearHint.SetActive(true);
         }
     }
 
+
+
     public override void Unhighlight() {
+
         base.Unhighlight();
-        interactHint.SetActive(false);
+
+        if (IsCarOwner(highlightingCharacter))
+        {
+            fliparteHint.SetActive(false);
+        }
+        else
+        {
+            sabotearHint.SetActive(false);
+        }
     }
 
-    public void ShowInteractHint() {
-        interactHint.SetActive(true);
+    public void ShowFliparteHint() {
+        fliparteHint.SetActive(true);
     }
 
     public override void Interact(ItemPicker picker)
@@ -77,11 +104,33 @@ public class Car : Interactable
         if (LobbyManager.Instance.GameStarted)
         {
             var character = picker.GetComponent<Character>();
-            if (character.CharacterColor == color)
+            if (IsCarOwner(character))
             {
                 StartMinigameIfPossible(character);
             }
+            else
+            {
+                if (!picker.HasItem) return;
+                if (picker.CurrentItemData.Type == ItemType.Scissors)
+                {
+                    Debug.Log("Revienta carro!");
+                    Sabotage();
+                    Unhighlight();
+                }
+            }
         }
+    }
+
+    private bool IsCarOwner(Character character)
+    {
+        return character.CharacterColor == color;
+    }
+
+    private void Sabotage()
+    {
+        aSource.PlayOneShot(sabotageSfx);
+        djMinigame.LowestTier();
+        losingRavers = true;
     }
 
 
@@ -93,7 +142,7 @@ public class Car : Interactable
             character.GetComponent<CharacterMovement>().IsMovementAllowed = false;
             djMinigame.Activate(character);
             character.CharacterAnimator.SetTrigger("Scratch");
-            interactHint.SetActive(false);
+            fliparteHint.SetActive(false);
         }
     }
 
