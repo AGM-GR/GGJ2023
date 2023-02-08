@@ -8,8 +8,8 @@ public class WinnerFeedback : MonoBehaviour
     public List<Car> cars;
     public Animator[] animators;
 
-    private int prevIndex;
-    private int currentIndex;
+    private int prevIndex = -1;
+    private int currentIndex = 0;
 
     public void Update()
     {
@@ -31,7 +31,7 @@ public class WinnerFeedback : MonoBehaviour
 
         if (prevIndex != currentIndex)
         {            
-            animators[prevIndex].SetBool("IsWinning", false);
+            if(prevIndex >= 0) animators[prevIndex].SetBool("IsWinning", false);
             animators[currentIndex].SetBool("IsWinning", true);
             prevIndex = currentIndex;
         }

@@ -54,24 +54,26 @@ public abstract class RaverBase : MonoBehaviour
     {
         _currentState = RaverState.INFLUENCED;
 
+        PlaySfx(influencingCar);
+
         // Disconnec the old car
         if (_currentInfluencingCar != null)
             _currentInfluencingCar.onInfluenceChanged -= ChangeSpeedMultiplier;
+
 
         // Connec to new car
         _currentInfluencingCar = influencingCar;
         _currentInfluencingCar.onInfluenceChanged += ChangeSpeedMultiplier;
 
-        PlaySfx(influencingCar);
     }
 
     private void PlaySfx(Car influencingCar)
     {
-        //if (influencingCar != _currentInfluencingCar)
-        //{
+        if (influencingCar != _currentInfluencingCar)
+        {
             AudioClip clip = clips.GetRandomElement();
             aSource.PlayOneShot(clip);
-        //}
+        }
     }
 
 
