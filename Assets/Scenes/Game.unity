@@ -1254,6 +1254,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: spawnSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 6cda9192ce9b6fd4aa688f3bf0b8df95, type: 3}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -2850,6 +2854,10 @@ PrefabInstance:
     - target: {fileID: 4309775857788697307, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Name
       value: Sabotage Effect amarillo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583715589412279386, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4583715590391055238, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_PresetInfoIsWorld
