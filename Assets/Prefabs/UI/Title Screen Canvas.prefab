@@ -598,7 +598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3067340265739680866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -674,6 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 904625341}
+  empezarBtn: {fileID: 6519655046172763482}
   pages:
   - {fileID: 3521395162814963194}
   - {fileID: 2448361023551527818}
@@ -848,7 +849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3399073831538768793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1466,6 +1467,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6040960941866941211, guid: edc6077ca8239d54f86b1a0ed6981ff0, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6278323487938829080, guid: edc6077ca8239d54f86b1a0ed6981ff0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1556,7 +1561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7704985419028775041, guid: edc6077ca8239d54f86b1a0ed6981ff0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7704985419028775041, guid: edc6077ca8239d54f86b1a0ed6981ff0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
