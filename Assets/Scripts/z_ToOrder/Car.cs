@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -32,6 +33,8 @@ public class Car : Interactable
 
     [HideInInspector] public Character highlightingCharacter;
 
+    public GameObject minusOneFx;
+
 
     public Vector3 PointsExit { get { return pointsExit.transform.position; } }
     public CarColor CarColor { get { return color; } }
@@ -57,8 +60,15 @@ public class Car : Interactable
                 timeSinceLastLoss -= raverLossPeriod;
                 currentRavers--;
                 raversAmountText.text = currentRavers.ToString();
+                ShowMinusOneFx();
             }
         }
+    }
+
+    private void ShowMinusOneFx()
+    {
+        minusOneFx.gameObject.SetActive(false);
+        minusOneFx.gameObject.SetActive(true);
     }
 
 

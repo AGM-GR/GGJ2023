@@ -170,6 +170,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2147087324, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+      propertyPath: cars.Array.data[0]
+      value: 
+      objectReference: {fileID: 1109204810}
+    - target: {fileID: 2147087324, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+      propertyPath: cars.Array.data[1]
+      value: 
+      objectReference: {fileID: 1473684686}
+    - target: {fileID: 2147087324, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+      propertyPath: cars.Array.data[2]
+      value: 
+      objectReference: {fileID: 1282424548}
+    - target: {fileID: 2147087324, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+      propertyPath: cars.Array.data[3]
+      value: 
+      objectReference: {fileID: 356819659}
     - target: {fileID: 488895281204432820, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -498,6 +514,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &213252249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2233188877606103807, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+  m_PrefabInstance: {fileID: 189806292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &291717256
 GameObject:
   m_ObjectHideFlags: 3
@@ -1366,6 +1387,11 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!1 &1004999859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4343269091420860601, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+  m_PrefabInstance: {fileID: 189806292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1091077045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1776,6 +1802,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68aae355974cba4e8fb3e5cc80d7635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1302902460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3907951049579669255, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+  m_PrefabInstance: {fileID: 189806292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1320378277 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1436988220766190722, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
@@ -2288,6 +2319,11 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!1 &1713111164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 791958205348054519, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+  m_PrefabInstance: {fileID: 189806292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1738024868 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5660881669556069607, guid: 0c6a04839671ef84cb2d139285b33854, type: 3}
@@ -2739,10 +2775,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2371322847205601090, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Car Logic rojo
+      objectReference: {fileID: 0}
     - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: djMinigame
       value: 
       objectReference: {fileID: 189806293}
+    - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: minusOneFx
+      value: 
+      objectReference: {fileID: 1302902460}
     - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: sabotageFx
       value: 
@@ -2771,10 +2815,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2877882354624095161, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Car Logic azul
+      objectReference: {fileID: 0}
     - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: djMinigame
       value: 
       objectReference: {fileID: 189806296}
+    - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: minusOneFx
+      value: 
+      objectReference: {fileID: 213252249}
     - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: sabotageFx
       value: 
@@ -2876,6 +2928,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 189806295}
     - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: minusOneFx
+      value: 
+      objectReference: {fileID: 1713111164}
+    - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: sabotageFx
       value: 
       objectReference: {fileID: 92903208}
@@ -2895,6 +2951,10 @@ PrefabInstance:
       propertyPath: raversSpeedMultiplierText
       value: 
       objectReference: {fileID: 520624898}
+    - target: {fileID: 5056020575992385756, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Car Logic amarillo
+      objectReference: {fileID: 0}
     - target: {fileID: 5444490815412513819, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Name
       value: Pulsa para Sabotear azul
@@ -3075,10 +3135,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -119
       objectReference: {fileID: 0}
+    - target: {fileID: 8009429763773510224, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Car Logic morado
+      objectReference: {fileID: 0}
     - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: djMinigame
       value: 
       objectReference: {fileID: 189806294}
+    - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: minusOneFx
+      value: 
+      objectReference: {fileID: 1004999859}
     - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: sabotageFx
       value: 
