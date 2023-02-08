@@ -15,6 +15,7 @@ public class Car : Interactable
     [SerializeField] Animator animator;
     [SerializeField] GameObject fliparteHint;
     [SerializeField] GameObject sabotearHint;
+    [SerializeField] GameObject sabotageFx;
 
 
     CharacterDJMinigameInteraction interaction;
@@ -128,6 +129,8 @@ public class Car : Interactable
 
     private void Sabotage()
     {
+        sabotageFx.SetActive(false);
+        sabotageFx.SetActive(true);
         aSource.PlayOneShot(sabotageSfx);
         djMinigame.LowestTier();
         losingRavers = true;

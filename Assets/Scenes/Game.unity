@@ -123,9 +123,19 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 23eebcdd39b36dc429e1c7f06acf00b2, type: 2}
+--- !u!1 &84190193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4309775856095628543, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85320546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9208252904778545546, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &92903208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4309775857788697307, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
   m_PrefabInstance: {fileID: 7381223091762940585}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &189806292
@@ -811,6 +821,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &525256934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4309775856965233927, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &622663574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9208252905539082354, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
@@ -2457,6 +2472,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1120157126486923630, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Sabotage Effect azul
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120157126486923630, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1661033614590815177, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.54003906
@@ -2514,6 +2537,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 189806293}
     - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: sabotageFx
+      value: 
+      objectReference: {fileID: 525256934}
+    - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: fliparteHint
       value: 
       objectReference: {fileID: 7381223091762940589}
@@ -2541,6 +2568,10 @@ PrefabInstance:
       propertyPath: djMinigame
       value: 
       objectReference: {fileID: 189806296}
+    - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: sabotageFx
+      value: 
+      objectReference: {fileID: 7381223091762940590}
     - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: fliparteHint
       value: 
@@ -2605,6 +2636,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4309775856095628543, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Sabotage Effect morado
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309775856965233927, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Sabotage Effect rojo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309775857788697307, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: m_Name
+      value: Sabotage Effect amarillo
+      objectReference: {fileID: 0}
     - target: {fileID: 4583715590391055238, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
@@ -2621,6 +2664,10 @@ PrefabInstance:
       propertyPath: djMinigame
       value: 
       objectReference: {fileID: 189806295}
+    - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: sabotageFx
+      value: 
+      objectReference: {fileID: 92903208}
     - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: fliparteHint
       value: 
@@ -2822,6 +2869,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 189806294}
     - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+      propertyPath: sabotageFx
+      value: 
+      objectReference: {fileID: 84190193}
+    - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: fliparteHint
       value: 
       objectReference: {fileID: 7381223091762940588}
@@ -2881,6 +2932,11 @@ GameObject:
 --- !u!1 &7381223091762940589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1064939254487859714, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
+  m_PrefabInstance: {fileID: 7381223091762940585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7381223091762940590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1120157126486923630, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
   m_PrefabInstance: {fileID: 7381223091762940585}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &7381223091762940591 stripped
