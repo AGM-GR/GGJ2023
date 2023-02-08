@@ -31,6 +31,7 @@ public class DJMinigame : MonoBehaviour {
 
     [Header("References")]
     [SerializeField] TextMeshProUGUI targetText;
+    [SerializeField] MinigameOutcomeFeedback feedback;
 
     public bool MinigameActive { get; set; }
     public bool IsOnMaxTier => currentTier == tiers.Length - 1;
@@ -147,6 +148,7 @@ public class DJMinigame : MonoBehaviour {
         if (closing) {
             audioSource.PlayOneShot(failClip);
             StartCoroutine(DeactivateNextFrame());
+            feedback.ShowFailFeedback();
         }
 
         remainingSuccessesToTierUp = tiers[currentTier].successGoalToLevelUp;
@@ -165,12 +167,19 @@ public class DJMinigame : MonoBehaviour {
         ResetTier();
         car.LowTierPassed();
         audioSource.PlayOneShot(tierUpClip);
+        ShowFeedback();
         StartCoroutine(DeactivateNextFrame());
     }
 
     private void TierDown() {
         currentTier--;
+        ShowFeedback();
         ResetTier();
+    }
+
+    private void ShowFeedback()
+    {
+        feedback.ShowFeedback(currentTier);
     }
 
     public void LowestTier() {
