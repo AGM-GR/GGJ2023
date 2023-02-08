@@ -26,11 +26,9 @@ public class Raver : RaverBase
 
     private Animator animator;
 
-    public AudioSource aSource;
-    public List<AudioClip> clips;
-
-
     public NavMeshAgent NavMeshAgent => _navMeshAgent;
+    public bool IsInGroup => RaversGroup != null;
+
 
     private void OnEnable()
     {
@@ -84,16 +82,14 @@ public class Raver : RaverBase
 
     public override void InfluencedByPlayer(CarColor carColor, Car influencingCar)
     {
-        if (influencingCar != _currentInfluencingCar) {
-            aSource.PlayOneShot(clips.GetRandomElement());
-        }
-
         base.InfluencedByPlayer(carColor, influencingCar);
         SetDestination(influencingCar.PointsExit);
         ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
         InfluenceCircle(carColor);
 
     }
+
+
 
     public void InfluenceCircle(CarColor carColor) {
         circle.enabled = true;

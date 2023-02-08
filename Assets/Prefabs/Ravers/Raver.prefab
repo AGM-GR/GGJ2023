@@ -74,6 +74,9 @@ MonoBehaviour:
   yellowColor: {r: 0.8588236, g: 0.63529414, b: 0.2392157, a: 0.29803923}
   purpleColor: {r: 0.57254905, g: 0.34509805, b: 0.53333336, a: 0.29803923}
   aSource: {fileID: 3564467881356556525}
+  groupClips:
+  - {fileID: 8300000, guid: 03381ec141e3d964fbd080e19b27db66, type: 3}
+  - {fileID: 8300000, guid: 0e80fb4f99efae049950bfe4bd0b35d4, type: 3}
   clips:
   - {fileID: 8300000, guid: 22165ba8e32c84cbda2f27dc822b80d4, type: 3}
   - {fileID: 8300000, guid: 934f6b32791ec4c71b6e5cef7486a0bc, type: 3}

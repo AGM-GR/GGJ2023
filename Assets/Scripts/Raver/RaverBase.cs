@@ -17,6 +17,11 @@ public abstract class RaverBase : MonoBehaviour
 
     internal RaverState _currentState;
 
+    [SerializeField]
+    private AudioSource aSource;
+
+    [SerializeField]
+    private List<AudioClip> clips;
 
     public RaversGroup RaversGroup { get; internal set; }
 
@@ -48,7 +53,6 @@ public abstract class RaverBase : MonoBehaviour
     public virtual void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
     {
         _currentState = RaverState.INFLUENCED;
-       
 
         // Disconnec the old car
         if (_currentInfluencingCar != null)
@@ -57,7 +61,19 @@ public abstract class RaverBase : MonoBehaviour
         // Connec to new car
         _currentInfluencingCar = influencingCar;
         _currentInfluencingCar.onInfluenceChanged += ChangeSpeedMultiplier;
+
+        PlaySfx(influencingCar);
     }
+
+    private void PlaySfx(Car influencingCar)
+    {
+        if (influencingCar != _currentInfluencingCar)
+        {
+            AudioClip clip = clips.GetRandomElement();
+            aSource.PlayOneShot(clip);
+        }
+    }
+
 
     public abstract void ChangeSpeedMultiplier(float speedMultiplier);
 
