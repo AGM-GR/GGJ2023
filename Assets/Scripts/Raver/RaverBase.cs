@@ -67,11 +67,11 @@ public abstract class RaverBase : MonoBehaviour
 
     private void PlaySfx(Car influencingCar)
     {
-        if (influencingCar != _currentInfluencingCar)
-        {
+        //if (influencingCar != _currentInfluencingCar)
+        //{
             AudioClip clip = clips.GetRandomElement();
             aSource.PlayOneShot(clip);
-        }
+        //}
     }
 
 
