@@ -966,6 +966,7 @@ GameObject:
   - component: {fileID: 8870835819245187017}
   - component: {fileID: 5972657309720533824}
   - component: {fileID: 7013746838095113516}
+  - component: {fileID: 3057355209615331067}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1045,7 +1046,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 8870835819245186992}
   m_Material: {fileID: 13400000, guid: f52af1649eaaea542a9c9d715b681894, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.2
   m_Height: 1.8
   m_Direction: 1
@@ -1284,6 +1285,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &3057355209615331067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870835819245186992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 2, z: 0.2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &8870835819650460675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,13 +2727,29 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 27899311699602858, guid: 8d6fa9503c5e9e34491b54edb0833855, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.3764706
+      objectReference: {fileID: 0}
     - target: {fileID: 27899311830448691, guid: 8d6fa9503c5e9e34491b54edb0833855, type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 27899311830448691, guid: 8d6fa9503c5e9e34491b54edb0833855, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.16470589
+      objectReference: {fileID: 0}
     - target: {fileID: 27899311893268551, guid: 8d6fa9503c5e9e34491b54edb0833855, type: 3}
       propertyPath: playOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 27899311893268551, guid: 8d6fa9503c5e9e34491b54edb0833855, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 27899311893268551, guid: 8d6fa9503c5e9e34491b54edb0833855, type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 0.49803922
       objectReference: {fileID: 0}
     - target: {fileID: 27899312024889148, guid: 8d6fa9503c5e9e34491b54edb0833855, type: 3}
       propertyPath: playOnAwake
