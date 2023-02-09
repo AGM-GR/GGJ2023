@@ -1153,7 +1153,7 @@ MonoBehaviour:
   - {fileID: 4393637914389592938}
   - {fileID: 8620458328124983558}
   - {fileID: 2612409745804726762}
-  pickItemSfx: {fileID: 8300000, guid: 75ba21b9d8bbdbd4b9b9885b23316226, type: 3}
+  pickItemSfx: {fileID: 8300000, guid: 8550205457a094348abf2f07d88b07bf, type: 3}
 --- !u!114 &8870835819245187017
 MonoBehaviour:
   m_ObjectHideFlags: 0
