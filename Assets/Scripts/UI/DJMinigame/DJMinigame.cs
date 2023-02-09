@@ -102,7 +102,7 @@ public class DJMinigame : MonoBehaviour {
             character.CharacterAnimator.SetTrigger("ScratchEnd");
         }
 
-        if (showInteractHint) {
+        if (showInteractHint && !IsOnMaxTier) {
             car.ShowFliparteHint();
         }
     }
