@@ -258,6 +258,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 42643565, guid: 922f6a9dae91a744aaf7168da6f0b193, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 42643565, guid: 922f6a9dae91a744aaf7168da6f0b193, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 172.54395
+      objectReference: {fileID: 0}
+    - target: {fileID: 705572742, guid: 922f6a9dae91a744aaf7168da6f0b193, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705572742, guid: 922f6a9dae91a744aaf7168da6f0b193, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 359453438814218836, guid: 922f6a9dae91a744aaf7168da6f0b193, type: 3}
       propertyPath: m_Name
       value: Title Screen Canvas
@@ -365,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 8282546240059191841, guid: 922f6a9dae91a744aaf7168da6f0b193, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bb781dcba4f3b1e44b19af5f808e7b27, type: 3}
+      objectReference: {fileID: 21300000, guid: 49da8c76ff664134ebcbd3e8b4314ade, type: 3}
     - target: {fileID: 8282546240059191841, guid: 922f6a9dae91a744aaf7168da6f0b193, type: 3}
       propertyPath: m_Color.b
       value: 1
