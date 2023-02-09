@@ -48,8 +48,6 @@ public class DJMinigame : MonoBehaviour {
     int remainingSuccessesToTierUp;
 
     float timeToTierDown;
-    float normalizedBeatTime;
-
 
     float activatedXPosition;
     float deactivatedXPosition;
@@ -78,7 +76,6 @@ public class DJMinigame : MonoBehaviour {
     }
     
     private void Update() {
-        normalizedBeatTime = (Time.time % (1 / BPM * 60)) / (1 / BPM * 60);
         if (!MinigameActive && currentTier > 1) {
             timeToTierDown -= Time.deltaTime;
             if (timeToTierDown <= 0) {
@@ -114,6 +111,7 @@ public class DJMinigame : MonoBehaviour {
         foreach (DJButton djButton in djButtons) {
             djButton.InMovement = true;
         }
+        GetComponentInChildren<Animator>().SetTrigger("Start");
     }
 
     public void ReceiveInput(MinigameButton button) {
@@ -217,7 +215,7 @@ public class DJMinigame : MonoBehaviour {
     private void ResetAllButtons() {
         float distance = BPM * speedMultiplier * (tiers[currentTier].halfBeats ? 2 : 1);
         for (int i = 0; i < djButtons.Length; ++i) {
-            djButtons[i].Reset(distance * (i + 1) + distance * normalizedBeatTime, speedMultiplier, tiers[currentTier].halfBeats);
+            djButtons[i].Reset(distance * (i + 1) + distance * MusicController.Instance.NormalizedBeatTime, speedMultiplier, tiers[currentTier].halfBeats);
         }
         currentPressableButton = null;
     }

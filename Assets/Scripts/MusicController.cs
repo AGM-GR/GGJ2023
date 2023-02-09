@@ -21,10 +21,12 @@ public class MusicController : MonoBehaviour
     }
 
     public static event Action OnMusicChanged;
-    public static float beatMultiplier;
+    public float BeatMultiplier { get; private set; }
+    public float NormalizedBeatTime { get; private set; }
 
     [SerializeField] DJMinigame[] djMinigames;
     [SerializeField] ClipAndBMPs[] clips;
+    [SerializeField] float startingClipBPM = 160;
 
     [Header("Energy Drink")]
     [SerializeField] AudioSource musicAudioSource;
@@ -37,9 +39,12 @@ public class MusicController : MonoBehaviour
 
     bool crossFading;
     float t;
+    float currentBPM;
 
     private void Awake() {
         Instance = this;
+
+        currentBPM = startingClipBPM;
     }
 
     private void Update() {
@@ -51,18 +56,24 @@ public class MusicController : MonoBehaviour
                 crossFading = false;
             }
         }
+
+        NormalizedBeatTime = (Time.time % (1 / currentBPM * 60)) / (1 / currentBPM * 60);
+        
     }
 
     public void StartMusicAndGames() {
         int clipIndex = UnityEngine.Random.Range(0, clips.Length);
+        currentBPM = clips[clipIndex].BPM;
 
         musicAudioSource.clip = clips[clipIndex].audioClip;
         musicAudioSource.Play();
 
-        beatMultiplier = 1 / (60 / clips[clipIndex].BPM);
+        NormalizedBeatTime = 0;
+
+        BeatMultiplier = currentBPM / 60;
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player")) {
             foreach (Animator animator in player.GetComponentsInChildren<Animator>()) {
-                animator.SetFloat("Beat", beatMultiplier);
+                animator.SetFloat("Beat", BeatMultiplier);
             }
         }
 

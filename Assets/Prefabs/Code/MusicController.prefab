@@ -54,6 +54,7 @@ MonoBehaviour:
   clips:
   - audioClip: {fileID: 8300000, guid: 718ec807bc6d947128b58453f3a85d86, type: 3}
     BPM: 156
+  startingClipBPM: 160
   musicAudioSource: {fileID: 5660881669556069605}
   musicVolume: 1
   energyDrinkAudioSource: {fileID: 5660881669556069606}

@@ -118,7 +118,7 @@ public class Raver : RaverBase
     }
 
     public void  SetAnimatorBeat() {
-        animator.SetFloat("Beat", MusicController.beatMultiplier);
+        animator.SetFloat("Beat", MusicController.Instance.BeatMultiplier);
     }
 
     private void SetAnimationSpeed() {

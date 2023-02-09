@@ -14,6 +14,7 @@ public class LobbyManager : MonoBehaviour
     public Button PlayGameButton;
     public MusicController musicController;
     public List<Animator> characterBanners;
+    public Animator joinTextAnimator;
 
     [Header("Lobby Input Actions")]
     [SerializeField] InputAction startGame = null;
@@ -52,6 +53,7 @@ public class LobbyManager : MonoBehaviour
     private void OnPlayerJoined(PlayerInput player)
     {
         characterBanners[player.playerIndex].SetTrigger("PlayerEntry");
+        characterBanners[player.playerIndex].Play("Loop", 1, GetPreviousAnimatorsNormalizedTime(player.playerIndex));
         InitializeCharacter(player);
         ConnectedPlayersAmount++;
         RefreshPlayButton();
@@ -65,7 +67,11 @@ public class LobbyManager : MonoBehaviour
 
     private void RefreshPlayButton()
     {
-        PlayGameButton.interactable = ConnectedPlayersAmount >= minPlayerAmount;
+        bool canPlay = ConnectedPlayersAmount >= minPlayerAmount;
+        PlayGameButton.interactable = canPlay;
+        if (canPlay) {
+            PlayGameButton.GetComponent<Animator>().Play("Normal", 0, GetPreviousAnimatorsNormalizedTime(ConnectedPlayersAmount));
+        }
     }
 
 
@@ -88,5 +94,13 @@ public class LobbyManager : MonoBehaviour
             o.GetComponent<CharacterInfluenceAction>().CanInfluence = true;
             o.IsMovementAllowed = true;
         });
+    }
+
+    private float GetPreviousAnimatorsNormalizedTime(int index) {
+        if (index == 0) {
+            return joinTextAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        } else {
+            return characterBanners[index - 1].GetCurrentAnimatorStateInfo(1).normalizedTime;
+        }
     }
 }

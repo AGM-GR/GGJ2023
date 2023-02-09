@@ -41,7 +41,7 @@ public class ItemsSpawner : NavMeshSpawner<Item>
                             EnergyDrinkSpawned = true;
                         }
 
-                        itemSpawned.GetComponent<Animator>().SetFloat("Beat", MusicController.beatMultiplier);
+                        itemSpawned.GetComponent<Animator>().SetFloat("Beat", MusicController.Instance.BeatMultiplier);
                         aSource.PlayOneShot(spawnSfx);
                         itemSpawned.Spawner = this;
                         yield return new WaitForSeconds(_spawnRatio);
