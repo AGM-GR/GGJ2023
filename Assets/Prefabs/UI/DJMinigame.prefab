@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BPM: 156
   invert: 0
-  currentTier: 1
+  currentTier: 0
   tiers:
   - duration: -1
     speedMultiplier: 0.25
@@ -1042,12 +1042,12 @@ MonoBehaviour:
     raveInfluence: 0.5
     halfBeats: 1
   - duration: -1
-    speedMultiplier: 0.25
+    speedMultiplier: 0.5
     successGoalToLevelUp: 4
     raveInfluence: 1
     halfBeats: 1
   - duration: 30
-    speedMultiplier: 0.5
+    speedMultiplier: 0.75
     successGoalToLevelUp: 8
     raveInfluence: 2
     halfBeats: 0
@@ -1070,6 +1070,7 @@ MonoBehaviour:
   failClip: {fileID: 8300000, guid: e6529ee476c6a4edaab8da2690d8f33a, type: 3}
   tierUpClip: {fileID: 8300000, guid: a3bbd3eb189964170b8a0f71c36a6ce7, type: 3}
   targetText: {fileID: 3773409290864616388}
+  feedback: {fileID: 0}
 --- !u!82 &1982160591279406845
 AudioSource:
   m_ObjectHideFlags: 0
