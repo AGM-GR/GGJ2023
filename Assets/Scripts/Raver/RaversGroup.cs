@@ -69,9 +69,9 @@ public class RaversGroup : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(CarColor carColor, Car influencingCar)
+    public override void InfluencedByPlayer(CarColor carColor, Car influencingCar, bool withRoot = false)
     {
-        base.InfluencedByPlayer(carColor, influencingCar);
+        base.InfluencedByPlayer(carColor, influencingCar, withRoot);
         foreach (Raver raver in _raversInGroup)
         {
             //raver.SetPlayerMaterial(carColor);

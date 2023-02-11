@@ -130,10 +130,10 @@ public class CharacterMovement : MonoBehaviour
 
     private IEnumerator SpeedUpTime()
     {
-        _characterInfluence.AutoIfluence = true;
+        _characterInfluence.AutoInfluence = true;
         _currentSpeedMultiplier = speedUpMultiplier;
         yield return new WaitForSeconds(speedUpDuration);
-        _characterInfluence.AutoIfluence = false;
+        _characterInfluence.AutoInfluence = false;
         _currentSpeedMultiplier = 1f;
         MusicController.Instance.EndEnergyDrink();
         ItemsSpawner.EnergyDrinkSpawned = false;

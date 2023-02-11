@@ -10,6 +10,8 @@ public class Raver : RaverBase
     [SerializeField]
     private float beatSpeedMultiplier = 0.2f;
     [SerializeField]
+    private float rootAdditionalSpeedMultiplier = 1.5f;
+    [SerializeField]
     private NavMeshAgent _navMeshAgent;
     [SerializeField]
     private RaverMaterials _raverMaterials;
@@ -29,6 +31,12 @@ public class Raver : RaverBase
     public NavMeshAgent NavMeshAgent => _navMeshAgent;
     public bool IsInGroup => RaversGroup != null;
 
+    private Coroutine _rootInfluenceCoroutine;
+
+    [SerializeField] private float _rootInfluenceTimeInSeconds;
+    // extra speed and invulnerability -- debería coincidir con root time?? podría funcionar
+
+    [SerializeField] private GameObject _rootInfluenceVfx;
 
     private void OnEnable()
     {
@@ -80,13 +88,47 @@ public class Raver : RaverBase
         gameObject.SetActive(false);
     }
 
-    public override void InfluencedByPlayer(CarColor carColor, Car influencingCar)
+    public override void InfluencedByPlayer(CarColor carColor, Car influencingCar, bool withRoot = false)
     {
-        base.InfluencedByPlayer(carColor, influencingCar);
-        SetDestination(influencingCar.PointsExit);
-        ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
-        InfluenceCircle(carColor);
+        base.InfluencedByPlayer(carColor, influencingCar, withRoot);
+        if (_currentState == RaverState.INFLUENCED_ROOT) return;
 
+        SetDestination(influencingCar.PointsExit);
+        SetKindOfInfluence(influencingCar, withRoot);
+        InfluenceCircle(carColor);
+    }
+
+    private void SetKindOfInfluence(Car influencingCar, bool withRoot)
+    {
+        if (withRoot)
+        {
+            if (_rootInfluenceCoroutine != null) StopCoroutine(_rootInfluenceCoroutine);
+            _rootInfluenceCoroutine = StartCoroutine(StartRootInfluence(influencingCar));
+        }
+        else
+        {
+            SetRegularInfluence(influencingCar);
+        }
+    }
+
+    private void SetRegularInfluence(Car influencingCar)
+    {
+        _currentState = RaverState.INFLUENCED;
+        ChangeSpeedMultiplier(influencingCar.GetSpeedMultiplierByInfluence());
+    }
+
+    private IEnumerator StartRootInfluence(Car influencingCar)
+    {
+        _currentState = RaverState.INFLUENCED_ROOT;
+        float rootSpeedMultiplier = influencingCar.GetSpeedMultiplierByInfluence() * rootAdditionalSpeedMultiplier;
+        ChangeSpeedMultiplier(rootSpeedMultiplier);
+        _rootInfluenceVfx.SetActive(true);
+
+        yield return new WaitForSeconds(_rootInfluenceTimeInSeconds);
+
+        _rootInfluenceVfx.SetActive(false);
+        SetRegularInfluence(influencingCar);
+        yield return null;
     }
 
 

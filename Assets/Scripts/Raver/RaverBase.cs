@@ -9,6 +9,7 @@ public abstract class RaverBase : MonoBehaviour
         IDLE,
         EXITING,
         INFLUENCED,
+        INFLUENCED_ROOT
     }
 
     internal Vector3 _finalDestination;
@@ -22,6 +23,8 @@ public abstract class RaverBase : MonoBehaviour
 
     [SerializeField]
     private List<AudioClip> clips;
+    [SerializeField]
+    private List<AudioClip> cannotInfluenceClips;
 
     public RaversGroup RaversGroup { get; internal set; }
 
@@ -50,11 +53,18 @@ public abstract class RaverBase : MonoBehaviour
         _currentInfluencingCar = null;
     }
 
-    public virtual void InfluencedByPlayer(CarColor raveColor, Car influencingCar)
+    public virtual void InfluencedByPlayer(CarColor raveColor, Car influencingCar, bool withRoot = false)
     {
-        _currentState = RaverState.INFLUENCED;
+        if (influencingCar == _currentInfluencingCar) return;
 
-        PlaySfx(influencingCar);
+        if (_currentState == RaverState.INFLUENCED_ROOT) // Si está influido por la root, lo ignora
+        {
+            PlayCannotInfluenceSfx();
+            return;
+        }
+
+        if (influencingCar != _currentInfluencingCar)
+            PlayInfluenceSfx();
 
         // Disconnec the old car
         if (_currentInfluencingCar != null)
@@ -67,13 +77,17 @@ public abstract class RaverBase : MonoBehaviour
 
     }
 
-    private void PlaySfx(Car influencingCar)
+    private void PlayCannotInfluenceSfx()
     {
-        if (influencingCar != _currentInfluencingCar)
-        {
-            AudioClip clip = clips.GetRandomElement();
-            aSource.PlayOneShot(clip);
-        }
+        // Algo tipo: "Nah", "booh", "paso"        
+        AudioClip clip = cannotInfluenceClips.GetRandomElement();
+        aSource.PlayOneShot(clip);
+    }
+
+    private void PlayInfluenceSfx()
+    {
+        AudioClip clip = clips.GetRandomElement();
+        aSource.PlayOneShot(clip);
     }
 
 
@@ -91,7 +105,7 @@ public abstract class RaverBase : MonoBehaviour
 
         if (_currentState == RaverState.IDLE)
         {
-            yield return new WaitForSeconds(Random.Range(0.8f, 1.4f));
+            yield return new WaitForSeconds(Random.Range(0.8f, 1.4f)); // delay inicial
 
             if (_currentState == RaverState.IDLE)
             {
