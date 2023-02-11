@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LobbyManager : MonoBehaviour
 {
     public static LobbyManager Instance { get; private set; }
-    const int minPlayerAmount = 2;
+    public int MinPlayerAmount = 2;
 
     private PlayerInputManager _inputManager;
     public int ConnectedPlayersAmount;
@@ -67,7 +67,7 @@ public class LobbyManager : MonoBehaviour
 
     private void RefreshPlayButton()
     {
-        bool canPlay = ConnectedPlayersAmount >= minPlayerAmount;
+        bool canPlay = ConnectedPlayersAmount >= MinPlayerAmount;
         PlayGameButton.interactable = canPlay;
         if (canPlay) {
             PlayGameButton.GetComponent<Animator>().Play("Normal", 0, GetPreviousAnimatorsNormalizedTime(ConnectedPlayersAmount));
