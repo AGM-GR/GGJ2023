@@ -48,18 +48,28 @@ public class ItemPicker : MonoBehaviour
         }
     }
 
+
+    // to make more clean...
     public async void UseItem()
     {
-        await HandleBaseballBatModelVisibility();
-        LoseItem();
+        if (CurrentItemData.Type == ItemType.BaseballBat)
+        {
+            int delay = CurrentItemData.MilisecondsDelayToHideItem;
+            LoseItem();
+            await HandleBaseballBatModelVisibility(delay);
+        }
+        else
+        {
+            LoseItem();
+        }
     }
 
-    private async Task HandleBaseballBatModelVisibility()
+    private async Task HandleBaseballBatModelVisibility(int msDelay)
     {
-        if (_currentItemPrefab != null && CurrentItemData.Type == ItemType.BaseballBat)
+        if (_currentItemPrefab != null)
         {
             BaseballTrailPrefab[(int)_character.CharacterColor].SetActive(true);
-            await Task.Delay(CurrentItemData.MilisecondsDelayToHideItem);
+            await Task.Delay(msDelay);
             _currentItemPrefab.SetActive(false);
             BaseballTrailPrefab[(int)_character.CharacterColor].SetActive(false);
         }
