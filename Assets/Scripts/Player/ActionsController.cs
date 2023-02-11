@@ -76,19 +76,29 @@ public class ActionsController : MonoBehaviour
         switch (_itemPicker.CurrentItemData.Type)
         {
             case ItemType.BaseballBat:
-                StunnerTest.SetActive(true);
-                if (stunnerCoroutine != null)
-                    StopCoroutine(stunnerCoroutine);
-                stunnerCoroutine = StartCoroutine(DisableStunnerTest(1.17f));
+                HandleBaseballBat();
                 break;
-            case ItemType.EnergyDrink:
 
-                DrinkParticleSystem.gameObject.SetActive(true);
-                MusicController.Instance.PlayEnergyDrink(_character.CharacterColor);
-                await ZoomCamera();
-                _characterMovement.AddSpeedUp();
+            case ItemType.EnergyDrink:
+                await HandleEnergyDrink();
                 break;
         }
+    }
+
+    private async Task HandleEnergyDrink()
+    {
+        DrinkParticleSystem.gameObject.SetActive(true);
+        MusicController.Instance.PlayEnergyDrink(_character.CharacterColor);
+        await ZoomCamera();
+        _characterMovement.AddSpeedUp();
+    }
+
+    private void HandleBaseballBat()
+    {
+        StunnerTest.SetActive(true);
+        if (stunnerCoroutine != null)
+            StopCoroutine(stunnerCoroutine);
+        stunnerCoroutine = StartCoroutine(DisableStunnerTest(1.17f));
     }
 
     private async Task ZoomCamera()

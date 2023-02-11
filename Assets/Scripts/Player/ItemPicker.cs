@@ -50,8 +50,12 @@ public class ItemPicker : MonoBehaviour
 
     public async void UseItem()
     {
-        _slot.HideItem();
+        await HandleBaseballBatModelVisibility();
+        LoseItem();
+    }
 
+    private async Task HandleBaseballBatModelVisibility()
+    {
         if (_currentItemPrefab != null && CurrentItemData.Type == ItemType.BaseballBat)
         {
             BaseballTrailPrefab[(int)_character.CharacterColor].SetActive(true);
@@ -59,7 +63,17 @@ public class ItemPicker : MonoBehaviour
             _currentItemPrefab.SetActive(false);
             BaseballTrailPrefab[(int)_character.CharacterColor].SetActive(false);
         }
+    }
 
+    public void LoseItem(bool showVfx = false)
+    {
+        if (!HasItem) return;
+
+        _slot.HideItem();
         CurrentItemData = null;
+        if (showVfx)
+        {
+            // show vfx
+        }
     }
 }

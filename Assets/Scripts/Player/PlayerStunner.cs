@@ -2,12 +2,14 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Cinemachine;
+using UnityEditor.Sprites;
 
 public class PlayerStunner : MonoBehaviour
 {
     public List<AudioClip> hitClips;
 
     private Character _character;
+    public ItemPicker picker;
 
     public CharacterMovement _movement;
     public CharacterInfluenceAction _influence;
@@ -26,6 +28,7 @@ public class PlayerStunner : MonoBehaviour
     {
         _character = GetComponent<Character>();
         aSource = GetComponent<AudioSource>();
+        picker = GetComponent<ItemPicker>();
         noise = GameObject.FindWithTag("MainVCam").GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
@@ -34,15 +37,18 @@ public class PlayerStunner : MonoBehaviour
     {
         if (other.CompareTag("Stunner") && !IsStunned)
         {
-            // vfx!
-            AudioClip clip = hitClips[_character.CharacterIndex];
-            aSource.PlayOneShot(clip);
+            PlaySfx();
             StartStun(other);
             await Task.Delay((int)(StunnedTimeInSeconds * 1000));
             EndStun();
         }
     }
 
+    private void PlaySfx()
+    {
+        AudioClip clip = hitClips[_character.CharacterIndex];
+        aSource.PlayOneShot(clip);
+    }
 
     private async void StartStun(Collider other)
     {
@@ -50,6 +56,8 @@ public class PlayerStunner : MonoBehaviour
         {
             _djMinigameInteraction.DJMinigame.Deactivate();
         }
+
+        picker.LoseItem(true);
 
         Animator.SetTrigger("GetHit");
         other.gameObject.SetActive(false);
