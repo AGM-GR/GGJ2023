@@ -1299,6 +1299,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e4665e103a945c5a3e7441893a015c, type: 3}
+--- !u!225 &338615881
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381223091762940586}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!114 &356819659 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
@@ -1409,11 +1421,47 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &613645063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381223091762940587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32e166d6d4aa164a80ec5cc42de16a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carColor: 1
+  _controlSchemeBindings:
+  - ControlScheme: Xbox
+    SpriteId: gamepad_icons_105
+  - ControlScheme: Playstation
+    SpriteId: gamepad_icons_10
 --- !u!1 &622663574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9208252905539082354, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
   m_PrefabInstance: {fileID: 7381223091762940585}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &633661612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381223091762940586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32e166d6d4aa164a80ec5cc42de16a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carColor: 0
+  _controlSchemeBindings:
+  - ControlScheme: Xbox
+    SpriteId: gamepad_icons_105
+  - ControlScheme: Playstation
+    SpriteId: gamepad_icons_10
 --- !u!1 &646666534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,6 +1879,24 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!114 &832344206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381223091762940589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32e166d6d4aa164a80ec5cc42de16a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carColor: 3
+  _controlSchemeBindings:
+  - ControlScheme: Xbox
+    SpriteId: gamepad_icons_105
+  - ControlScheme: Playstation
+    SpriteId: gamepad_icons_10
 --- !u!1 &1004999859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4343269091420860601, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
@@ -2239,6 +2305,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!225 &1242352498
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381223091762940589}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!114 &1282424548 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
@@ -2422,6 +2500,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7381223090799694948, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
   m_PrefabInstance: {fileID: 7381223091762940585}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1613020361
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381223091762940587}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1645448649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9208252905099268014, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
@@ -3145,7 +3235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1064939254487859714, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1064939254937114078, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Name
@@ -3153,7 +3243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1064939254937114078, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1064939255254180858, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Name
@@ -3161,7 +3251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1064939255254180858, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1120157126486923630, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Name
@@ -3246,7 +3336,7 @@ PrefabInstance:
     - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: fliparteHint
       value: 
-      objectReference: {fileID: 7381223091762940589}
+      objectReference: {fileID: 1242352498}
     - target: {fileID: 2371322847205601095, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: sabotearHint
       value: 
@@ -3290,7 +3380,7 @@ PrefabInstance:
     - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: fliparteHint
       value: 
-      objectReference: {fileID: 7381223091762940586}
+      objectReference: {fileID: 338615881}
     - target: {fileID: 2877882354624095164, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: sabotearHint
       value: 
@@ -3349,7 +3439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4216374385571395179, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4309775856095628543, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: m_Name
@@ -3398,7 +3488,7 @@ PrefabInstance:
     - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: fliparteHint
       value: 
-      objectReference: {fileID: 7381223091762940587}
+      objectReference: {fileID: 1613020361}
     - target: {fileID: 5056020575992385753, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: sabotearHint
       value: 
@@ -3618,7 +3708,7 @@ PrefabInstance:
     - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: fliparteHint
       value: 
-      objectReference: {fileID: 7381223091762940588}
+      objectReference: {fileID: 7381223091762940597}
     - target: {fileID: 8009429763773510229, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
       propertyPath: sabotearHint
       value: 
@@ -3687,3 +3777,33 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7381223091762940591, guid: 0013201b4fb0b334a9bddbecbad1a523, type: 3}
   m_PrefabInstance: {fileID: 7381223091762940585}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7381223091762940596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381223091762940588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32e166d6d4aa164a80ec5cc42de16a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carColor: 2
+  _controlSchemeBindings:
+  - ControlScheme: Xbox
+    SpriteId: gamepad_icons_105
+  - ControlScheme: Playstation
+    SpriteId: gamepad_icons_10
+--- !u!225 &7381223091762940597
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381223091762940588}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
