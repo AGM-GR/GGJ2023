@@ -5,6 +5,7 @@ public class Character : MonoBehaviour
 {
     [SerializeField] CarColor characterColor;
     public int CharacterIndex;
+    public string ControlScheme;
     public GameObject[] Models;
     [HideInInspector] public Animator CharacterAnimator;
     public Transform refCameraPoint;
@@ -16,9 +17,10 @@ public class Character : MonoBehaviour
 
     public bool IsMale => CharacterColor == CarColor.BLUE || CharacterColor == CarColor.PURPLE;
 
-    public void Initialize(int index)
+    public void Initialize(int index, string controlScheme)
     {
         CharacterIndex = index;
+        ControlScheme = controlScheme;
         characterColor = (CarColor)index;
         Models[CharacterIndex].SetActive(true);
         CharacterAnimator = Models[CharacterIndex].GetComponentInChildren<Animator>();

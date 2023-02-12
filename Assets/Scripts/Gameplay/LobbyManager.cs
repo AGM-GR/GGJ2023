@@ -68,7 +68,7 @@ public class LobbyManager : MonoBehaviour
     private static void InitializeCharacter(PlayerInput player)
     {
         var character = player.GetComponent<Character>();
-        character.Initialize(player.playerIndex);
+        character.Initialize(player.playerIndex, player.currentControlScheme);
     }
 
     private void RefreshPlayButton()

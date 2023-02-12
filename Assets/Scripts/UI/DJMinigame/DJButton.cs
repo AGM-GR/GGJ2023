@@ -1,15 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
+
 public class DJButton : MonoBehaviour
 {
-    [SerializeField] Sprite southButtonSprite;
-    [SerializeField] Sprite westButtonSprite;
-    [SerializeField] Sprite eastButtonSprite;
-    [SerializeField] Sprite northButtonSprite;
+    [System.Serializable]
+    public struct ControlSchemeDependantSpritesCollection
+    {
+        public string ControlScheme;
+        [Space]
+        public Sprite SouthButtonSprite;
+        public Sprite WestButtonSprite;
+        public Sprite EastButtonSprite;
+        public Sprite NorthButtonSprite;
+    }
+
+
+    [SerializeField] private ControlSchemeDependantSpritesCollection[] _spriteCollections;
+    private int _currentSpritesIndex = 0;
     
     public MinigameButton CurrentMinigameButton { get; private set; }
     public bool AlreadyTried { get; set; }
@@ -29,9 +40,24 @@ public class DJButton : MonoBehaviour
     bool pressable;
 
     private void Awake() {
-        image = GetComponent<Image>();
+        image = GetComponentInChildren<Image>();
         djMinigame = GetComponentInParent<DJMinigame>();
         ResetMinigameButton();
+    }
+
+    public void SetControlScheme(string controlScheme)
+    {
+        for (int i = 0; i < _spriteCollections.Length; i++)
+        {
+            if (_spriteCollections[i].ControlScheme == controlScheme)
+            {
+                _currentSpritesIndex = i;
+                if(InMovement) image.sprite = GetSprite(CurrentMinigameButton);
+                return;
+            }
+        }
+
+        _currentSpritesIndex = 0; // default
     }
 
     public void Initialize(float BPM, bool invert, float skipLimit, float pressThreshold, float startingSpeedMultiplier) {
@@ -92,18 +118,20 @@ public class DJButton : MonoBehaviour
         AlreadyTried = false;
         Succeded = false;
         image.sprite = GetSprite(CurrentMinigameButton);
-    }  
-    
-    private Sprite GetSprite(MinigameButton button) {
-        switch (button) {
+    }
+
+    private Sprite GetSprite(MinigameButton button)
+    {
+        switch (button)
+        {
             case MinigameButton.SOUTH:
-                return southButtonSprite;
+                return _spriteCollections[_currentSpritesIndex].SouthButtonSprite;
             case MinigameButton.EAST:
-                return eastButtonSprite;
+                return _spriteCollections[_currentSpritesIndex].EastButtonSprite;
             case MinigameButton.WEST:
-                return westButtonSprite;
+                return _spriteCollections[_currentSpritesIndex].WestButtonSprite;
             case MinigameButton.NORTH:
-                return northButtonSprite;
+                return _spriteCollections[_currentSpritesIndex].NorthButtonSprite;
             default:
                 return null;
         }

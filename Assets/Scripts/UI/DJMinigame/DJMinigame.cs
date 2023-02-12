@@ -92,6 +92,11 @@ public class DJMinigame : MonoBehaviour {
         transform.localPosition = new Vector3(activatedXPosition, transform.localPosition.y, 0);
         MinigameActive = true;
         this.character = character;
+
+        foreach (DJButton djButton in djButtons)
+        {
+            djButton.SetControlScheme(character.ControlScheme);
+        }
     }
 
     public void Deactivate(bool showInteractHint = true) {
