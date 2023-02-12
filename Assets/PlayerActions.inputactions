@@ -93,7 +93,7 @@
                 {
                     "name": "up",
                     "id": "3b4e5fee-a2c8-45f1-aca9-61042ea2477c",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -104,7 +104,7 @@
                 {
                     "name": "down",
                     "id": "df1ecf25-a571-4209-b7f6-5d0386b92197",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -115,7 +115,7 @@
                 {
                     "name": "left",
                     "id": "97c58ebb-a749-4049-b9ee-c4876c5dd4e9",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -126,7 +126,7 @@
                 {
                     "name": "right",
                     "id": "7f3c3430-f37a-4a24-8aea-9347289da473",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -245,9 +245,119 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "d5d48860-e46a-4ccf-b464-7c837f584cf1",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "3ef3d226-093f-47d1-a83e-d0f7f6c88fad",
+                    "path": "<DualShockGamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "92b185b9-aed1-4d6d-b066-eeee8c7111b7",
+                    "path": "<DualShockGamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "95859878-012d-4221-a68c-8c7fc0f79064",
+                    "path": "<DualShockGamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "114dcb83-26b2-4d7f-bd2c-7a810b472d5d",
+                    "path": "<DualShockGamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "4aa53cc0-0707-4178-883c-cd69abf081f6",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "125ba880-a9aa-4065-9435-299c587567fa",
+                    "path": "<XInputController>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "7806c08e-5b61-4ae7-b81e-68ac1c1427c1",
+                    "path": "<XInputController>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "52e560d5-e6d3-41c9-8c98-b9a09ef8d384",
+                    "path": "<XInputController>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c2636b5d-1a1f-4667-b561-67ba6b1599a2",
+                    "path": "<XInputController>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "ca0c6420-31ca-4ead-8e09-06c1c48a08b5",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -273,6 +383,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
+                    "action": "ExecuteAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ae8246d-206f-4d34-aa33-2d498779cb4c",
+                    "path": "<DualShockGamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "ExecuteAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30a8abb2-ae2f-4e8b-af5c-4a28841a9e7f",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
                     "action": "ExecuteAction",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -312,6 +444,28 @@
                 },
                 {
                     "name": "",
+                    "id": "8895230d-24fe-4e26-8e9c-d548cf66e6e8",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "MinigameSouthButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d04e2cc-f6c0-4f1e-b4d4-3ff0a78e117a",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "MinigameSouthButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ec3fc8da-e52b-4e61-ac4f-90c6ab73b566",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -339,6 +493,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
+                    "action": "MinigameWestButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ce0f24c-b5a0-4d5c-be59-6f7a93f1c07f",
+                    "path": "<DualShockGamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "MinigameWestButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b384886-e5d3-4b51-99f3-b17b61f1fe21",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
                     "action": "MinigameWestButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -378,6 +554,28 @@
                 },
                 {
                     "name": "",
+                    "id": "025ce9ed-76e0-4f52-9e7e-e9be4729f574",
+                    "path": "<DualShockGamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "MinigameEastButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0feae241-1b75-45e8-9a37-c89470c2f2c5",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "MinigameEastButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4cda5aff-73b2-432a-b49c-8b77a3e313b6",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
@@ -411,8 +609,30 @@
                 },
                 {
                     "name": "",
+                    "id": "f9d98e47-91a2-41b2-8073-20d15d9b4aa7",
+                    "path": "<DualShockGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "MinigameNorthButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d428f92d-ea95-4547-8dcf-e03131d8af85",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "MinigameNorthButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8d780a4e-0e75-4ad0-9a80-58367b59c84e",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -444,8 +664,30 @@
                 },
                 {
                     "name": "",
+                    "id": "2c2cb771-0c3a-45ae-ae93-876a76128908",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "InfluenceRaver",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80fad4db-5f53-4b5a-a4f5-fe9f41d319cf",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "InfluenceRaver",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c3c8a449-2530-4293-828e-181498e3765d",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -471,6 +713,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
+                    "action": "StartMinigame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c15342c-1ff4-426f-ba1a-f2c3b2ea91d3",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "StartMinigame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab41cf9b-c46a-44d2-b81d-26a7e14569a7",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
                     "action": "StartMinigame",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -507,6 +771,28 @@
             "devices": [
                 {
                     "devicePath": "<Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Playstation",
+            "bindingGroup": "Playstation",
+            "devices": [
+                {
+                    "devicePath": "<DualShockGamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Xbox",
+            "bindingGroup": "Xbox",
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
                     "isOptional": false,
                     "isOR": false
                 }

@@ -39,12 +39,16 @@ public class ItemPicker : MonoBehaviour
             await item.Pick(_character.CharacterColor);
             aSource.PlayOneShot(pickItemSfx);
 
-            if (item.Data.Name == "Baseball Bat")
-            {
+            ShowBaseballBatModelIfRequired(item);
+        }
+    }
 
-                BaseballPrefab[(int)_character.CharacterColor].SetActive(true);
-                _currentItemPrefab = BaseballPrefab[(int)_character.CharacterColor];
-            }
+    private void ShowBaseballBatModelIfRequired(Item item)
+    {
+        if (item.Data.Name == "Baseball Bat")
+        {
+            BaseballPrefab[(int)_character.CharacterColor].SetActive(true);
+            _currentItemPrefab = BaseballPrefab[(int)_character.CharacterColor];
         }
     }
 

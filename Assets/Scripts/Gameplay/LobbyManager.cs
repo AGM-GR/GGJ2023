@@ -52,11 +52,17 @@ public class LobbyManager : MonoBehaviour
 
     private void OnPlayerJoined(PlayerInput player)
     {
-        characterBanners[player.playerIndex].SetTrigger("PlayerEntry");
-        characterBanners[player.playerIndex].Play("Loop", 1, GetPreviousAnimatorsNormalizedTime(player.playerIndex));
+        Debug.Log("control scheme: " + player.currentControlScheme);
+        PlayBannerAnimation(player);
         InitializeCharacter(player);
         ConnectedPlayersAmount++;
         RefreshPlayButton();
+    }
+
+    private void PlayBannerAnimation(PlayerInput player)
+    {
+        characterBanners[player.playerIndex].SetTrigger("PlayerEntry");
+        characterBanners[player.playerIndex].Play("Loop", 1, GetPreviousAnimatorsNormalizedTime(player.playerIndex));
     }
 
     private static void InitializeCharacter(PlayerInput player)
@@ -69,7 +75,8 @@ public class LobbyManager : MonoBehaviour
     {
         bool canPlay = ConnectedPlayersAmount >= MinPlayerAmount;
         PlayGameButton.interactable = canPlay;
-        if (canPlay) {
+        if (canPlay)
+        {
             PlayGameButton.GetComponent<Animator>().Play("Normal", 0, GetPreviousAnimatorsNormalizedTime(ConnectedPlayersAmount));
         }
     }
