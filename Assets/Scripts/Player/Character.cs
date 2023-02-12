@@ -36,6 +36,9 @@ public class Character : MonoBehaviour
         var cam = FindObjectsOfType<CameraZoomController>().Where(c => c.carColor == CharacterColor).First();
         cam.Setup(this);
         ZoomController = cam;
+
+        var fliparteHint = FindObjectsOfType<FliparteHintTextManager>().Where(c => c.carColor == CharacterColor).First();
+        fliparteHint.SetControlScheme(controlScheme);
     }
 
     private void MoveToSpawningPoint()

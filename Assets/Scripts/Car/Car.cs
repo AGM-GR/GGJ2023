@@ -14,7 +14,7 @@ public class Car : Interactable
     [SerializeField] float raverLossPeriod;
 
     [SerializeField] Animator animator;
-    [SerializeField] GameObject fliparteHint;
+    [SerializeField] CanvasGroup fliparteHint;
     [SerializeField] GameObject sabotearHint;
     [SerializeField] GameObject sabotageFx;
 
@@ -81,7 +81,7 @@ public class Car : Interactable
         {
             if (!djMinigame.IsOnMaxTier)
             {
-                fliparteHint.SetActive(true);
+                fliparteHint.alpha = 1;
             }
         }
         else
@@ -98,7 +98,7 @@ public class Car : Interactable
 
         if (IsCarOwner(highlightingCharacter))
         {
-            fliparteHint.SetActive(false);
+            fliparteHint.alpha = 0;
         }
         else
         {
@@ -107,7 +107,7 @@ public class Car : Interactable
     }
 
     public void ShowFliparteHint() {
-        fliparteHint.SetActive(true);
+        fliparteHint.alpha = 1;
     }
 
     public override void Interact(ItemPicker picker)
@@ -155,7 +155,7 @@ public class Car : Interactable
             character.GetComponent<CharacterMovement>().IsMovementAllowed = false;
             djMinigame.Activate(character);
             character.CharacterAnimator.SetTrigger("Scratch");
-            fliparteHint.SetActive(false);
+            fliparteHint.alpha = 0;
         }
     }
 
