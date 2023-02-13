@@ -39,6 +39,9 @@ public class Character : MonoBehaviour
 
         var fliparteHint = FindObjectsOfType<FliparteHintTextManager>().Where(c => c.carColor == CharacterColor).First();
         fliparteHint.SetControlScheme(controlScheme);
+
+        var itemSlot = FindObjectsOfType<ItemSlot>().Where(c => c.Rave == CharacterColor).First();
+        itemSlot.SetControlScheme(controlScheme);
     }
 
     private void MoveToSpawningPoint()
