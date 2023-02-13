@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5058824, g: 0.49411765, b: 0.4627451, a: 1}
+  m_Color: {r: 0.5058824, g: 0.49411765, b: 0.4627451, a: 0.16862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 3464893645439246505}
   - component: {fileID: 1428402661038638807}
   m_Layer: 5
-  m_Name: Red Amount
+  m_Name: Time Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_text: 03:25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 744f828789babf44882f9e00fb0fc92a, type: 2}
-  m_sharedMaterial: {fileID: 8719854633455235371, guid: 744f828789babf44882f9e00fb0fc92a, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e00f5ec35ba7f6a4aad761e0f949bdf7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

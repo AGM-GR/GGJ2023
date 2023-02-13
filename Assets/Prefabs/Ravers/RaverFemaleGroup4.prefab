@@ -149,6 +149,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaverFemale (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 628391451089865693, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: _defaultMaterial
       value: 
@@ -224,6 +236,18 @@ PrefabInstance:
     - target: {fileID: 233917706799661345, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: m_Name
       value: RaverFemale (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 628391451089865693, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: _defaultMaterial
@@ -301,6 +325,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaverFemale (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 628391451089865693, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: _defaultMaterial
       value: 
@@ -376,6 +412,18 @@ PrefabInstance:
     - target: {fileID: 233917706799661345, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: m_Name
       value: RaverFemale (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233917706799661351, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 628391451089865693, guid: 34ea8dd045265f14a8b9d2db816dcd64, type: 3}
       propertyPath: _defaultMaterial

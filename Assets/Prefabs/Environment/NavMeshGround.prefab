@@ -477,16 +477,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefabs:
   - Prefab: {fileID: 1983442127558890042}
-    SpawnProbability: 0.01
+    SpawnProbability: 0.1
   - Prefab: {fileID: 7549394030018618176}
-    SpawnProbability: 0.02
+    SpawnProbability: 0.1
   - Prefab: {fileID: 1505219390748095052}
-    SpawnProbability: 0.5
+    SpawnProbability: 1
   - Prefab: {fileID: 1660621812236693555}
     SpawnProbability: 1
   _spawnRadios:
   - spawnRadio: 6
-    spawnProbability: 0.6
+    spawnProbability: 0.7
   - spawnRadio: 11
     spawnProbability: 0.5
   - spawnRadio: 14

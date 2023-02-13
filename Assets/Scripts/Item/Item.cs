@@ -11,10 +11,14 @@ public class Item : MonoBehaviour
     public ItemsSpawner Spawner;
     private Animator _animator;
     [SerializeField] private LookAtConstraint _iconLookAt;
+	
+	public AudioSource aSource;
+	public AudioClip pickItemSfx;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+		aSource = GetComponent<AudioSource>();
 
 
         var constraint = new ConstraintSource();
@@ -29,6 +33,8 @@ public class Item : MonoBehaviour
         Slot = FindObjectsOfType<ItemSlot>().Where(s => s.Rave == color).First();
         Slot.ShowItem(Data);
         _animator.SetTrigger("OpenBox");
+		await Task.Delay(200);
+		aSource.PlayOneShot(pickItemSfx);
         await Task.Delay(2500);
         gameObject.SetActive(false);
         Spawner.ItemDisabled();

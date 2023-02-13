@@ -155,7 +155,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 1
   m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!114 &589278177152257944
 MonoBehaviour:
@@ -1010,6 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterColor: 0
   CharacterIndex: 0
+  ControlScheme: 
   Models:
   - {fileID: 2317794935355093821}
   - {fileID: 932048966526315077}
@@ -1171,11 +1172,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ea9c51f644982ca4e896fcbe2abf1c26, type: 3}
   - {fileID: 8300000, guid: 47fbdfb57a963b349b58afec8d2a4ff1, type: 3}
   - {fileID: 8300000, guid: 769c0a5c062b380418da0737f1b63799, type: 3}
+  picker: {fileID: 0}
   _movement: {fileID: 8870835819245187019}
   _influence: {fileID: 5972657309720533824}
   _djMinigameInteraction: {fileID: 9112374262877955239}
   IsStunned: 0
-  StunnedTimeInSeconds: 2
+  StunnedTimeInSeconds: 3
 --- !u!114 &5972657309720533824
 MonoBehaviour:
   m_ObjectHideFlags: 0

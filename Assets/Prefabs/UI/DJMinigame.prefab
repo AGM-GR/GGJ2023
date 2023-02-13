@@ -755,7 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BPM: 156
   invert: 0
-  currentTier: 0
+  currentTier: 1
   tiers:
   - duration: -1
     speedMultiplier: 0.25
@@ -764,7 +764,7 @@ MonoBehaviour:
     halfBeats: 1
   - duration: -1
     speedMultiplier: 0.5
-    successGoalToLevelUp: 4
+    successGoalToLevelUp: 5
     raveInfluence: 1
     halfBeats: 1
   - duration: 30

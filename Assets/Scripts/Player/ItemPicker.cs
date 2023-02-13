@@ -37,7 +37,7 @@ public class ItemPicker : MonoBehaviour
             CurrentItemData = item.Data;
             // update ui
             await item.Pick(_character.CharacterColor);
-            aSource.PlayOneShot(pickItemSfx);
+           // aSource.PlayOneShot(pickItemSfx);
 
             ShowBaseballBatModelIfRequired(item);
         }

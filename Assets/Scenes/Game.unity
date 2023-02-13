@@ -300,7 +300,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1755752200950320773, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[1].halfBeats
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755752200950320773, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+      propertyPath: tiers.Array.data[3].raveInfluence
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1755752200950320773, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[0].speedMultiplier
@@ -320,11 +324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1755752200950320773, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[1].successGoalToLevelUp
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1755752200950320773, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[2].successGoalToLevelUp
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1755752201430636832, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: m_Name
@@ -563,6 +567,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000789805410458698, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+      propertyPath: tiers.Array.data[3].raveInfluence
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000789805410458698, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[0].speedMultiplier
       value: 0.3
       objectReference: {fileID: 0}
@@ -580,15 +588,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000789805410458698, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[1].successGoalToLevelUp
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4000789805410458698, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[2].successGoalToLevelUp
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4000789805971528329, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[1].halfBeats
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000789805971528329, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+      propertyPath: tiers.Array.data[3].raveInfluence
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4000789805971528329, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[0].speedMultiplier
@@ -608,15 +620,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000789805971528329, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[1].successGoalToLevelUp
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4000789805971528329, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[2].successGoalToLevelUp
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4000789806903086258, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[1].halfBeats
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000789806903086258, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
+      propertyPath: tiers.Array.data[3].raveInfluence
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4000789806903086258, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[0].speedMultiplier
@@ -635,12 +651,8 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000789806903086258, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
-      propertyPath: tiers.Array.data[1].successGoalToLevelUp
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000789806903086258, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: tiers.Array.data[2].successGoalToLevelUp
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4034324949113979083, guid: 19729fd2bdee7604dae8e61c01b2f4c2, type: 3}
       propertyPath: m_IsActive
@@ -1462,6 +1474,17 @@ MonoBehaviour:
     SpriteId: gamepad_icons_105
   - ControlScheme: Playstation
     SpriteId: gamepad_icons_10
+--- !u!114 &637874801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7549394030018618176, guid: 895897e4db8b28747a7329039885594f, type: 3}
+  m_PrefabInstance: {fileID: 1091077045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa09a7adc8156043be847fd7612bca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &646666534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,17 +1790,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
-      propertyPath: spawnSfx
-      value: 
-      objectReference: {fileID: 8300000, guid: 8c729c298448624408a9ebe0993bd91e, type: 3}
-    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
       propertyPath: meshGround
       value: 
       objectReference: {fileID: 1501295581}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: _spawnRatio
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: nextBatchRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 202737967340706557, guid: 9e2915c82fd123c438a4982916671235, type: 3}
+      propertyPath: _itemsSpawnBatch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 202737967340706559, guid: 9e2915c82fd123c438a4982916671235, type: 3}
       propertyPath: m_Name
       value: Items spawner
@@ -1910,8 +1937,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
-      propertyPath: _spawnRadios.Array.data[0].spawnProbability
-      value: 0.7
+      propertyPath: _spawnRatio
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: _maxRaverCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: _raversSpawnBatch
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.data[0].Prefab
+      value: 
+      objectReference: {fileID: 637874801}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.data[1].Prefab
+      value: 
+      objectReference: {fileID: 1413894025}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.data[0].SpawnProbability
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.data[1].SpawnProbability
+      value: 0.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.data[2].SpawnProbability
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722056164159584111, guid: 895897e4db8b28747a7329039885594f, type: 3}
+      propertyPath: Prefabs.Array.data[3].SpawnProbability
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5075584716663242228, guid: 895897e4db8b28747a7329039885594f, type: 3}
       propertyPath: m_RootOrder
@@ -2353,6 +2412,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1413894025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1983442127558890042, guid: 895897e4db8b28747a7329039885594f, type: 3}
+  m_PrefabInstance: {fileID: 1091077045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa09a7adc8156043be847fd7612bca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1457588101

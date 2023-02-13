@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5019750446587924660}
   - component: {fileID: 6656764267968229342}
   - component: {fileID: 8747625476752930226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RaverGroup4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,6 +178,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4d646094d16c2074993a616019e46ad0, type: 2}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3643196353454003164, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
       propertyPath: m_Name
       value: Raver (2)
@@ -279,6 +295,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4d646094d16c2074993a616019e46ad0, type: 2}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3643196353454003164, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
       propertyPath: m_Name
       value: Raver (3)
@@ -380,6 +412,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4d646094d16c2074993a616019e46ad0, type: 2}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3643196353454003164, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
       propertyPath: m_Name
       value: Raver (4)
@@ -481,6 +529,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4d646094d16c2074993a616019e46ad0, type: 2}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643196353454003162, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3643196353454003164, guid: d14c85c94cbe9964e86e1dcb2e4a50a1, type: 3}
       propertyPath: m_Name
       value: Raver (1)

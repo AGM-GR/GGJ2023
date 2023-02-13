@@ -48,7 +48,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 1
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
@@ -64,6 +64,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dda77aeef16a75469ac325e5da1c666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aSource: {fileID: 3564467881356556525}
+  clips:
+  - {fileID: 8300000, guid: 22165ba8e32c84cbda2f27dc822b80d4, type: 3}
+  - {fileID: 8300000, guid: 934f6b32791ec4c71b6e5cef7486a0bc, type: 3}
+  - {fileID: 8300000, guid: 58ea4d420ab5f435eb10ac51e07a1c58, type: 3}
+  - {fileID: 8300000, guid: 4ee5a0788f7744bbca68feca7b6fe953, type: 3}
+  - {fileID: 8300000, guid: 339b1ea49d8ab4b48b8412e82dc8df96, type: 3}
   _baseSpeed: 1
   beatSpeedMultiplier: 0.2
   _navMeshAgent: {fileID: 3643196353454003163}
@@ -73,16 +80,6 @@ MonoBehaviour:
   redColor: {r: 0.56078434, g: 0.16470589, b: 0.16470589, a: 0.29803923}
   yellowColor: {r: 0.8588236, g: 0.63529414, b: 0.2392157, a: 0.29803923}
   purpleColor: {r: 0.57254905, g: 0.34509805, b: 0.53333336, a: 0.29803923}
-  aSource: {fileID: 3564467881356556525}
-  groupClips:
-  - {fileID: 8300000, guid: 03381ec141e3d964fbd080e19b27db66, type: 3}
-  - {fileID: 8300000, guid: 0e80fb4f99efae049950bfe4bd0b35d4, type: 3}
-  clips:
-  - {fileID: 8300000, guid: 22165ba8e32c84cbda2f27dc822b80d4, type: 3}
-  - {fileID: 8300000, guid: 934f6b32791ec4c71b6e5cef7486a0bc, type: 3}
-  - {fileID: 8300000, guid: 58ea4d420ab5f435eb10ac51e07a1c58, type: 3}
-  - {fileID: 8300000, guid: 4ee5a0788f7744bbca68feca7b6fe953, type: 3}
-  - {fileID: 8300000, guid: 339b1ea49d8ab4b48b8412e82dc8df96, type: 3}
 --- !u!195 &3643196353454003163
 NavMeshAgent:
   m_ObjectHideFlags: 0
